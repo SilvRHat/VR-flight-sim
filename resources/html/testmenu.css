@@ -1,0 +1,64 @@
+button {
+    font-size: xx-large;
+    margin: auto;
+    display: block;
+    border-radius: 10px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin: 0px;
+}
+h2 {
+    text-align: center;
+}
+
+#title {
+    width: 300px;
+    padding: 10px 40px;
+    margin-bottom: 20px;
+}
+#content {
+    padding: 12px 40px;
+    width: 480px;
+    color: white;
+}
+#content_text {
+    font-size: x-large;
+    margin: 0px;
+}
+#content li {
+    font-size: large;
+}
+
+.background {
+    display: block;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+body {
+    background-image: url(https://cdn.britannica.com/34/94834-050-16DB7EEB/USS-Carl-Vinson-aircraft-carrier-US-Navy-2005.jpg);
+} 
+
+#prepar3d_logo {
+    width: 120px;
+    position: relative;
+    bottom: 100%;
+    left: 80%;
+    padding: 12px 0px 0px 0px
+}
+
+#decoration_border {
+    display: block;
+    width: 90%;
+    height: 100%;
+    border: white 1px solid;
+    border-radius: inherit;
+    padding: inherit;
+    position: relative;
+    right: 3.5%;
+}
