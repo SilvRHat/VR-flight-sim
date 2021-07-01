@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Test Menu - Prepar3d Render</title>
-        <link rel="stylesheet" href="menu.css">
+<head>
+    <title>Test Menu - Prepar3d Render</title>
+    <link rel="stylesheet" href="menu.css">
 
-        <!-- jQuery: ajax library for web requests-->
-        <script 
-            src="https://code.jquery.com/jquery-3.6.0.min.js" 
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
-            crossorigin="anonymous">
-        </script>
-        <!-- Our scripts: order is important -->
-        <script src="init.js"></script>
-        <script src='menu.js'></script>
-    </head>
+    <!-- jQuery: ajax library for web requests-->
+    <!--<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>-->
+    <!-- Our scripts: order is important -->
+    <script src="init.js"></script>
+    <script src='menu.js'></script>
+</head>
     <body>
         <div id = 'title' class='background'>
             <h1>
@@ -37,12 +37,12 @@
                 <button id='start_button'>
                     Start Demo
                 </button>
-                <img id = 'prepar3d_logo' src='http://prepar3d.com/wp-content/uploads/2014/10/11Logo_1600.png'>
-                
+                <img id='prepar3d_logo' src='http://prepar3d.com/wp-content/uploads/2014/10/11Logo_1600.png'>
+
             </div>
             
         </div>
-        <div id='outputdiv' class='background'>
+        <div style="visibility:hidden;" id='outputdiv' class='background'>
             <p id='output'>
                 Test Output
             </p>

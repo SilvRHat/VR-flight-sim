@@ -17,23 +17,34 @@ function stepMenu(runtime, step) {
 function testJQuery() {
     let out = "Testing jquery on website<br>";
     let err=false;
-    
-    $.ajax({
+
+    try {
+        $.ajax({
         url: "https:silvrship.dev", 
         async: false,
         
-    }).done(function (data) {
-        if (data.search('Gavin Zimmerman')<0) {
+        }).done(function (data) {
+            if (data.search('Gavin Zimmerman')<0) {
+                err=true;
+                out=out.concat('&nbsp;[BAD] Unexpected response from webpage<br>');
+            }
+        }).fail(function () {
             err=true;
-            out=out.concat('&nbsp;[BAD] Unexpected response from webpage<br>');
-        }
-    }).fail(function () {
-        err=true;
-        out=out.concat('&nbsp;[BAD] Could not make web request<br>');
-    }).always(function () {
-        if (!err)
-            out=out.concat('&nbsp;[YAY] No problems<br>');
-    });
+            out=out.concat('&nbsp;[BAD] Could not make web request<br>');
+        }).always(function () {
+            if (!err)
+                out=out.concat('&nbsp;[YAY] No problems<br>');
+        });
+        out=out.concat('&nbsp;ran fine<br>');
+    }
+    catch (err){
+        out=out.concat('&nbsp;err: ',err,'<br>');
+    }
+    finally {
+        out=out.concat('&nbsp;complete<br>');
+    }
+    
+    
     return out;
 }
 
@@ -59,7 +70,8 @@ function buttonFadeOnMouse(button) {
 }
 
 function startDemo() {
-    VarSet('S:Continue', 'true')
+    document.getElementById('start_button').style.backgroundColor = "rgb(250,150,150)";
+    VarSet('S:Continue', 'STRING', 'true')
 }
 
 
@@ -71,7 +83,7 @@ function initMenu() {
     // Make buttons do things
     let startbutton = document.getElementById('start_button');
     
-    VarSet('S:Continue', 'yielding')
+    //VarSet('S:Continue', 'yielding')
     buttonFadeOnMouse(startbutton);
     startbutton.onclick = startDemo
 
