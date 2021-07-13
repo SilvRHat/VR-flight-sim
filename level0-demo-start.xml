@@ -10,9 +10,11 @@
         <SimContain.UserAvatar InstanceId="{508FDC98-BF36-4C0F-B22D-27045DF1A0CF}">
         </SimContain.UserAvatar>
         <SimMission.ObjectActivationAction InstanceId="{968FAB7F-F36E-4648-AFCB-9EE80D127945}">
-            <Descr>Activate</Descr>
+            <Descr>Init_Activate</Descr>
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{EE4AF1C7-3020-4584-B4B9-CB3D6095C88F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{6AD36EB2-565D-4A0D-9C5C-AE177918F4D9}">
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
@@ -22,16 +24,24 @@
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{C6E34582-CCEB-45D7-BD75-1091C3838D45}">
                 </ObjectReference>
+                <ObjectReference InstanceId="{EE4AF1C7-3020-4584-B4B9-CB3D6095C88F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{6AD36EB2-565D-4A0D-9C5C-AE177918F4D9}">
+                </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.LoadScenarioAction InstanceId="{443E601C-62E8-420F-B26A-3C2FABB6883D}">
             <Descr>Load lvl1</Descr>
-            <ScenarioFileName>sims\level1- Gates.fxml</ScenarioFileName>
+            <ScenarioFileName>sims\level1- Basics.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
+        <SimMission.SetPauseAction InstanceId="{CAE8C70E-B08C-4EAE-A30F-8B80223708A3}">
+            <Descr>EnforcePause_Pause</Descr>
+            <PauseFlight>True</PauseFlight>
+        </SimMission.SetPauseAction>
         <SimMission.ScriptTrigger InstanceId="{9C87DDF7-8E46-4D11-8A84-F9D7DEE00A8C}">
             <Descr>Init</Descr>
             <Script>!lua
-varset(&apos;S:Continue&apos;,&apos;STRING&apos;,&apos;false&apos;)
+varset(&apos;S:continue&apos;,&apos;STRING&apos;,&apos;false&apos;)
 return true</Script>
             <Actions>
                 <ObjectReference InstanceId="{968FAB7F-F36E-4648-AFCB-9EE80D127945}">
@@ -39,15 +49,26 @@ return true</Script>
             </Actions>
         </SimMission.ScriptTrigger>
         <SimMission.ScriptTrigger InstanceId="{EE4AF1C7-3020-4584-B4B9-CB3D6095C88F}">
-            <Descr>onStepPoll</Descr>
+            <Descr>Poll_Continue_LoadLvl1</Descr>
             <Activated>False</Activated>
             <OneShot>False</OneShot>
             <Script>!lua
-return varget(&apos;S:Continue&apos;,&apos;STRING&apos;)~=&apos;false&apos;</Script>
+return varget(&apos;S:continue&apos;,&apos;STRING&apos;)~=&apos;false&apos;</Script>
             <Actions>
                 <ObjectReference InstanceId="{DCF80961-4EAB-44C6-9540-DED2DD5FF242}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{443E601C-62E8-420F-B26A-3C2FABB6883D}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{6AD36EB2-565D-4A0D-9C5C-AE177918F4D9}">
+            <Descr>EnforcePause_Poll</Descr>
+            <Activated>False</Activated>
+            <OneShot>False</OneShot>
+            <Script>!lua
+return (varget(&apos;P:SIM PAUSED&apos;, &apos;Bool&apos;)~=&apos;1&apos;)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{CAE8C70E-B08C-4EAE-A30F-8B80223708A3}">
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
@@ -117,6 +138,17 @@ return varget(&apos;S:Continue&apos;,&apos;STRING&apos;)~=&apos;false&apos;</Scr
                 <ObjectReference InstanceId="{DCF80961-4EAB-44C6-9540-DED2DD5FF242}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{443E601C-62E8-420F-B26A-3C2FABB6883D}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{890D11B1-9DE6-4AC8-9523-DDBF6CA80F07}">
+            <Descr>EnforcePause</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{CAE8C70E-B08C-4EAE-A30F-8B80223708A3}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{6AD36EB2-565D-4A0D-9C5C-AE177918F4D9}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>

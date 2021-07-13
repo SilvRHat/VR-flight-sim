@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="ObjectFile" version="5,1">
+    <Descr>Level 2 of Demo series. 1 gate, free style</Descr>
+    <Title>Level 2 - Freestyle</Title>
+    <WorldBase.Flight>
+        <SimContain.UserOwnship InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
+            <SpeedKnots>260.000000</SpeedKnots>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+        </SimContain.UserOwnship>
+        <SimContain.UserAvatar InstanceId="{508FDC98-BF36-4C0F-B22D-27045DF1A0CF}">
+        </SimContain.UserAvatar>
+        <SimMission.SetPauseAction InstanceId="{410E47AE-F5B3-445E-B2A5-15F0152EDFCD}">
+            <Descr>Pause</Descr>
+            <PauseFlight>True</PauseFlight>
+        </SimMission.SetPauseAction>
+        <SimMission.ObjectActivationAction InstanceId="{1F0B6A64-4397-498E-A15A-DEF8AD7256E3}">
+            <Descr>Gate0 Activate</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{0EF65E73-1E3C-4395-A7BE-D6FCC745F750}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{92F07E9A-CD90-4EA3-8A07-8FEC5F86256F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{73294FD1-6708-4E5C-A8C1-4C8C61838A89}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.SetPauseAction InstanceId="{40935336-844B-48EB-AC28-FEBFF9425744}">
+            <Descr>Unpause</Descr>
+        </SimMission.SetPauseAction>
+        <SimMission.ObjectActivationAction InstanceId="{2F6C5471-4D82-427B-8DDF-8316AA327208}">
+            <Descr>Intro Deactivate</Descr>
+            <NewObjectState>False</NewObjectState>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{49B4D58E-17C4-45EA-816E-0722ABD36627}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{0EF65E73-1E3C-4395-A7BE-D6FCC745F750}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{B97F3B46-A084-499D-ABB1-758B86BA830A}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ScriptAction InstanceId="{26CD06DB-6522-49DA-9D70-25C7856EC112}">
+            <Descr>Intro Done</Descr>
+            <Script>!lua
+varset(&apos;S:continue&apos;,&apos;STRING&apos;,&apos;exp&apos;)
+return true</Script>
+            <OnCompleteActions>
+                <ObjectReference InstanceId="{40935336-844B-48EB-AC28-FEBFF9425744}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{2F6C5471-4D82-427B-8DDF-8316AA327208}">
+                </ObjectReference>
+            </OnCompleteActions>
+        </SimMission.ScriptAction>
+        <SimMission.ObjectActivationAction InstanceId="{E525B525-5805-4A62-80F6-86CD82BB56B4}">
+            <Descr>Init Activate</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{0EF65E73-1E3C-4395-A7BE-D6FCC745F750}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{B97F3B46-A084-499D-ABB1-758B86BA830A}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{49B4D58E-17C4-45EA-816E-0722ABD36627}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{2E3FB0BD-373E-4E12-9F22-B57764FCC7C2}">
+            <Descr>Survey Done Deactivate</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{92F07E9A-CD90-4EA3-8A07-8FEC5F86256F}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{079D7288-62FA-4640-B10A-274CDF862CDF}">
+            <Descr>Survey Done Activate</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{391F306B-D417-4989-8500-37EDB3A8F4C3}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.RectangleArea InstanceId="{3C9FCB26-02B7-40E3-AB90-E51448E7E76A}">
+            <Descr>Gate0 HitArea</Descr>
+            <Orientation>0.000000,0.000000,38.700002</Orientation>
+            <Length>90.000000</Length>
+            <Width>40.000000</Width>
+            <Height>90.000000</Height>
+            <RGBColor>153.000000,50.000000,204.000000,255.000000</RGBColor>
+            <AttachedWorldObject>
+                <OffsetXYZ>0.000000,-17.949999,0.000000,0.000000</OffsetXYZ>
+                <BodyRelativeOffset>1.000000,1.000000,1.000000,0.000000</BodyRelativeOffset>
+                <BodyRelativeRotation>0.000000,0.000000,0.000000,0.000000</BodyRelativeRotation>
+                <ObjectReference InstanceId="{FF251276-A269-48DF-A819-4A8D78B9323F}">
+                </ObjectReference>
+            </AttachedWorldObject>
+        </SimMission.RectangleArea>
+        <SimMission.ProximityTrigger InstanceId="{443A18D8-0321-45D8-90C1-A23780FFE081}">
+            <Descr>Gate0 HitTrigger</Descr>
+            <ObjectFilter>Reference</ObjectFilter>
+            <Areas>
+                <ObjectReference InstanceId="{3C9FCB26-02B7-40E3-AB90-E51448E7E76A}">
+                </ObjectReference>
+            </Areas>
+            <OnEnterActions>
+                <ObjectReference InstanceId="{410E47AE-F5B3-445E-B2A5-15F0152EDFCD}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{1F0B6A64-4397-498E-A15A-DEF8AD7256E3}">
+                </ObjectReference>
+            </OnEnterActions>
+            <OnEnterFilter>
+                <ObjectReference InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
+                </ObjectReference>
+            </OnEnterFilter>
+        </SimMission.ProximityTrigger>
+        <SimMission.ScriptTrigger InstanceId="{AACA04A1-8DFB-49B7-82AE-2AEC151F37E8}">
+            <Descr>Init</Descr>
+            <Script>!lua
+varset(&apos;S:continue&apos;,&apos;STRING&apos;,&apos;exp&apos;)
+return true</Script>
+            <Actions>
+                <ObjectReference InstanceId="{E525B525-5805-4A62-80F6-86CD82BB56B4}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{49B4D58E-17C4-45EA-816E-0722ABD36627}">
+            <Descr>Intro Done Poll</Descr>
+            <Activated>False</Activated>
+            <OneShot>False</OneShot>
+            <Script>!lua
+return varget(&apos;S:continue&apos;,&apos;STRING&apos;)~=&apos;exp&apos;</Script>
+            <Actions>
+                <ObjectReference InstanceId="{26CD06DB-6522-49DA-9D70-25C7856EC112}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{73294FD1-6708-4E5C-A8C1-4C8C61838A89}">
+            <Descr>Survey Done Poll</Descr>
+            <Activated>False</Activated>
+            <OneShot>False</OneShot>
+            <Script>!lua
+return varget(&apos;S:continue&apos;,&apos;STRING&apos;)~=&apos;exp&apos;</Script>
+            <Actions>
+                <ObjectReference InstanceId="{2E3FB0BD-373E-4E12-9F22-B57764FCC7C2}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{079D7288-62FA-4640-B10A-274CDF862CDF}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SceneryObjects.LibraryObject InstanceId="{661B7871-4D31-4D57-BE2A-79380FF76F9A}">
+            <Descr>Menu Boat</Descr>
+            <MDLGuid>{93615C8E-9789-49A9-B7B0-EC3D2A2625E6}</MDLGuid>
+            <WorldPosition>N35° 27' 27.756000",E139° 44' 41.604000",+000000.00</WorldPosition>
+            <Orientation>0.000000,0.000000,180.000000</Orientation>
+            <Scale>1.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
+        </SceneryObjects.LibraryObject>
+        <SceneryObjects.LibraryObject InstanceId="{FF251276-A269-48DF-A819-4A8D78B9323F}">
+            <Descr>Hoop Active</Descr>
+            <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
+            <WorldPosition>N35° 24' 35.817758",E139° 45' 7.513627",+008349.74</WorldPosition>
+            <Orientation>0.000000,0.000000,38.699995</Orientation>
+            <Scale>1.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
+        </SceneryObjects.LibraryObject>
+        <SimMissionUI.ScenarioMetadata InstanceId="{1266AFE6-24BD-4695-86F8-3487E04D0169}">
+            <Descr>Scenario Desc Metadata</Descr>
+        </SimMissionUI.ScenarioMetadata>
+        <SimMission.RealismOverrides InstanceId="{2ED1249F-8482-4D45-9FA3-DF2EDE076B18}">
+            <Descr>UnlimitedFuelHack (Error Circumventing)</Descr>
+            <CrashBehavior>ResetFlight</CrashBehavior>
+            <UnlimitedFuel>Unlimited</UnlimitedFuel>
+        </SimMission.RealismOverrides>
+        <SimMission.UIPanelObject InstanceId="{92F07E9A-CD90-4EA3-8A07-8FEC5F86256F}">
+            <Descr>Question</Descr>
+            <UIPanelFileName>resources\html\question.html</UIPanelFileName>
+            <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
+            <Orientation>0.000000,0.000000,340.000000</Orientation>
+            <UIPanelFileResolution>960.000000,720.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
+            <HasMouseInteractivity>True</HasMouseInteractivity>
+            <Activated>False</Activated>
+            <WorldSize>32.000004,24.000002,-1.000000,-1.000000</WorldSize>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 29.160000",E139° 44' 41.388000",+000064.47</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.UIPanelObject>
+        <SimMission.PointOfInterest InstanceId="{47480CDA-5645-4EF8-A8F3-3887CB861556}">
+            <Descr>Hoop POI</Descr>
+            <SelectedModelGuid>{0E41BE96-3A8A-49AD-A1F9-429013E27CA0}</SelectedModelGuid>
+            <AttachedWorldObject>
+                <OffsetXYZ>0.000000,27.050003,0.000000,0.000000</OffsetXYZ>
+                <BodyRelativeOffset>1.000000,1.000000,1.000000,0.000000</BodyRelativeOffset>
+                <BodyRelativeRotation>0.000000,0.000000,0.000000,0.000000</BodyRelativeRotation>
+                <ObjectReference InstanceId="{FF251276-A269-48DF-A819-4A8D78B9323F}">
+                </ObjectReference>
+            </AttachedWorldObject>
+        </SimMission.PointOfInterest>
+        <SimMission.UIPanelObject InstanceId="{B97F3B46-A084-499D-ABB1-758B86BA830A}">
+            <Descr>Intro Lvl2</Descr>
+            <UIPanelFileName>resources\html\level2intro.html</UIPanelFileName>
+            <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
+            <Orientation>0.000000,0.000000,340.000000</Orientation>
+            <UIPanelFileResolution>960.000000,720.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
+            <HasMouseInteractivity>True</HasMouseInteractivity>
+            <WorldSize>32.000004,24.000002,-1.000000,-1.000000</WorldSize>
+            <Activated>False</Activated>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 29.160000",E139° 44' 41.388000",+000047.66</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.UIPanelObject>
+        <SimMission.UIPanelObject InstanceId="{391F306B-D417-4989-8500-37EDB3A8F4C3}">
+            <Descr>Complete</Descr>
+            <UIPanelFileName>resources\html\complete.html</UIPanelFileName>
+            <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
+            <Orientation>0.000000,0.000000,340.000000</Orientation>
+            <UIPanelFileResolution>960.000000,720.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
+            <HasMouseInteractivity>True</HasMouseInteractivity>
+            <WorldSize>32.000004,24.000002,-1.000000,-1.000000</WorldSize>
+            <Activated>False</Activated>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 29.160000",E139° 44' 41.388000",+000042.58</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.UIPanelObject>
+        <SimMission.Camera InstanceId="{0EF65E73-1E3C-4395-A7BE-D6FCC745F750}">
+            <Descr>UICam</Descr>
+            <Name>UICam</Name>
+            <Activated>False</Activated>
+            <Orientation>0.000000,0.000000,340.000000</Orientation>
+            <CameraZoomLevel>0.500000</CameraZoomLevel>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 28.012408",E139° 44' 41.913537",+000102.25</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.Camera>
+    </WorldBase.Flight>
+    <MissionBuilder.MissionBuilder>
+        <ObjectGroup InstanceId="{8F55B7A1-A302-44C7-BE7F-27443FB3F5EA}">
+            <Descr>UI</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{92F07E9A-CD90-4EA3-8A07-8FEC5F86256F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{391F306B-D417-4989-8500-37EDB3A8F4C3}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{B97F3B46-A084-499D-ABB1-758B86BA830A}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{0EF65E73-1E3C-4395-A7BE-D6FCC745F750}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{06D35F8D-BC2E-49B4-8547-7ACFEBECCA99}">
+            <Descr>Init</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{AACA04A1-8DFB-49B7-82AE-2AEC151F37E8}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{E525B525-5805-4A62-80F6-86CD82BB56B4}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{A2C89E87-E427-4BB8-B111-D1B4E61E817A}">
+            <Descr>Gate0 HIT_EVENT</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{443A18D8-0321-45D8-90C1-A23780FFE081}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{410E47AE-F5B3-445E-B2A5-15F0152EDFCD}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{1F0B6A64-4397-498E-A15A-DEF8AD7256E3}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{90B88BEC-7802-4AB0-9C1D-5CE0F53B15D0}">
+            <Descr>Intro</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{49B4D58E-17C4-45EA-816E-0722ABD36627}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{40935336-844B-48EB-AC28-FEBFF9425744}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{2F6C5471-4D82-427B-8DDF-8316AA327208}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{26CD06DB-6522-49DA-9D70-25C7856EC112}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{873FA12A-F3C6-4863-AF5C-54CFA7C7254F}">
+            <Descr>Survey1</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{73294FD1-6708-4E5C-A8C1-4C8C61838A89}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{2E3FB0BD-373E-4E12-9F22-B57764FCC7C2}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{079D7288-62FA-4640-B10A-274CDF862CDF}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+    </MissionBuilder.MissionBuilder>
+    <WorldBase.AreasOfInterest>
+    </WorldBase.AreasOfInterest>
+    <WorldBase.Waypoints>
+    </WorldBase.Waypoints>
+</SimBase.Document>

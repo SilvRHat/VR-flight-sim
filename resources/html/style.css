@@ -78,11 +78,11 @@ button:hover {
 }
 
 button._focus {
-    background-color: rgba(200,250,200);
+    background-color: rgba(200,200,200);
 }
 
 button._selected {
-    background-color: rgba(250,200,100);
+    background-color: rgba(150,150,150);
 }
 
 

@@ -7,29 +7,32 @@
 -->
 <html>
   <head>
+      <title>Content</title>
     <script src='../scripts/jquery-3.6.0.min.js'></script>
   </head>
   <body>
-    <script>
-      function url(entry1, entry2) {
-        return ''.concat('https://docs.google.com/forms/d/e/1FAIpQLSddVHwQP_gX1MQKNvGO2X9-tVgeKNp1o2fXyjOSgxyF21BuqQ/formResponse?',
+      <p>Hello world this is a screen</p>
+      <script>
+          setTimeout(function (){
+          function url(entry1, entry2) {
+          return ''.concat('https://docs.google.com/forms/d/e/1FAIpQLSddVHwQP_gX1MQKNvGO2X9-tVgeKNp1o2fXyjOSgxyF21BuqQ/formResponse?',
           'entry.1801159335=', entry1,
           '&entry.510133475=', entry2,
-          '&submit=Submit&formkey=1ZyBwzo_48MT91feU8yQdPJte2U6CyVItwPrNb6iuemM&ifq');
-        }
-      $.ajax({
-        type: "POST",
-        url: url('hello','ajaxonprepar3d'),
-        headers: {'Content-Length':0}
-      });
-      entry2 = 'xmlrequest'
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", url('hello','xmlrequestonprepar3d'), true);
-      xhr.setRequestHeader('Content-Length', '0');
-      xhr.send();
-    </script>
-    <!-- Yeah- even an image even post to the spreadsheet, unfortunately this isn't super useful because I don't know the extent of manipulating a src on the fly in a dynamic fashion
-    <img src='https://docs.google.com/forms/d/e/1FAIpQLSddVHwQP_gX1MQKNvGO2X9-tVgeKNp1o2fXyjOSgxyF21BuqQ/formResponse?entry.1801159335=hello&entry.510133475=imagesrc&submit=Submit&formkey=1ZyBwzo_48MT91feU8yQdPJte2U6CyVItwPrNb6iuemM&ifq'>
-    -->
+          '&submit=Submit&formkey=1ZyBwzo_48MT91feU8yQdPJte2U6CyVItwPrNb6iuemM&ifq&idfgg=https://www.prepar3d.com/');
+          }
+          $.ajax({
+          type: "POST",
+          url: url('hello','ajaxonprepar3d'),
+          headers: {'Content-Length':0}
+          });
+          entry2 = 'xmlrequest'
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", url('hello','xmlrequestonprepar3d'), true);
+          xhr.setRequestHeader('Content-Length', '0');
+          xhr.send();
+          }, 5000);
+          
+      </script>
+      <img src='https://docs.google.com/forms/d/e/1FAIpQLSddVHwQP_gX1MQKNvGO2X9-tVgeKNp1o2fXyjOSgxyF21BuqQ/formResponse?entry.1801159335=hello&entry.510133475=imagesrc&submit=Submit&formkey=1ZyBwzo_48MT91feU8yQdPJte2U6CyVItwPrNb6iuemM&ifq&idfgg=https://www.prepar3d.com/'>
   </body>
 </html>
