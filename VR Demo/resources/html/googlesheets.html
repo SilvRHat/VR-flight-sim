@@ -1,0 +1,38 @@
+
+<!--
+  The mother of all Javascript/Prepar3D tests
+  This makes an ajax call to a google form which saves to a google spreadsheet; 
+  it timestamps it like a beast and does not require prepar3d to do anything besides allow the javascript components that make ajax functional.
+  Has great potential for data logging purposes
+-->
+<html>
+  <head>
+      <title>Content</title>
+    <script src='../scripts/jquery-3.6.0.min.js'></script>
+  </head>
+  <body>
+      <p>Hello world this is a screen</p>
+      <script>
+          setTimeout(function (){
+          function url(entry1, entry2) {
+          return ''.concat('https://docs.google.com/forms/d/e/1FAIpQLSddVHwQP_gX1MQKNvGO2X9-tVgeKNp1o2fXyjOSgxyF21BuqQ/formResponse?',
+          'entry.1801159335=', entry1,
+          '&entry.510133475=', entry2,
+          '&submit=Submit&formkey=1ZyBwzo_48MT91feU8yQdPJte2U6CyVItwPrNb6iuemM&ifq&idfgg=https://www.prepar3d.com/');
+          }
+          $.ajax({
+          type: "POST",
+          url: url('hello','ajaxonprepar3d'),
+          headers: {'Content-Length':0}
+          });
+          entry2 = 'xmlrequest'
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", url('hello','xmlrequestonprepar3d'), true);
+          xhr.setRequestHeader('Content-Length', '0');
+          xhr.send();
+          }, 5000);
+          
+      </script>
+      <img src='https://docs.google.com/forms/d/e/1FAIpQLSddVHwQP_gX1MQKNvGO2X9-tVgeKNp1o2fXyjOSgxyF21BuqQ/formResponse?entry.1801159335=hello&entry.510133475=imagesrc&submit=Submit&formkey=1ZyBwzo_48MT91feU8yQdPJte2U6CyVItwPrNb6iuemM&ifq&idfgg=https://www.prepar3d.com/'>
+  </body>
+</html>

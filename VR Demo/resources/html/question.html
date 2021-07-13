@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MENU</title>
+        <link rel="stylesheet" href="style.css">
+        <script src='../scripts/jquery-3.6.0.min.js'></script>
+        <script src='../scripts/init.js'></script>
+        <script src="../scripts/focus.js"></script>
+        <script src='../scripts/vrvisibility.js'></script>
+    </head>
+    <body>
+        <div id = 'projectTitle' class = 'background'>
+            <h1> DEMO Project </h1>
+            <img id='VRIndicator' class='VROnly' src='../img/vrlogo.png'>
+        </div>
+        <div class = 'background'>
+            <div class='dec_border'></div>
+            <div id='content' style="width: 400px;">
+                <h2>VR Questionaire</h2>
+                <p class='stats'>&emsp;gate # - Hit / Missed</p>
+                <p>
+                   Please mark any virtual reality symptoms you are currently experiencing: 
+                </p>
+                <div class='question Interactive'>
+                    <div class='checkbox'></div>
+                    <p>General discomfort</p>
+                </div>
+                <div class='question Interactive'>
+                    <div class='checkbox'></div>
+                    <p>Fatigue</p>
+                </div>
+                <div class='question Interactive'>
+                    <div class='checkbox'></div>
+                    <p>Eyestrain</p>
+                </div>
+                <div class='question Interactive'>
+                    <div class='checkbox'></div>
+                    <p>Difficulty focusing</p>
+                </div>
+                <div class='question Interactive'>
+                    <div class='checkbox'></div>
+                    <p>Headache</p>
+                </div>
+                <div class='question Interactive'>
+                    <div class='checkbox'></div>
+                    <p>Fulness of head</p>
+                </div>
+                <div class='question Interactive'>
+                    <div class='checkbox'></div>
+                    <p>Blurred vision</p>
+                </div>
+                <div class='question Interactive'>
+                    <div class='checkbox'></div>
+                    <p>Dizzy (eyes closed)</p>
+                </div>
+                <div class='question Interactive'>
+                    <div class='checkbox'></div>
+                    <p>Vertigo</p>
+                </div>
+                <br>
+                <button id='continueButton' class='Interactive'>Continue</button>
+                <img class='prepar3dlogo' src='http://prepar3d.com/wp-content/uploads/2014/10/11Logo_1600.png'>
+            </div>
+        </div>
+        <script>
+            $('#continueButton').on("onSelection", async function () {
+                /* Collect and submit survey data */
+                $('_selected').removeClass('_selected'); // Clear survey
+                VarSet('S:continue', 'STRING', 'true'); // Ready game
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MENU</title>
+        <link rel="stylesheet" href="style.css">
+        <script src='../scripts/jquery-3.6.0.min.js'></script>
+        <script src='../scripts/init.js'></script>
+        <script src="../scripts/focus.js"></script>
+        <script src='../scripts/vrvisibility.js'></script>
+    </head>
+    <body>
+        <div id = 'projectTitle' class = 'background'>
+            <h1> DEMO Project </h1>
+            <img id='VRIndicator' class='VROnly' src='../img/vrlogo.png'>
+        </div>
+        <div class = 'background'>
+            <div class='dec_border'></div>
+            <div id='content' >
+                <h2>Level 1 - Gate trio</h2>
+                <p class='stats'>&emsp;Easy - 3 gates</p>
+                <p>Welcome to the first challenge of the DEMO. 
+                    Here you will demonstrate aviation basics flying through a series of gates.
+                    After passing through a gate you will be prompted with a questionaire surveying the effects of VR (virtual reality).
+                </p>
+                <button id='continueButton' class='Interactive'>Start</button>
+                <img class='prepar3dlogo' src='http://prepar3d.com/wp-content/uploads/2014/10/11Logo_1600.png'>
+            </div>
+        </div>
+        <script>
+            $('#continueButton').on('onSelection', function () {
+                VarSet('S:continue', 'STRING', 'true');
+            });
+        </script>
+    </body>
+</html>

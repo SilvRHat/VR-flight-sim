@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MENU</title>
+        <link rel="stylesheet" href="style.css">
+        <script src='../scripts/jquery-3.6.0.min.js'></script>
+        <script src='../scripts/init.js'></script>
+        <script src="../scripts/focus.js"></script>
+        <script src='../scripts/vrvisibility.js'></script>
+    </head>
+    <body>
+        <div id = 'projectTitle' class = 'background'>
+            <h1> DEMO Project </h1>
+            <img id='VRIndicator' class='VROnly' src='../img/vrlogo.png'>
+        </div>
+        <div class = 'background'>
+            <div class='dec_border'></div>
+            <div id='content' >
+                <h2>DEMO - Proof of Concept</h2>
+                <p class='stats'>&emsp;Easy - 2 levels - Boeing T45C</p>
+                <p>This demo showcases the following technologies for building guided runs in Prepar3D:</p>
+                <ul>
+                    <li>Reading/Writing scenario variables</li>
+                    <li>Direct user interfaces using camera manipulation</li>
+                    <li>Surveying at specific trigger points (gates)</li>
+                    <li>Collecting survey data</li>
+                    <li>Stringing scenarios into a series</li>
+                    <li>User feedback on input (sound/ FX)</li>
+                    <li>Guiding user path towards gates</li>
+                </ul>
+                <button id='continueButton' class='Interactive'>Start Demo</button>
+                <img class='prepar3dlogo' src='http://prepar3d.com/wp-content/uploads/2014/10/11Logo_1600.png'>
+            </div>
+        </div>
+        <script>
+            /* Continue logic */
+            $('#continueButton').on('onSelection', function () {
+                VarSet('S:continue', 'STRING', 'true');
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,141 @@
+/* Background Rules */ 
+body {
+    background-image: url(https://cdn.britannica.com/34/94834-050-16DB7EEB/USS-Carl-Vinson-aircraft-carrier-US-Navy-2005.jpg);
+} 
+
+.background {
+    position: relative;
+    background-color: rgba(0,0,0, .75);
+    border-radius: 20px;
+    color: white;
+    margin: auto;
+    display: block;
+    width: fit-content;
+    
+    background-color: rgb(35,46,51, .9);
+}
+
+.dec_border {
+    display: block;
+    width: calc(100% - 20px - 3px);
+    height: calc(100% - 20px - 3px);
+    border: rgb(90, 172, 197) 3px solid;
+    border-radius: inherit;
+    position: absolute;
+    left: 8.5px;
+    top: 8.5px;
+    pointer-events: none;
+    background: none !important;
+}
+
+/* Important object Rules */
+#projectTitle {
+    width: 360px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+#content {
+    width: 500px;
+    padding: 20px 36px 34px 36px;
+    font-size: medium;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* Image Rules */
+#VRIndicator {
+    width: 55px;
+    position: absolute;
+    top: calc(50% - 27.5px);
+    right: 12px;
+    filter: hue-rotate(276deg) brightness(1.8) contrast(.8);
+}
+
+.prepar3dlogo {
+    width: 100px;
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+}
+
+/* Interactive Rules */
+button {
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-size: x-large;
+    padding: 4px calc(5px + 15%);
+    border-radius: 10px;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+button:hover {
+    background-color: rgba(155,155,155);
+}
+
+button._focus {
+    background-color: rgba(200,200,200);
+}
+
+button._selected {
+    background-color: rgba(150,150,150);
+}
+
+
+
+/* Text Rules */
+h1 {
+    margin: 0px;
+    padding: 6px 0px;
+}
+h2 {
+    margin: 0px;
+    padding-bottom: 4px;
+}
+
+.stats {
+    margin: 0px;
+    font-size: small;
+    color: whitesmoke;
+}
+
+/* Question Rules */
+.question {
+    display: block;
+    position: relative;
+    padding: 4px 0px;
+    margin: 8px;
+}
+
+.question._focus {
+    background-color: rgb(161, 161, 161);
+}
+
+.question._selected {
+    background-color: rgb(100, 100, 100);
+}
+
+.question .checkbox {
+    width: 16px;
+    height: 16px;
+    background-color: ivory;
+    margin: 2px;
+    
+    display: block;
+    position: absolute;
+}
+
+.question._selected .checkbox {
+    background-color: rgb(26, 26, 26);
+}
+
+.question p {
+    position: relative;
+    left: 30px;
+    width: calc(100% - 30px);
+    margin: 0px;
+}
