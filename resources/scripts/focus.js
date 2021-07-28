@@ -35,10 +35,31 @@ function Select() {
     }
 };
 
+// updateVisuals - Will update which element is selected and focused on
+function updateVisuals() {
+    let n = VarGet('L:_options','number')
+
+    for (let i=0; i<=n; i++) {
+        if (VarGet('_toggle'.concat(i.toString()), 'number')>0) {
+            $('#interactive'.concat(i.toString())).addClass('_selected');
+        }
+        else {
+            $('#interactive'.concat(i.toString())).removeClass('_selected');
+        }
+
+        if (VarGet('L:_ui_focus_id','number') % (n+1) == i) {
+            $('#interactive'.concat(i.toString())).addClass('_focus');
+        }
+        else {
+            $('#interactive'.concat(i.toString())).removeClass('_focus');
+        }
+    }
+}
 
 // Initializer - Sets up functionality
 function main() {
-    initFocusObjects();
-    document.body.addEventListener('click', Select, true); 
+    //initFocusObjects();
+    //document.body.addEventListener('click', Select, true);
+    $('body').on('Stepped', updateVisuals)
 }
 $.when( $.ready ).then( main );
