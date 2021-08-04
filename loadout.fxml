@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<SimBase.Document Type="ScenarioFile" version="5,1" id="template">
+<SimBase.Document Type="ScenarioFile" version="5,1" id="loadout">
     <Descr>AceXML Document</Descr>
-    <Filename>template.fxml</Filename>
+    <Filename>loadout.fxml</Filename>
     <Flight.Sections>
         <Section Name="Main">
-            <Property Name="Title" Value="TEMPLATE [MAIN PROJECT]" />
-            <Property Name="Description" Value="Rough Template" />
+            <Property Name="Title" Value="Loadout [MAIN PROJECT]" />
+            <Property Name="Description" Value="Allows user to load a specific scenario and setup the experiment environment for data collection." />
             <Property Name="AppVersion" Value="5.1.12.26829" />
             <Property Name="ScenarioVersion" Value="0" />
         </Section>
@@ -152,7 +152,7 @@
         </Section>
         <Section Name="Camera.1.10">
             <Property Name="Guid" Value="{AA8C80C0-9EE2-4284-A1C2-B20CD3F5F3D9}" />
-            <Property Name="Title" Value="RJTT" />
+            <Property Name="Title" Value="RJTF" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="8" />
             <Property Name="Translation" Value="0, 0, 0" />
@@ -296,7 +296,7 @@
             <Property Name="PostProcess.0" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.24">
-            <Property Name="Guid" Value="{FE12091C-F74D-49E6-943B-AC347024C2F6}" />
+            <Property Name="Guid" Value="{DD605C2E-8973-408E-8882-F3BCD2C01B8C}" />
             <Property Name="Title" Value="UICam Object Camera View" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
@@ -377,7 +377,7 @@
             <Property Name="AircraftSignature" Value="1,0" />
         </Section>
         <Section Name="ATC_AircraftManager">
-            <Property Name="NumberofAircraft" Value="0" />
+            <Property Name="NumberofAircraft" Value="1" />
         </Section>
         <Section Name="ATC_MessageSystem">
             <Property Name="FrequencyNodes" Value="0" />
@@ -730,19 +730,19 @@
             <Property Name="Descr" Value="plr" />
         </Section>
         <Section Name="SimVars.0">
-            <Property Name="Latitude" Value="N35&#xB0; 30&apos; 5.67&quot;" />
-            <Property Name="Longitude" Value="E139&#xB0; 50&apos; 18.64&quot;" />
-            <Property Name="Altitude" Value="+009210.85" />
+            <Property Name="Latitude" Value="N35&#xB0; 32&apos; 25.20&quot;" />
+            <Property Name="Longitude" Value="E139&#xB0; 48&apos; 16.80&quot;" />
+            <Property Name="Altitude" Value="+000026.00" />
             <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
-            <Property Name="Heading" Value="0.95997853204607963562" />
+            <Property Name="Heading" Value="-30.040008304640647196" />
             <Property Name="PVelBodyAxis" Value="0" />
             <Property Name="BVelBodyAxis" Value="0" />
             <Property Name="HVelBodyAxis" Value="0" />
             <Property Name="XVelBodyAxis" Value="0" />
             <Property Name="YVelBodyAxis" Value="0" />
-            <Property Name="ZVelBodyAxis" Value="438.83056284614156084" />
-            <Property Name="SimOnGround" Value="False" />
+            <Property Name="ZVelBodyAxis" Value="0" />
+            <Property Name="SimOnGround" Value="True" />
             <Property Name="OnPlatformHeight" Value="-9999999999" />
             <Property Name="AssociationID" Value="0" />
             <Property Name="HealthPoints" Value="1" />
@@ -920,9 +920,9 @@
             <Property Name="LeftFlap" Value="000.00" />
             <Property Name="RightFlap" Value="000.00" />
             <Property Name="GearsHandle" Value="000.01" />
-            <Property Name="Gear1" Value="099.04" />
-            <Property Name="Gear2" Value="099.04" />
-            <Property Name="Gear3" Value="099.04" />
+            <Property Name="Gear1" Value="099.25" />
+            <Property Name="Gear2" Value="099.25" />
+            <Property Name="Gear3" Value="099.25" />
             <Property Name="YokeY" Value="050.00" />
             <Property Name="YokeX" Value="050.00" />
             <Property Name="Rudder" Value="050.00" />
@@ -942,9 +942,9 @@
             <Property Name="ContainerTitle" Value="Civilian Male White Shirt Blue Jeans" />
             <Property Name="UserCamera" Value="{00000000-0000-0000-0000-000000000000}" />
             <Property Name="AvatarCamera" Value="{00000000-0000-0000-0000-000000000000}" />
-            <Property Name="Latitude" Value="N35&#xB0; 30&apos; 5.67&quot;" />
-            <Property Name="Longitude" Value="E139&#xB0; 50&apos; 18.64&quot;" />
-            <Property Name="Altitude" Value="+009210.85" />
+            <Property Name="Latitude" Value="N35&#xB0; 32&apos; 25.20&quot;" />
+            <Property Name="Longitude" Value="E139&#xB0; 48&apos; 16.80&quot;" />
+            <Property Name="Altitude" Value="+000026.00" />
             <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
             <Property Name="Heading" Value="49.999989308416843414" />
@@ -954,7 +954,7 @@
             <Property Name="XVelBodyAxis" Value="0" />
             <Property Name="YVelBodyAxis" Value="0" />
             <Property Name="ZVelBodyAxis" Value="0" />
-            <Property Name="SimOnGround" Value="False" />
+            <Property Name="SimOnGround" Value="True" />
             <Property Name="OnPlatformHeight" Value="-9999999999" />
             <Property Name="AssociationID" Value="0" />
             <Property Name="HealthPoints" Value="1" />
@@ -975,14 +975,14 @@
             <Property Name="UndocCoords" Value="0, 0, 0, 0" />
         </Section>
         <Section Name="ResourcePath">
-            <Property Name="Path" Value="../" />
+            <Property Name="Path" Value="./" />
         </Section>
         <Section Name="SessionInfo">
             <Property Name="StartTime" Value="63720320400" />
             <Property Name="DurationTotal" Value="0" />
         </Section>
         <Section Name="ObjectFile">
-            <Property Name="File" Value="template" />
+            <Property Name="File" Value="loadout" />
         </Section>
         <Section Name="Camera.1.27">
             <Property Name="Guid" Value="{61C3B6FB-FF9E-4B9C-978E-AA7C7F70F5A9}" />

@@ -40,7 +40,7 @@ function updateVisuals() {
     let n = VarGet('L:_options','number')
 
     for (let i=0; i<=n; i++) {
-        if (VarGet('_toggle'.concat(i.toString()), 'number')>0) {
+        if (VarGet('L:_toggle'.concat(i.toString()), 'number')>0) {
             $('#interactive'.concat(i.toString())).addClass('_selected');
         }
         else {

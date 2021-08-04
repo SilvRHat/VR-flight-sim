@@ -5,9 +5,9 @@
     This file changes state of the simulation on user clicking button (will often toggle selection)
 ]]
 
-local state = ipc.readLvar('L:_state')
-local options = ipc.readLvar('L:_options')
-local focus_id = ipc.readLvar('L:_ui_focus_id') % (options+1)
+local state = ipc.readLvar('L:_state') or 0
+local options = ipc.readLvar('L:_options') or 0
+local focus_id = (ipc.readLvar('L:_ui_focus_id') or 0) % (options+1)
 
 
 local function selectExclusive()

@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="ObjectFile" version="5,1">
+    <Descr>Allows user to load a specific scenario and setup the experiment environment for data collection.</Descr>
+    <Title>Loadout [MAIN PROJECT]</Title>
+    <WorldBase.Flight>
+        <SimContain.UserOwnship InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+        </SimContain.UserOwnship>
+        <SimContain.UserAvatar InstanceId="{508FDC98-BF36-4C0F-B22D-27045DF1A0CF}">
+        </SimContain.UserAvatar>
+        <SimMission.ObjectActivationAction InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
+            <Descr>InitActivate</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{64A8A27B-84FA-464C-BB38-119CD4881A4F}">
+            <Descr>Continue1 Activate</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{C6E34582-CCEB-45D7-BD75-1091C3838D45}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{FF0E7C3D-3A4F-4B87-A971-C9FC200454FB}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{85A6402B-F0D1-4B5B-9036-D3C44102E993}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{F79775A3-AB2B-4071-8790-5E04D00253DD}">
+            <Descr>Continue1 Deactivate</Descr>
+            <NewObjectState>False</NewObjectState>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{82923290-D1AF-44A9-B63D-01A4D2C9C27F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ScriptAction InstanceId="{4B74A1FF-02AC-432E-A215-494AE282EAB1}">
+            <Descr>Reset Data</Descr>
+            <Script>!lua
+-- Reset Data</Script>
+            <OnCompleteActions>
+                <ObjectReference InstanceId="{E252DE85-5513-4AB5-BF99-421883DD5EC6}">
+                </ObjectReference>
+            </OnCompleteActions>
+        </SimMission.ScriptAction>
+        <SimMission.ScriptAction InstanceId="{BCD00779-72EB-49C7-B25C-B90B1730B143}">
+            <Descr>Setup State 2</Descr>
+            <Script>!lua
+-- INIT script
+local lvars = {
+    [&apos;_continue&apos;] = 0;
+    [&apos;_state&apos;] = 1;
+    [&apos;_options&apos;] = 7;
+    [&apos;_level&apos;] = 0;
+    [&apos;_gate&apos;] = 0;
+    [&apos;_hit&apos;] = 0;
+    [&apos;_ui_focus_id&apos;] = (8*200) -1;
+    [&apos;_last_poll&apos;] = 0;
+}
+function state2()
+    for lvar, default in pairs(lvars) do
+        varset(&apos;L:&apos;..lvar, default)
+    end
+    for i=0, 15, 1 do
+        varset(&apos;L:_toggle&apos;..i, 0)
+    end
+    varset(&apos;L:_toggle0&apos;, 1)
+end
+
+state2()</Script>
+            <OnCompleteActions>
+                <ObjectReference InstanceId="{C59BEEBB-A43B-48E7-B705-C758FC7F7C9B}">
+                </ObjectReference>
+            </OnCompleteActions>
+        </SimMission.ScriptAction>
+        <SimMission.ObjectActivationAction InstanceId="{E252DE85-5513-4AB5-BF99-421883DD5EC6}">
+            <Descr>Deactivate Reset</Descr>
+            <NewObjectState>False</NewObjectState>
+            <OnCompleteActions>
+                <ObjectReference InstanceId="{BCD00779-72EB-49C7-B25C-B90B1730B143}">
+                </ObjectReference>
+            </OnCompleteActions>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{FF0E7C3D-3A4F-4B87-A971-C9FC200454FB}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{85A6402B-F0D1-4B5B-9036-D3C44102E993}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{C59BEEBB-A43B-48E7-B705-C758FC7F7C9B}">
+            <Descr>Continue 1 Activate Continue 2</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{33B28C46-B484-4163-8249-1BE01E218D08}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{132C58A2-5276-4B40-8F68-E38B7716922C}">
+            <Descr>Continue2 Activate</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{A91551DA-2247-4057-9CF2-B8DF1A403050}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{0311DEC6-FE03-4D4C-99C5-D4DC5097ABEF}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{39DE5561-452C-4843-B133-0EDC17129CCB}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{CB0AF9BE-AEDB-472C-B60B-5B78C36A59F1}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{EF1F32A5-EE0B-4DE7-B706-337651B739A4}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{D2012A84-2459-42AC-BC45-D8D1EB8AE51C}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{C4877870-FA5D-4558-AD9F-79C49700EB1E}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.LoadScenarioAction InstanceId="{D65DE049-A927-4FBB-96F9-43EDA799601B}">
+            <Descr>Load Intro</Descr>
+            <ScenarioFileName>sims\intro.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.LoadScenarioAction InstanceId="{C9994C5C-9005-44FD-AC26-9FB2636BFD0C}">
+            <Descr>Load Lvl1</Descr>
+            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.LoadScenarioAction InstanceId="{8AF4CEF1-B3CA-4BDD-B1AE-095A1091CD5F}">
+            <Descr>Load Lvl2</Descr>
+            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.LoadScenarioAction InstanceId="{949AE1B4-1FA5-4440-B07D-1F3717ACF582}">
+            <Descr>Load Lvl3</Descr>
+            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.LoadScenarioAction InstanceId="{113D104B-1631-4828-9C2C-0E8BD22EE2E0}">
+            <Descr>Load Lvl4</Descr>
+            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.LoadScenarioAction InstanceId="{B465011E-6EC4-4BF1-BAA1-2412A78A50C2}">
+            <Descr>Load Lvl5</Descr>
+            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.LoadScenarioAction InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
+            <Descr>Load Lvl6</Descr>
+            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.ScriptTrigger InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
+            <Descr>Init</Descr>
+            <Script>!lua
+-- INIT script
+local lvars = {
+    [&apos;_continue&apos;] = 0;
+    [&apos;_state&apos;] = 1;
+    [&apos;_options&apos;] = 2;
+    [&apos;_level&apos;] = 0;
+    [&apos;_gate&apos;] = 0;
+    [&apos;_hit&apos;] = 0;
+    [&apos;_ui_focus_id&apos;] = (3*200) -1;
+    [&apos;_last_poll&apos;] = 0;
+}
+function init()
+    for lvar, default in pairs(lvars) do
+        varset(&apos;L:&apos;..lvar, default)
+    end
+    for i=0, 15, 1 do
+        varset(&apos;L:_toggle&apos;..i, 0)
+    end
+    varset(&apos;L:_toggle0&apos;, 1)
+end
+
+init()
+return true</Script>
+            <Actions>
+                <ObjectReference InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
+            <Descr>Continue1</Descr>
+            <Activated>False</Activated>
+            <OneShot>False</OneShot>
+            <Script>!lua
+return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{64A8A27B-84FA-464C-BB38-119CD4881A4F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{F79775A3-AB2B-4071-8790-5E04D00253DD}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{FF0E7C3D-3A4F-4B87-A971-C9FC200454FB}">
+            <Descr>Reset Data Yes</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+return varget(&apos;L:_toggle0&apos;,&apos;number&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{4B74A1FF-02AC-432E-A215-494AE282EAB1}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{85A6402B-F0D1-4B5B-9036-D3C44102E993}">
+            <Descr>Reset Data No</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+return varget(&apos;L:_toggle0&apos;,&apos;number&apos;)~=1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{E252DE85-5513-4AB5-BF99-421883DD5EC6}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{33B28C46-B484-4163-8249-1BE01E218D08}">
+            <Descr>Continue 2</Descr>
+            <Activated>False</Activated>
+            <OneShot>False</OneShot>
+            <Script>!lua
+return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{132C58A2-5276-4B40-8F68-E38B7716922C}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{A91551DA-2247-4057-9CF2-B8DF1A403050}">
+            <Descr>Load Intro</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+return varget(&apos;L:_toggle0&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{D65DE049-A927-4FBB-96F9-43EDA799601B}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{0311DEC6-FE03-4D4C-99C5-D4DC5097ABEF}">
+            <Descr>Load lvl1</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+return varget(&apos;L:_toggle1&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{C9994C5C-9005-44FD-AC26-9FB2636BFD0C}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{39DE5561-452C-4843-B133-0EDC17129CCB}">
+            <Descr>Load lvl2</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+return varget(&apos;L:_toggle2&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{8AF4CEF1-B3CA-4BDD-B1AE-095A1091CD5F}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{CB0AF9BE-AEDB-472C-B60B-5B78C36A59F1}">
+            <Descr>Load lvl3</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+return varget(&apos;L:_toggle3&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{949AE1B4-1FA5-4440-B07D-1F3717ACF582}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{EF1F32A5-EE0B-4DE7-B706-337651B739A4}">
+            <Descr>Load lvl4</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+return varget(&apos;L:_toggle4&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{113D104B-1631-4828-9C2C-0E8BD22EE2E0}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{D2012A84-2459-42AC-BC45-D8D1EB8AE51C}">
+            <Descr>Load lvl5</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+return varget(&apos;L:_toggle5&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{B465011E-6EC4-4BF1-BAA1-2412A78A50C2}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{C4877870-FA5D-4558-AD9F-79C49700EB1E}">
+            <Descr>Load lvl6</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+return varget(&apos;L:_toggle6&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SceneryObjects.LibraryObject InstanceId="{F5FA16C8-ACBC-4721-85DD-F136DEBF4297}">
+            <Descr>Menu Boat</Descr>
+            <MDLGuid>{93615C8E-9789-49A9-B7B0-EC3D2A2625E6}</MDLGuid>
+            <WorldPosition>N35° 27' 27.536682",E139° 44' 41.591427",+000000.00</WorldPosition>
+            <Orientation>0.000000,0.000000,180.000000</Orientation>
+            <Scale>1.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
+        </SceneryObjects.LibraryObject>
+        <SimMissionUI.ScenarioMetadata InstanceId="{1266AFE6-24BD-4695-86F8-3487E04D0169}">
+            <Descr>Scenario Desc Metadata</Descr>
+        </SimMissionUI.ScenarioMetadata>
+        <SimMission.RealismOverrides InstanceId="{2ED1249F-8482-4D45-9FA3-DF2EDE076B18}">
+            <Descr>UnlimitedFuelHack (Error Circumventing)</Descr>
+            <CrashBehavior>ResetFlight</CrashBehavior>
+            <UnlimitedFuel>Unlimited</UnlimitedFuel>
+        </SimMission.RealismOverrides>
+        <SimMission.Camera InstanceId="{DDB9694E-4140-4E16-9412-F6957840000B}">
+            <Descr>UICam</Descr>
+            <Name>UICam</Name>
+            <Orientation>0.000000,0.000000,340.000000</Orientation>
+            <CameraZoomLevel>0.500000</CameraZoomLevel>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 27.934130",E139° 44' 41.831390",+000093.32</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.Camera>
+        <SimMission.UIPanelObject InstanceId="{C6E34582-CCEB-45D7-BD75-1091C3838D45}">
+            <Descr>Loadout2</Descr>
+            <UIPanelFileName>resources\html\loadout.html</UIPanelFileName>
+            <UIPanelFileResolution>1600.000000,600.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <InstanceName>Menu</InstanceName>
+            <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
+            <WorldSize>48.000000,18.000000,-1.000000,-1.000000</WorldSize>
+            <Orientation>0.000000,0.000000,340.000000</Orientation>
+            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
+            <HasMouseInteractivity>True</HasMouseInteractivity>
+            <Activated>False</Activated>
+            <OriginY>-0.600000</OriginY>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 28.913319",E139° 44' 41.404429",+000064.47</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.UIPanelObject>
+        <SimMission.UIPanelObject InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
+            <Descr>Controls</Descr>
+            <UIPanelFileName>resources\html\controls.html</UIPanelFileName>
+            <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <InstanceName>Menu</InstanceName>
+            <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
+            <WorldSize>33.000000,14.000000,-1.000000,-1.000000</WorldSize>
+            <Orientation>0.000000,0.000000,303.999969</Orientation>
+            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
+            <HasMouseInteractivity>True</HasMouseInteractivity>
+            <OriginY>-0.750000</OriginY>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 28.509839",E139° 44' 40.832797",+000064.00</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.UIPanelObject>
+        <SimMission.UIPanelObject InstanceId="{82923290-D1AF-44A9-B63D-01A4D2C9C27F}">
+            <Descr>Loadout1</Descr>
+            <UIPanelFileName>resources\html\reset_data.html</UIPanelFileName>
+            <UIPanelFileResolution>1600.000000,600.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <InstanceName>Menu</InstanceName>
+            <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
+            <WorldSize>48.000000,18.000000,-1.000000,-1.000000</WorldSize>
+            <Orientation>0.000000,0.000000,340.000000</Orientation>
+            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
+            <HasMouseInteractivity>True</HasMouseInteractivity>
+            <OriginY>-0.600000</OriginY>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 28.913319",E139° 44' 41.404429",+000064.47</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.UIPanelObject>
+    </WorldBase.Flight>
+    <MissionBuilder.MissionBuilder>
+        <ObjectGroup InstanceId="{F748FC90-3A5C-4C88-A901-CA745DD839DE}">
+            <Descr>UI</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{82923290-D1AF-44A9-B63D-01A4D2C9C27F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{C6E34582-CCEB-45D7-BD75-1091C3838D45}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{DDB9694E-4140-4E16-9412-F6957840000B}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{5A57BB23-83B9-4E1E-89F0-2A2C933C6C35}">
+            <Descr>Init</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{900BE545-92FE-4EE9-8F62-BBC51D527B2A}">
+            <Descr>Continue1</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{64A8A27B-84FA-464C-BB38-119CD4881A4F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{F79775A3-AB2B-4071-8790-5E04D00253DD}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{FF0E7C3D-3A4F-4B87-A971-C9FC200454FB}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{85A6402B-F0D1-4B5B-9036-D3C44102E993}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{4B74A1FF-02AC-432E-A215-494AE282EAB1}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{BCD00779-72EB-49C7-B25C-B90B1730B143}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{E252DE85-5513-4AB5-BF99-421883DD5EC6}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{C59BEEBB-A43B-48E7-B705-C758FC7F7C9B}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{BA47D6BC-D391-4971-A207-CCD581C785BA}">
+            <Descr>Continue2</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{33B28C46-B484-4163-8249-1BE01E218D08}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{132C58A2-5276-4B40-8F68-E38B7716922C}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{A91551DA-2247-4057-9CF2-B8DF1A403050}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{0311DEC6-FE03-4D4C-99C5-D4DC5097ABEF}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{39DE5561-452C-4843-B133-0EDC17129CCB}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{CB0AF9BE-AEDB-472C-B60B-5B78C36A59F1}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{EF1F32A5-EE0B-4DE7-B706-337651B739A4}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{D2012A84-2459-42AC-BC45-D8D1EB8AE51C}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{C4877870-FA5D-4558-AD9F-79C49700EB1E}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{D65DE049-A927-4FBB-96F9-43EDA799601B}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{C9994C5C-9005-44FD-AC26-9FB2636BFD0C}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{8AF4CEF1-B3CA-4BDD-B1AE-095A1091CD5F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{949AE1B4-1FA5-4440-B07D-1F3717ACF582}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{113D104B-1631-4828-9C2C-0E8BD22EE2E0}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{B465011E-6EC4-4BF1-BAA1-2412A78A50C2}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+    </MissionBuilder.MissionBuilder>
+    <WorldBase.AreasOfInterest>
+    </WorldBase.AreasOfInterest>
+    <WorldBase.Waypoints>
+    </WorldBase.Waypoints>
+</SimBase.Document>

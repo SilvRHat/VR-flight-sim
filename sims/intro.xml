@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="ObjectFile" version="5,1">
+    <Descr>Showcases an introduction to the research study project.</Descr>
+    <Title>Intro [MAIN PROJECT]</Title>
+    <WorldBase.Flight>
+        <SimContain.UserOwnship InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+        </SimContain.UserOwnship>
+        <SimContain.UserAvatar InstanceId="{508FDC98-BF36-4C0F-B22D-27045DF1A0CF}">
+        </SimContain.UserAvatar>
+        <SimMission.ObjectActivationAction InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
+            <Descr>InitActivate</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.LoadScenarioAction InstanceId="{87CA8F6A-791E-4DD6-9308-6C0C191CE8A5}">
+            <Descr>Load lvl1</Descr>
+            <ScenarioFileName>sims\level1.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.ScriptTrigger InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
+            <Descr>Init</Descr>
+            <Script>!lua
+-- INIT script
+local lvars = {
+    [&apos;_continue&apos;] = 0;
+    [&apos;_state&apos;] = 1;
+    [&apos;_options&apos;] = 0;
+    [&apos;_level&apos;] = 0;
+    [&apos;_gate&apos;] = 0;
+    [&apos;_hit&apos;] = 0;
+    [&apos;_ui_focus_id&apos;] = (3*200) -1;
+    [&apos;_last_poll&apos;] = 0;
+}
+function init()
+    for lvar, default in pairs(lvars) do
+        varset(&apos;L:&apos;..lvar, default)
+    end
+    for i=0, 15, 1 do
+        varset(&apos;L:_toggle&apos;..i, 0)
+    end
+    varset(&apos;L:_toggle0&apos;, 1)
+end
+
+init()
+return true</Script>
+            <Actions>
+                <ObjectReference InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
+            <Descr>Continue1</Descr>
+            <Activated>False</Activated>
+            <OneShot>False</OneShot>
+            <Script>!lua
+return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{87CA8F6A-791E-4DD6-9308-6C0C191CE8A5}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SceneryObjects.LibraryObject InstanceId="{F5FA16C8-ACBC-4721-85DD-F136DEBF4297}">
+            <Descr>Menu Boat</Descr>
+            <MDLGuid>{93615C8E-9789-49A9-B7B0-EC3D2A2625E6}</MDLGuid>
+            <WorldPosition>N35° 27' 27.536682",E139° 44' 41.591427",+000000.00</WorldPosition>
+            <Orientation>0.000000,0.000000,180.000000</Orientation>
+            <Scale>1.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
+        </SceneryObjects.LibraryObject>
+        <SimMissionUI.ScenarioMetadata InstanceId="{1266AFE6-24BD-4695-86F8-3487E04D0169}">
+            <Descr>Scenario Desc Metadata</Descr>
+        </SimMissionUI.ScenarioMetadata>
+        <SimMission.RealismOverrides InstanceId="{2ED1249F-8482-4D45-9FA3-DF2EDE076B18}">
+            <Descr>UnlimitedFuelHack (Error Circumventing)</Descr>
+            <CrashBehavior>ResetFlight</CrashBehavior>
+            <UnlimitedFuel>Unlimited</UnlimitedFuel>
+        </SimMission.RealismOverrides>
+        <SimMission.Camera InstanceId="{DDB9694E-4140-4E16-9412-F6957840000B}">
+            <Descr>UICam</Descr>
+            <Name>UICam</Name>
+            <Orientation>0.000000,0.000000,340.000000</Orientation>
+            <CameraZoomLevel>0.500000</CameraZoomLevel>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 27.934130",E139° 44' 41.831390",+000093.32</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.Camera>
+        <SimMission.UIPanelObject InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
+            <Descr>Controls</Descr>
+            <UIPanelFileName>resources\html\controls.html</UIPanelFileName>
+            <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <InstanceName>Menu</InstanceName>
+            <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
+            <WorldSize>33.000000,14.000000,-1.000000,-1.000000</WorldSize>
+            <Orientation>0.000000,0.000000,303.999969</Orientation>
+            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
+            <HasMouseInteractivity>True</HasMouseInteractivity>
+            <OriginY>-0.750000</OriginY>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 28.509839",E139° 44' 40.832797",+000064.00</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.UIPanelObject>
+        <SimMission.UIPanelObject InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
+            <Descr>Intro</Descr>
+            <UIPanelFileName>resources\html\intro.html</UIPanelFileName>
+            <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <InstanceName>Menu</InstanceName>
+            <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
+            <WorldSize>55.000000,22.000000,-1.000000,-1.000000</WorldSize>
+            <Orientation>0.000000,0.000000,340.000000</Orientation>
+            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
+            <HasMouseInteractivity>True</HasMouseInteractivity>
+            <OriginY>-0.400000</OriginY>
+            <AttachedWorldPosition>
+                <WorldPosition>N35° 27' 29.043479",E139° 44' 41.345215",+000064.00</WorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+            </AttachedWorldPosition>
+        </SimMission.UIPanelObject>
+    </WorldBase.Flight>
+    <MissionBuilder.MissionBuilder>
+        <ObjectGroup InstanceId="{F748FC90-3A5C-4C88-A901-CA745DD839DE}">
+            <Descr>UI</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{DDB9694E-4140-4E16-9412-F6957840000B}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{5A57BB23-83B9-4E1E-89F0-2A2C933C6C35}">
+            <Descr>Init</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{900BE545-92FE-4EE9-8F62-BBC51D527B2A}">
+            <Descr>Continue1</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{87CA8F6A-791E-4DD6-9308-6C0C191CE8A5}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+    </MissionBuilder.MissionBuilder>
+    <WorldBase.AreasOfInterest>
+    </WorldBase.AreasOfInterest>
+    <WorldBase.Waypoints>
+    </WorldBase.Waypoints>
+</SimBase.Document>
