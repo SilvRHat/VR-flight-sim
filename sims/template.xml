@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <SimBase.Document Type="ObjectFile" version="5,1">
-    <Descr>Rough Template</Descr>
-    <Title>TEMPLATE [MAIN PROJECT]</Title>
+    <Descr>Unfinished product for level 1 - flying straight through gates</Descr>
+    <Title>Level 1 [MAIN PROJECT]</Title>
     <WorldBase.Flight>
         <SimContain.UserOwnship InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
             <SpeedKnots>260.000000</SpeedKnots>
@@ -989,7 +989,7 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
-            <OriginY>-0.610000</OriginY>
+            <OriginY>-0.600000</OriginY>
             <Activated>False</Activated>
             <AttachedWorldPosition>
                 <WorldPosition>N35° 27' 29.043479",E139° 44' 41.345215",+000064.00</WorldPosition>
