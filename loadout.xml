@@ -122,27 +122,27 @@ state2()</Script>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{C9994C5C-9005-44FD-AC26-9FB2636BFD0C}">
             <Descr>Load Lvl1</Descr>
-            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+            <ScenarioFileName>sims/level1.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{8AF4CEF1-B3CA-4BDD-B1AE-095A1091CD5F}">
             <Descr>Load Lvl2</Descr>
-            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+            <ScenarioFileName>sims/level2.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{949AE1B4-1FA5-4440-B07D-1F3717ACF582}">
             <Descr>Load Lvl3</Descr>
-            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+            <ScenarioFileName>sims/level3.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{113D104B-1631-4828-9C2C-0E8BD22EE2E0}">
             <Descr>Load Lvl4</Descr>
-            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+            <ScenarioFileName>sims/level4.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{B465011E-6EC4-4BF1-BAA1-2412A78A50C2}">
             <Descr>Load Lvl5</Descr>
-            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+            <ScenarioFileName>sims/level5.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
             <Descr>Load Lvl6</Descr>
-            <ScenarioFileName>loadout.fxml</ScenarioFileName>
+            <ScenarioFileName>sims/level6.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.ScriptTrigger InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
             <Descr>Init</Descr>

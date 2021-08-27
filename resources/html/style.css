@@ -73,16 +73,13 @@ button {
 
 
 
-button:hover {
+
+button._focus {
     background-color: rgba(155,155,155);
 }
 
-button._focus {
-    background-color: rgba(200,200,200);
-}
-
 button._selected {
-    background-color: rgba(150,150,150);
+    background-color: rgba(100,100,100);
 }
 
 

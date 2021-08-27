@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <SimBase.Document Type="ObjectFile" version="5,1">
-    <Descr>Rough Template</Descr>
-    <Title>TEMPLATE [MAIN PROJECT]</Title>
+    <Descr>Unfinished product for level 5</Descr>
+    <Title>Level 5 [MAIN PROJECT]</Title>
     <WorldBase.Flight>
         <SimContain.UserOwnship InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
             <SpeedKnots>260.000000</SpeedKnots>
@@ -309,8 +309,8 @@ state2()</Script>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.LoadScenarioAction InstanceId="{2B64D3EC-9B1B-4A97-A890-A8A653357C59}">
-            <Descr>Load Lvl2</Descr>
-            <ScenarioFileName>sims\template.fxml</ScenarioFileName>
+            <Descr>Load Lvl6</Descr>
+            <ScenarioFileName>sims\level6.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.RectangleArea InstanceId="{CBD9545F-0CC2-4D85-8916-2737E00BA691}">
             <Descr>HitRegion G1</Descr>
@@ -344,7 +344,7 @@ state2()</Script>
         </SimMission.RectangleArea>
         <SimMission.RectangleArea InstanceId="{B96BC965-CE05-4CC9-B6CB-92DD3B53708B}">
             <Descr>HitRegion G2</Descr>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <Orientation>0.000000,360.000000,0.000000</Orientation>
             <Length>120.000000</Length>
             <Width>40.000000</Width>
             <Height>120.000000</Height>
@@ -783,6 +783,15 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{4C3B589C-2D4C-400D-BB39-B9A7F7B16089}">
+            <Descr>KillCode</Descr>
+            <Script>!lua
+return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{554A4184-1412-4D18-ADB6-DA2D8D39091B}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
         <SceneryObjects.LibraryObject InstanceId="{F5FA16C8-ACBC-4721-85DD-F136DEBF4297}">
             <Descr>Menu Boat</Descr>
             <MDLGuid>{93615C8E-9789-49A9-B7B0-EC3D2A2625E6}</MDLGuid>
@@ -796,8 +805,8 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{48422332-68A2-4106-99FF-953A9671E2D5}">
             <Descr>Gate1</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 31' 16.511731",E139° 50' 18.411903",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 10' 14.088000",E139° 56' 47.832000",+009400.00</WorldPosition>
+            <Orientation>0.000000,2.000000,172.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -806,8 +815,8 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{94B9C792-C697-475D-AE1E-C04FDE1AC631}">
             <Descr>Gate2</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 31' 46.230242",E139° 50' 18.430330",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 2' 9.384000",E140° 4' 21.972000",+009500.00</WorldPosition>
+            <Orientation>0.000000,2.000000,305.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -817,8 +826,8 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{C2FC2FB1-37B9-4D65-8C35-2AD96083D74D}">
             <Descr>Gate3</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 32' 16.168708",E139° 50' 18.448756",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 4' 25.104000",E139° 56' 39.732000",+009600.00</WorldPosition>
+            <Orientation>10.000000,0.000000,105.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -828,8 +837,8 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{B5B4E48B-743F-4BAB-ABBA-274F20BABDA5}">
             <Descr>Gate4</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 32' 40.262459",E139° 50' 18.467183",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N33° 56' 55.140000",E139° 53' 9.564000",+009700.00</WorldPosition>
+            <Orientation>10.000000,0.000000,28.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -839,8 +848,8 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{72836C13-D188-46F8-933D-D0FCC5FF4AE0}">
             <Descr>Gate5</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 33' 7.150197",E139° 50' 18.485609",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 4' 43.644000",E139° 52' 24.708000",+009800.00</WorldPosition>
+            <Orientation>1.000000,352.000000,5.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -850,13 +859,63 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{F91B5808-4871-4625-883A-0C5989839304}">
             <Descr>Gate6</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 33' 34.711365",E139° 50' 18.504036",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 5' 51.972000",E139° 46' 9.480000",+009900.00</WorldPosition>
+            <Orientation>10.000000,0.000000,100.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
             <NoCrash>False</NoCrash>
             <Activated>False</Activated>
+        </SceneryObjects.LibraryObject>
+        <SceneryObjects.LibraryObject InstanceId="{4A22CFA3-7225-4D4C-837C-8649AB2FDD94}">
+            <Descr>Scenery8</Descr>
+            <MDLGuid>{AAD65D6A-671E-4B98-BD9F-CA4BC7B8FB51}</MDLGuid>
+            <WorldPosition>N34° 8' 30.876000",E139° 55' 28.344000",+009400.00</WorldPosition>
+            <Orientation>358.000000,90.000000,192.484000</Orientation>
+            <Scale>16.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
+        </SceneryObjects.LibraryObject>
+        <SceneryObjects.LibraryObject InstanceId="{4FF118DF-8CB7-49FA-ABBB-9ED364BF31EA}">
+            <Descr>Scenery9</Descr>
+            <MDLGuid>{AAD65D6A-671E-4B98-BD9F-CA4BC7B8FB51}</MDLGuid>
+            <WorldPosition>N34° 2' 9.384000",E140° 6' 15.552000",+009500.00</WorldPosition>
+            <Orientation>359.000000,269.000000,213.484000</Orientation>
+            <Scale>16.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
+        </SceneryObjects.LibraryObject>
+        <SceneryObjects.LibraryObject InstanceId="{4DAB3337-3A3C-4ADA-93C9-943D2A9DCCB4}">
+            <Descr>Scenery10</Descr>
+            <MDLGuid>{AAD65D6A-671E-4B98-BD9F-CA4BC7B8FB51}</MDLGuid>
+            <WorldPosition>N34° 5' 34.980000",E139° 55' 35.472000",+009600.00</WorldPosition>
+            <Orientation>353.000000,89.000000,292.484000</Orientation>
+            <Scale>16.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
+        </SceneryObjects.LibraryObject>
+        <SceneryObjects.LibraryObject InstanceId="{09C6486E-BE9D-4771-9BE8-D81B5ABA24D6}">
+            <Descr>Scenery11</Descr>
+            <MDLGuid>{AAD65D6A-671E-4B98-BD9F-CA4BC7B8FB51}</MDLGuid>
+            <WorldPosition>N33° 55' 29.028000",E139° 51' 20.556000",+009700.00</WorldPosition>
+            <Orientation>353.000000,272.000000,280.484000</Orientation>
+            <Scale>16.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
+        </SceneryObjects.LibraryObject>
+        <SceneryObjects.LibraryObject InstanceId="{8FC99FF6-ACBD-4F33-BAB2-7B94304C5F42}">
+            <Descr>Scenery12</Descr>
+            <MDLGuid>{AAD65D6A-671E-4B98-BD9F-CA4BC7B8FB51}</MDLGuid>
+            <WorldPosition>N34° 6' 15.480000",E139° 53' 15.648000",+009800.00</WorldPosition>
+            <Orientation>359.000000,87.000000,358.484000</Orientation>
+            <Scale>16.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
         </SceneryObjects.LibraryObject>
         <SimMissionUI.ScenarioMetadata InstanceId="{1266AFE6-24BD-4695-86F8-3487E04D0169}">
             <Descr>Scenario Desc Metadata</Descr>
@@ -894,7 +953,7 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
             <Descr>Intro</Descr>
-            <UIPanelFileName>resources\html\lvl1_intro.html</UIPanelFileName>
+            <UIPanelFileName>resources\html\lvl5_intro.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
@@ -989,7 +1048,7 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
-            <OriginY>-0.610000</OriginY>
+            <OriginY>-0.600000</OriginY>
             <Activated>False</Activated>
             <AttachedWorldPosition>
                 <WorldPosition>N35° 27' 29.043479",E139° 44' 41.345215",+000064.00</WorldPosition>
@@ -1233,6 +1292,15 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
                 <ObjectReference InstanceId="{CC5B0B0B-B1CA-4B2E-B26F-31DAE852C5AF}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{2B64D3EC-9B1B-4A97-A890-A8A653357C59}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{42433B96-4690-4D4C-A1CB-E226328719C5}">
+            <Descr>KillCode</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{4C3B589C-2D4C-400D-BB39-B9A7F7B16089}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>

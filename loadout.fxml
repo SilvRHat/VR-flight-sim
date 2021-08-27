@@ -152,7 +152,7 @@
         </Section>
         <Section Name="Camera.1.10">
             <Property Name="Guid" Value="{AA8C80C0-9EE2-4284-A1C2-B20CD3F5F3D9}" />
-            <Property Name="Title" Value="RJTF" />
+            <Property Name="Title" Value="RJTT" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="8" />
             <Property Name="Translation" Value="0, 0, 0" />
@@ -296,7 +296,7 @@
             <Property Name="PostProcess.0" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.24">
-            <Property Name="Guid" Value="{DD605C2E-8973-408E-8882-F3BCD2C01B8C}" />
+            <Property Name="Guid" Value="{088D0FE5-0F8A-410D-9EFF-D69A97BE7FF4}" />
             <Property Name="Title" Value="UICam Object Camera View" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
@@ -920,9 +920,9 @@
             <Property Name="LeftFlap" Value="000.00" />
             <Property Name="RightFlap" Value="000.00" />
             <Property Name="GearsHandle" Value="000.01" />
-            <Property Name="Gear1" Value="099.25" />
-            <Property Name="Gear2" Value="099.25" />
-            <Property Name="Gear3" Value="099.25" />
+            <Property Name="Gear1" Value="099.24" />
+            <Property Name="Gear2" Value="099.24" />
+            <Property Name="Gear3" Value="099.24" />
             <Property Name="YokeY" Value="050.00" />
             <Property Name="YokeX" Value="050.00" />
             <Property Name="Rudder" Value="050.00" />
