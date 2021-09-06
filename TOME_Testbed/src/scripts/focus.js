@@ -1,7 +1,11 @@
-// Focus script (for when you need to focus)
-// Gavin Zimmerman
+/*
+    Focus
+    SHINE Lab & Aptima | Collaborative VR Flight Sim Research Project
 
-// DEPENDENCIES
+    Reads scenario state to determine which UI elements are selected and focused on
+*/
+
+// Dependencies
     // jQuery
 
 

@@ -1,3 +1,10 @@
+--[[
+    Require Utility Function
+    SHINE Lab & Aptima | Collaborative VR Flight Sim Research Project
+
+    Used to import lua scripts
+]]
+
 -- Compatibility
     -- Prepar3D Funcs
     varget = varget or function(varname, _) return _G[varname] end

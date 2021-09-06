@@ -1,3 +1,13 @@
+/*
+    Animation
+    SHINE Lab & Aptima | Collaborative VR Flight Sim Research Project
+
+    HTML Animation Loop
+*/
+
+// Dependencies
+    // jQuery
+
 // animFrameStep - Wrapper function for an animation loop
     // @param timestamp - Timestamp paramater passed into callback; in milliseconds
 let firststep, laststep;

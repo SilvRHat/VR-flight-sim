@@ -57,6 +57,7 @@ This testbed requires various software/ packages to run:
     - https://secure.simmarket.com/john-dowson-fsuipc6-for-p3dv4-5.phtml
 - T45C Boeing: Plane model used in the testbed application
     - https://flyawaysimulation.com/downloads/files/5638/fsx-boeing-bae-t-45c-goshawk/
+- Lua 5.3
 
 
 ## Developer Cautions

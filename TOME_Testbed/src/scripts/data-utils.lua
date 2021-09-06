@@ -1,8 +1,8 @@
 --[[
-    Main
+    Data Utility Functions
     SHINE Lab & Aptima | Collaborative VR Flight Sim Research Project
 
-    Class which abstracts logic for data saving
+    Class which abstracts logic for data saving and changing state of scenario
 ]]
 
 
@@ -177,7 +177,7 @@ end
 
 -- pollP3D - Polls prepar3D for a list of simulation variables
     -- List of variables is set in CONFIG file
-function DATA_UTILS.pollP3D()
+function DATA_UTILS.pollP3D(args)
     -- Limit Polling
     if (not CONFIG.poll_while_paused) and (varget('P:SIM PAUSED','Bool')==1) then
         return end
@@ -196,6 +196,8 @@ function DATA_UTILS.pollP3D()
         local datacolumns = {
             'timestamp'
         }
+        for key,_ in pairs(args) do
+            table.insert(datacolumns, key) end
         for _, var in ipairs(CONFIG.SIMVARS) do
             table.insert(datacolumns, var.Label or var.Name or 'untitled') end
         
@@ -212,6 +214,8 @@ function DATA_UTILS.pollP3D()
     local data = {
         os.clock()
     }
+    for _, val in pairs(args) do
+        table.insert(data, val) end
     for _, var in ipairs(CONFIG.SIMVARS) do
         table.insert(data, varget(var.Name or '', var.Units or '') or -1) end
 
@@ -227,7 +231,10 @@ end
 
 function DATA_UTILS.clearFiles()
     local filenames = {CONFIG.event_log_filename, CONFIG.simvar_log_filename, CONFIG.survey_log_filename}
-    
+    for _, fn in ipairs(filenames) do
+        local path = string.format('%s%s/%s%s', srcpath, CONFIG.data_folder, CONFIG.data_filenames_prefix, fn)
+        os.remove(path)
+    end
 end
 
 
