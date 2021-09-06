@@ -40,7 +40,7 @@ To setup the following testbed, ensure the following:
     - **P3D_PROJECT_PATH.txt** should be placed under **/Programs/Lockheed Martin/Prepar3D v5/** (or equivalent for prepar3d v5 source code)
 2. Open prepar3D to default scenario, and open Add-ons -> FSUIPC6. A window (rough graphics) should appear with 10ish tabs. Under 'Buttons & switches', set the customized inputs by:
     1. Press intended button
-    2. Under the first scroll, find Lua &gt;script name for control&lt;. Select it.
+    2. Under the first scroll, find Lua &lt;script name for control&gt;. Select it.
 3. Load the loadout simulation from the main Prepar3D menu (if it does not appear, then the TOME_Testbed was not placed in the right directory)
 4. If a UI menu does not load then, inside **P3D_PROJECT_PATH.txt**, write the absolute file path of the directory originally named **TOME_Testbed** on its own line. If it still does not load, contact me, the developer
 
@@ -65,4 +65,3 @@ I wanted to point out a few pitfalls in implementing the above concepts in Prepa
 - Caching behaviour: When working with html content to be rendered in the 3D, prepar3D will cache this content even in SimDirector. This is not workflow wise- because to see changes on html rendered content, the entire application must be exited and restarted. Lua scripts do not cache behaviour
 - Lua Scripting: Prepar3D allows lua scripts to run in its environment dynamically, however it in no way makes this developer friendly. The code editor is a non-sizeable 300x100px text editor, and does not have an in-house importing feature. I circumvented this by developing a custom require function to load in an external script, and run functions from that instead. Any editing after this code has been put into p3d, can be done on the external scripts. Useful for on event to call one function.
 - Javascript powers: Allow marketed that javascript scripts rendered on html content has a VarSet() function, it doesn't. Javascript should only read state - having lua read user input and write to state while javascript displays its view of the simulation state is an effective design.
-
