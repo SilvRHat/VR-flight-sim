@@ -32,6 +32,12 @@ This section briefly summarizes the contents of this repository
 - P3D_PROJECT_PATH.txt - An optional file that can be placed under 'Lockheed Martin/ Prepar3D v5/', which points to the testbed path (above directory)
 
 
+## Features
+- Local file data saving for 3 different types of data (survey, event logging, and simulation variable logging)
+- Easy UI that displays in a 3D VR Environment
+- Intuitive UI controls on any hardware devices (joystick, throttle, rudder, keyboard, etc.)
+- Built challenges and scenarios that guide user to accomplish a variety of challenges
+
 ## Setup
 To setup the following testbed, ensure the following:
 1. Download entire repo and place directories in appropriate places on host machine
