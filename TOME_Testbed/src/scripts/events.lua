@@ -212,10 +212,11 @@ end
 --[[
 !lua
 local lvl='template'
+local gate=1
 function require(filename)local user=os.getenv('USERNAME');local paths={'',string.format('C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\',user)};local fileexts={'','.lua'};local PATHFILE_EXT='P3D_PROJECT_PATH.txt';local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format("%s%s%s",path,filename,ext),'r');if f then;local src=f:read('*a');f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require('CONFIG.lua')
 
 local EVENTS=require('src\\scripts\\events')
-return EVENTS.lvl_pollData(lvl)
+return EVENTS.lvl_gateHit(lvl, gate)
 ]]
 
 -- Return Module

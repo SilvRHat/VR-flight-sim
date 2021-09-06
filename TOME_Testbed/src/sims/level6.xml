@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <SimBase.Document Type="ObjectFile" version="5,1">
-    <Descr>Unfinished product for level 6</Descr>
-    <Title>Level 6 [MAIN PROJECT]</Title>
+    <Descr>Sixth level of TOME Testbed Application; features 6 gates requiring user to change gaze near/far sight</Descr>
+    <Title>Level 6 - Gaze Switches [TOME Testbed]</Title>
     <WorldBase.Flight>
         <SimContain.UserOwnship InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
             <SpeedKnots>260.000000</SpeedKnots>
@@ -11,21 +11,23 @@
         <SimContain.UserAvatar InstanceId="{508FDC98-BF36-4C0F-B22D-27045DF1A0CF}">
         </SimContain.UserAvatar>
         <SimMission.ObjectActivationAction InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
-            <Descr>InitActivate</Descr>
+            <Descr>initActivate_Action</Descr>
             <ObjectReferenceList>
+                <ObjectReference InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
+                </ObjectReference>
                 <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.SetPauseAction InstanceId="{DDADA40A-57F4-4A03-8CF7-8D463D1E1719}">
-            <Descr>Pause</Descr>
+            <Descr>pause_Action</Descr>
             <PauseFlight>True</PauseFlight>
         </SimMission.SetPauseAction>
         <SimMission.SetPauseAction InstanceId="{3471EFE2-1D46-4784-AD0F-09CF33084FF0}">
-            <Descr>Unpause</Descr>
+            <Descr>unpause_Action</Descr>
         </SimMission.SetPauseAction>
         <SimMission.ObjectActivationAction InstanceId="{81363D06-593C-4F24-A80C-B8F0AD8F5791}">
-            <Descr>Disable UI</Descr>
+            <Descr>diableUI_Action</Descr>
             <NewObjectState>False</NewObjectState>
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{DDB9694E-4140-4E16-9412-F6957840000B}">
@@ -39,9 +41,14 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ScriptAction InstanceId="{8110B88C-9EA1-42EA-B39D-25EEAFED0109}">
-            <Descr>Set Hit Gate 1</Descr>
+            <Descr>G1Hit_ScriptAction</Descr>
             <Script>!lua
--- Mark Gate Hit</Script>
+local lvl=&apos;6&apos;
+local gate=1
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gateHit(lvl, gate)</Script>
         </SimMission.ScriptAction>
         <SimMission.ObjectActivationAction InstanceId="{10C17CA8-EE33-4B20-8006-E5887D0F01B3}">
             <Descr>Disable G1</Descr>
@@ -85,14 +92,24 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ScriptAction InstanceId="{6CFDF8B7-F6EA-451F-9572-4FA78DAB5279}">
-            <Descr>Set Hit Gate2</Descr>
+            <Descr>G2Hit_ScriptAction</Descr>
             <Script>!lua
--- Set Hit gate2</Script>
+local lvl=&apos;6&apos;
+local gate=2
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gateHit(lvl, gate)</Script>
         </SimMission.ScriptAction>
         <SimMission.ScriptAction InstanceId="{2DA92B2E-708E-4351-8FA3-F0DD34BC0EBD}">
-            <Descr>Set Hit Gate3</Descr>
+            <Descr>G3Hit_ScriptAction</Descr>
             <Script>!lua
--- Perform</Script>
+local lvl=&apos;6&apos;
+local gate=3
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gateHit(lvl, gate)</Script>
         </SimMission.ScriptAction>
         <SimMission.ObjectActivationAction InstanceId="{AA28C33A-13B8-480A-AE91-72D64C1FBB53}">
             <Descr>Enable G3</Descr>
@@ -149,9 +166,14 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ScriptAction InstanceId="{E70F735E-6BAC-4ED1-B338-B6B00CE0FAF1}">
-            <Descr>Set Hit Gate4</Descr>
+            <Descr>G4Hit_ScriptAction</Descr>
             <Script>!lua
---Perform</Script>
+local lvl=&apos;6&apos;
+local gate=4
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gateHit(lvl, gate)</Script>
         </SimMission.ScriptAction>
         <SimMission.ObjectActivationAction InstanceId="{55C3472D-57F2-4909-8F85-9B5B9488D15A}">
             <Descr>Disable G5</Descr>
@@ -181,9 +203,14 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ScriptAction InstanceId="{0C696F61-442E-46F4-ADB1-F6BA19C413D9}">
-            <Descr>Set Hit Gate5</Descr>
+            <Descr>G5Hit_ScriptAction</Descr>
             <Script>!lua
---Perform</Script>
+local lvl=&apos;6&apos;
+local gate=5
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gateHit(lvl, gate)</Script>
         </SimMission.ScriptAction>
         <SimMission.ObjectActivationAction InstanceId="{540D7143-5813-4089-8105-2F31099E5341}">
             <Descr>Disable G6</Descr>
@@ -213,9 +240,14 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ScriptAction InstanceId="{6CC282FB-1FCB-4A15-938E-6480C899EF92}">
-            <Descr>Set Hit Gate6</Descr>
+            <Descr>G6Hit_ScriptAction</Descr>
             <Script>!lua
--- Perform</Script>
+local lvl=&apos;6&apos;
+local gate=6
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gateHit(lvl, gate)</Script>
         </SimMission.ScriptAction>
         <SimMission.ObjectActivationAction InstanceId="{89423C7D-38BC-4343-918D-893BE140DFC0}">
             <Descr>EnableSurveyQ1</Descr>
@@ -231,59 +263,28 @@
         <SimMission.ScriptAction InstanceId="{554A4184-1412-4D18-ADB6-DA2D8D39091B}">
             <Descr>Set Survey Q1</Descr>
             <Script>!lua
--- QUESTION1 script
-local lvars = {
-    [&apos;_continue&apos;] = 0;
-    [&apos;_state&apos;] = 0;
-    [&apos;_options&apos;] = 9;
-    [&apos;_level&apos;] = 1;
-    [&apos;_gate&apos;] = 0;
-    [&apos;_hit&apos;] = 0;
-    [&apos;_ui_focus_id&apos;] = (10*100);
-    [&apos;_last_poll&apos;] = 0;
-}
-function state2()
-    for lvar, default in pairs(lvars) do
-        varset(&apos;L:&apos;..lvar, default)
-    end
-    for i=0, 15, 1 do
-        varset(&apos;L:_toggle&apos;..i, 0)
-    end
-end
+local lvl=&apos;6&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
 
-state2()
-</Script>
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_surveyQ1(lvl)</Script>
             <OnCompleteActions>
                 <ObjectReference InstanceId="{89423C7D-38BC-4343-918D-893BE140DFC0}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{DDADA40A-57F4-4A03-8CF7-8D463D1E1719}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{E1E485D4-9D83-43B8-A15B-76395FA50FA9}">
                 </ObjectReference>
             </OnCompleteActions>
         </SimMission.ScriptAction>
         <SimMission.ScriptAction InstanceId="{CF7BB17F-0CD0-4A3E-84D5-4158B4C26C96}">
             <Descr>Set Survey Q2</Descr>
             <Script>!lua
--- QUESTION1 script
-local lvars = {
-    [&apos;_continue&apos;] = 0;
-    [&apos;_state&apos;] = 1;
-    [&apos;_options&apos;] = 10;
-    [&apos;_level&apos;] = 1;
-    [&apos;_gate&apos;] = 0;
-    [&apos;_hit&apos;] = 0;
-    [&apos;_ui_focus_id&apos;] = (10*100);
-    [&apos;_last_poll&apos;] = 0;
-}
-function state2()
-    for lvar, default in pairs(lvars) do
-        varset(&apos;L:&apos;..lvar, default)
-    end
-    for i=0, 15, 1 do
-        varset(&apos;L:_toggle&apos;..i, 0)
-    end
-end
+local lvl=&apos;6&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
 
-state2()</Script>
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_surveyQ2(lvl)</Script>
             <OnCompleteActions>
                 <ObjectReference InstanceId="{6BAD5704-CC80-406E-9A84-9BEFC63F7C1E}">
                 </ObjectReference>
@@ -308,30 +309,93 @@ state2()</Script>
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{473EF6C6-CABD-4E81-95BA-2676E8686828}">
-            <Descr>Display Done</Descr>
-            <OnCompleteActions>
-                <ObjectReference InstanceId="{32341791-830D-4873-99AD-639D22D5950C}">
-                </ObjectReference>
-            </OnCompleteActions>
+        <SimMission.ScriptAction InstanceId="{395DB581-238C-49D1-A273-31D28D3F193D}">
+            <Descr>Empty</Descr>
+            <Script>!lua
+-- Do nothing</Script>
+        </SimMission.ScriptAction>
+        <SimMission.LoadScenarioAction InstanceId="{D224E7C8-024A-4EBE-99C6-4B100C6CAED2}">
+            <Descr>Reload</Descr>
+            <ScenarioFileName>sims\level6.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.ObjectActivationAction InstanceId="{E326CB64-6F23-4671-ABE5-173AA5640C9B}">
+            <Descr>G1Passed_Action</Descr>
             <ObjectReferenceList>
-                <ObjectReference InstanceId="{EAD285B3-304E-494C-92C5-A0DCF416B8DE}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{DDB9694E-4140-4E16-9412-F6957840000B}">
+                <ObjectReference InstanceId="{2FD958F0-47CC-4073-A24A-166D44BEC196}">
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{32341791-830D-4873-99AD-639D22D5950C}">
-            <Descr>Disable Survey Q2</Descr>
+        <SimMission.ObjectActivationAction InstanceId="{0FA75F48-7F90-4E43-9D30-51E5C29A434B}">
+            <Descr>G2Passed_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{A974D0B3-0601-479F-AA29-7E2FFB0B5E30}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{BEA2D3E0-AF0E-4E32-B5CF-F8797746ECBD}">
+            <Descr>G3Passed_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{FF9287D5-6A0D-4DF0-BCCC-CE33EAEECEBC}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{69790DF0-A0BA-40E4-ACAF-3A24C32959DA}">
+            <Descr>G4Passed_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{D13F59C9-25A0-482A-A4F0-9E10F5E48B39}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{E049D260-D993-4BE7-8BA9-1B9F415DF8C0}">
+            <Descr>G5Passed_action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{374CCA74-8A0C-4E4B-89DD-4F39CA60F5C2}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{7E9802AD-2040-4A78-873A-5B5882DE1C6F}">
+            <Descr>G6Passed_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{6298226F-F73A-4E24-94EE-50D21BAEE4D7}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{C3899989-4726-4BED-8BAD-E2D0660BB71B}">
+            <Descr>Complete_Action</Descr>
+            <OnCompleteActions>
+                <ObjectReference InstanceId="{340F5DAA-717E-4939-9C2A-49AF6F8F9619}">
+                </ObjectReference>
+            </OnCompleteActions>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{478B125B-2043-4CD0-8E1B-597C5938CAD6}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{340F5DAA-717E-4939-9C2A-49AF6F8F9619}">
+            <Descr>disableQ2</Descr>
             <NewObjectState>False</NewObjectState>
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{37E8A408-3679-4929-AE1B-8E026DCEE26F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{DA7FAE02-F6F2-4B66-9F37-749B4C2695A0}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{E1E485D4-9D83-43B8-A15B-76395FA50FA9}">
+            <Descr>Survey_Deactivate</Descr>
+            <NewObjectState>False</NewObjectState>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{3972D6BD-20DA-44BD-B93A-4B842A8411ED}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.RectangleArea InstanceId="{CBD9545F-0CC2-4D85-8916-2737E00BA691}">
             <Descr>HitRegion G1</Descr>
-            <Orientation>0.000000,360.000000,360.000000</Orientation>
+            <Orientation>0.000000,0.000000,0.000000</Orientation>
             <Length>120.000000</Length>
             <Width>40.000000</Width>
             <Height>120.000000</Height>
@@ -350,7 +414,8 @@ state2()</Script>
             <Length>2000.000000</Length>
             <Width>40.000000</Width>
             <Height>2000.000000</Height>
-            <RGBColor>72.000000,61.000000,139.000000,255.000000</RGBColor>
+            <RGBColor>255.000000,0.000000,0.000000,255.000000</RGBColor>
+            <DrawStyle>Outlined</DrawStyle>
             <AttachedWorldObject>
                 <OffsetXYZ>0.000000,-1000.000000,0.000000,0.000000</OffsetXYZ>
                 <BodyRelativeOffset>1.000000,1.000000,1.000000,0.000000</BodyRelativeOffset>
@@ -380,7 +445,8 @@ state2()</Script>
             <Length>2000.000000</Length>
             <Width>40.000000</Width>
             <Height>2000.000000</Height>
-            <RGBColor>72.000000,61.000000,139.000000,255.000000</RGBColor>
+            <RGBColor>255.000000,165.000000,0.000000,255.000000</RGBColor>
+            <DrawStyle>Outlined</DrawStyle>
             <AttachedWorldObject>
                 <OffsetXYZ>0.000000,-1000.000000,0.000000,0.000000</OffsetXYZ>
                 <BodyRelativeOffset>1.000000,1.000000,1.000000,0.000000</BodyRelativeOffset>
@@ -410,7 +476,8 @@ state2()</Script>
             <Length>2000.000000</Length>
             <Width>40.000000</Width>
             <Height>2000.000000</Height>
-            <RGBColor>72.000000,61.000000,139.000000,255.000000</RGBColor>
+            <RGBColor>255.000000,255.000000,0.000000,255.000000</RGBColor>
+            <DrawStyle>Outlined</DrawStyle>
             <AttachedWorldObject>
                 <OffsetXYZ>0.000000,-1000.000000,0.000000,0.000000</OffsetXYZ>
                 <BodyRelativeOffset>1.000000,1.000000,1.000000,0.000000</BodyRelativeOffset>
@@ -440,7 +507,8 @@ state2()</Script>
             <Length>2000.000000</Length>
             <Width>40.000000</Width>
             <Height>2000.000000</Height>
-            <RGBColor>72.000000,61.000000,139.000000,255.000000</RGBColor>
+            <RGBColor>0.000000,255.000000,0.000000,255.000000</RGBColor>
+            <DrawStyle>Outlined</DrawStyle>
             <AttachedWorldObject>
                 <OffsetXYZ>0.000000,-1000.000000,0.000000,0.000000</OffsetXYZ>
                 <BodyRelativeOffset>1.000000,1.000000,1.000000,0.000000</BodyRelativeOffset>
@@ -451,7 +519,7 @@ state2()</Script>
         </SimMission.RectangleArea>
         <SimMission.RectangleArea InstanceId="{A2150285-BBA1-42EE-94E2-609443120A9F}">
             <Descr>HitRegion G5</Descr>
-            <Orientation>359.999999,0.000000,0.000000</Orientation>
+            <Orientation>0.000000,0.000000,0.000000</Orientation>
             <Length>120.000000</Length>
             <Width>40.000000</Width>
             <Height>120.000000</Height>
@@ -470,7 +538,8 @@ state2()</Script>
             <Length>2000.000000</Length>
             <Width>40.000000</Width>
             <Height>2000.000000</Height>
-            <RGBColor>72.000000,61.000000,139.000000,255.000000</RGBColor>
+            <RGBColor>0.000000,255.000000,255.000000,255.000000</RGBColor>
+            <DrawStyle>Outlined</DrawStyle>
             <AttachedWorldObject>
                 <OffsetXYZ>0.000000,-1000.000000,0.000000,0.000000</OffsetXYZ>
                 <BodyRelativeOffset>1.000000,1.000000,1.000000,0.000000</BodyRelativeOffset>
@@ -500,7 +569,8 @@ state2()</Script>
             <Length>2000.000000</Length>
             <Width>40.000000</Width>
             <Height>2000.000000</Height>
-            <RGBColor>72.000000,61.000000,139.000000,255.000000</RGBColor>
+            <RGBColor>255.000000,0.000000,255.000000,255.000000</RGBColor>
+            <DrawStyle>Outlined</DrawStyle>
             <AttachedWorldObject>
                 <OffsetXYZ>0.000000,-1000.000000,0.000000,0.000000</OffsetXYZ>
                 <BodyRelativeOffset>1.000000,1.000000,1.000000,0.000000</BodyRelativeOffset>
@@ -510,31 +580,13 @@ state2()</Script>
             </AttachedWorldObject>
         </SimMission.RectangleArea>
         <SimMission.ScriptTrigger InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
-            <Descr>Init</Descr>
+            <Descr>init_trigger</Descr>
             <Script>!lua
--- INIT script
-local lvars = {
-    [&apos;_continue&apos;] = 0;
-    [&apos;_state&apos;] = 1;
-    [&apos;_options&apos;] = 0;
-    [&apos;_level&apos;] = 0;
-    [&apos;_gate&apos;] = 0;
-    [&apos;_hit&apos;] = 0;
-    [&apos;_ui_focus_id&apos;] = (3*200) -1;
-    [&apos;_last_poll&apos;] = 0;
-}
-function init()
-    for lvar, default in pairs(lvars) do
-        varset(&apos;L:&apos;..lvar, default)
-    end
-    for i=0, 15, 1 do
-        varset(&apos;L:_toggle&apos;..i, 0)
-    end
-    varset(&apos;L:_toggle0&apos;, 1)
-end
+local lvl=&apos;6&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
 
-init()
-return true</Script>
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_init(lvl)</Script>
             <Actions>
                 <ObjectReference InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
                 </ObjectReference>
@@ -543,10 +595,14 @@ return true</Script>
             </Actions>
         </SimMission.ScriptTrigger>
         <SimMission.ScriptTrigger InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
-            <Descr>Continue1</Descr>
+            <Descr>startLvl_trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
+local lvl=&apos;6&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_start(lvl)</Script>
             <Actions>
                 <ObjectReference InstanceId="{81363D06-593C-4F24-A80C-B8F0AD8F5791}">
                 </ObjectReference>
@@ -573,18 +629,16 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
         <SimMission.ProximityTrigger InstanceId="{D976880D-5B5F-43F9-9EE0-06DCB7E9F213}">
             <Descr>Passed G1</Descr>
             <ObjectFilter>Reference</ObjectFilter>
+            <OnEnterActions>
+                <ObjectReference InstanceId="{E326CB64-6F23-4671-ABE5-173AA5640C9B}">
+                </ObjectReference>
+            </OnEnterActions>
             <Areas>
                 <ObjectReference InstanceId="{CBD9545F-0CC2-4D85-8916-2737E00BA691}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{AC0FAC9D-4499-45D3-B2D4-3EA1A5B0BD23}">
                 </ObjectReference>
             </Areas>
-            <OnEnterActions>
-                <ObjectReference InstanceId="{10C17CA8-EE33-4B20-8006-E5887D0F01B3}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{8BD2679D-2CBD-4843-87B4-C51F2751358B}">
-                </ObjectReference>
-            </OnEnterActions>
             <OnEnterFilter>
                 <ObjectReference InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
                 </ObjectReference>
@@ -611,18 +665,16 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             <Descr>Passed G2</Descr>
             <ObjectFilter>Reference</ObjectFilter>
             <Activated>False</Activated>
+            <OnEnterActions>
+                <ObjectReference InstanceId="{0FA75F48-7F90-4E43-9D30-51E5C29A434B}">
+                </ObjectReference>
+            </OnEnterActions>
             <Areas>
                 <ObjectReference InstanceId="{B96BC965-CE05-4CC9-B6CB-92DD3B53708B}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{3DA489CE-214D-463E-A8A1-B24662DFA614}">
                 </ObjectReference>
             </Areas>
-            <OnEnterActions>
-                <ObjectReference InstanceId="{617163A6-96A8-497B-A9D2-3BA0CD2DDA09}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{AA28C33A-13B8-480A-AE91-72D64C1FBB53}">
-                </ObjectReference>
-            </OnEnterActions>
             <OnEnterFilter>
                 <ObjectReference InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
                 </ObjectReference>
@@ -649,18 +701,16 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             <Descr>Passed G3</Descr>
             <ObjectFilter>Reference</ObjectFilter>
             <Activated>False</Activated>
+            <OnEnterActions>
+                <ObjectReference InstanceId="{BEA2D3E0-AF0E-4E32-B5CF-F8797746ECBD}">
+                </ObjectReference>
+            </OnEnterActions>
             <Areas>
                 <ObjectReference InstanceId="{259FAEBC-0654-468D-ADAE-2CEACA2687E2}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{3B7FAC35-0F9A-4C20-840F-DB884FAF52D2}">
                 </ObjectReference>
             </Areas>
-            <OnEnterActions>
-                <ObjectReference InstanceId="{46354FA5-F4D6-4E42-9527-52F81B69B066}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{33BFB00E-7602-410F-A1F1-BF18085CC3D9}">
-                </ObjectReference>
-            </OnEnterActions>
             <OnEnterFilter>
                 <ObjectReference InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
                 </ObjectReference>
@@ -670,18 +720,16 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             <Descr>Passed G4</Descr>
             <ObjectFilter>Reference</ObjectFilter>
             <Activated>False</Activated>
+            <OnEnterActions>
+                <ObjectReference InstanceId="{69790DF0-A0BA-40E4-ACAF-3A24C32959DA}">
+                </ObjectReference>
+            </OnEnterActions>
             <Areas>
                 <ObjectReference InstanceId="{1CFC50CE-27F4-4368-B0C0-E026FE7F3903}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{C28D8E40-D2FD-4CBD-8F8A-781424455668}">
                 </ObjectReference>
             </Areas>
-            <OnEnterActions>
-                <ObjectReference InstanceId="{B8C135A6-4004-4D65-8B03-B9BF0D84B53C}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{F111DAD7-1144-4357-A80B-18B2D7BB400A}">
-                </ObjectReference>
-            </OnEnterActions>
             <OnEnterFilter>
                 <ObjectReference InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
                 </ObjectReference>
@@ -708,18 +756,16 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             <Descr>Passed G5</Descr>
             <ObjectFilter>Reference</ObjectFilter>
             <Activated>False</Activated>
+            <OnEnterActions>
+                <ObjectReference InstanceId="{E049D260-D993-4BE7-8BA9-1B9F415DF8C0}">
+                </ObjectReference>
+            </OnEnterActions>
             <Areas>
                 <ObjectReference InstanceId="{2930EAE8-1931-43AF-B624-5189BB05C145}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{A2150285-BBA1-42EE-94E2-609443120A9F}">
                 </ObjectReference>
             </Areas>
-            <OnEnterActions>
-                <ObjectReference InstanceId="{55C3472D-57F2-4909-8F85-9B5B9488D15A}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{D411CD6B-4A39-4896-9DEA-15BF8B7FAF7A}">
-                </ObjectReference>
-            </OnEnterActions>
             <OnEnterFilter>
                 <ObjectReference InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
                 </ObjectReference>
@@ -746,18 +792,16 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             <Descr>Passed G6</Descr>
             <ObjectFilter>Reference</ObjectFilter>
             <Activated>False</Activated>
+            <OnEnterActions>
+                <ObjectReference InstanceId="{7E9802AD-2040-4A78-873A-5B5882DE1C6F}">
+                </ObjectReference>
+            </OnEnterActions>
             <Areas>
                 <ObjectReference InstanceId="{0A10D06E-87F4-42C0-8906-D58B7E92C30D}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{02E8E43B-7D86-4DF8-A730-0DAD78F1A7DE}">
                 </ObjectReference>
             </Areas>
-            <OnEnterActions>
-                <ObjectReference InstanceId="{540D7143-5813-4089-8105-2F31099E5341}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{554A4184-1412-4D18-ADB6-DA2D8D39091B}">
-                </ObjectReference>
-            </OnEnterActions>
             <OnEnterFilter>
                 <ObjectReference InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
                 </ObjectReference>
@@ -781,30 +825,183 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             </OnEnterFilter>
         </SimMission.ProximityTrigger>
         <SimMission.ScriptTrigger InstanceId="{B76286AF-F852-4037-98CE-5D4B93184728}">
-            <Descr>Continue 2</Descr>
+            <Descr>Q1Answered_Trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
+local lvl=&apos;6&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_surveyQ1Answered(lvl)</Script>
             <Actions>
                 <ObjectReference InstanceId="{CF7BB17F-0CD0-4A3E-84D5-4158B4C26C96}">
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
         <SimMission.ScriptTrigger InstanceId="{28EC3561-56FC-4E51-8548-031F1AD7AC7F}">
-            <Descr>Continue 3</Descr>
+            <Descr>Q2Answered_Trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
+local lvl=&apos;6&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_surveyQ2Answered(lvl)</Script>
             <Actions>
-                <ObjectReference InstanceId="{473EF6C6-CABD-4E81-95BA-2676E8686828}">
+                <ObjectReference InstanceId="{C3899989-4726-4BED-8BAD-E2D0660BB71B}">
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{9A7F5C60-8AF9-434B-810D-A32683ACD161}">
-            <Descr>KillCode</Descr>
+        <SimMission.ScriptTrigger InstanceId="{835DB61B-973F-4435-8E69-408553AFED8B}">
+            <Descr>pollData_trigger</Descr>
             <Script>!lua
-return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
+local lvl=&apos;6&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_pollData(lvl)</Script>
             <Actions>
+                <ObjectReference InstanceId="{395DB581-238C-49D1-A273-31D28D3F193D}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{38A13F91-80FF-4259-BC69-16570F450218}">
+            <Descr>nextLvl_trigger</Descr>
+            <Script>!lua
+local lvl=&apos;6&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_OR_nextLvl(lvl)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{C3899989-4726-4BED-8BAD-E2D0660BB71B}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{7BA6671E-810F-4329-B02A-6B46C701C06E}">
+            <Descr>resetLvl_trigger</Descr>
+            <Script>!lua
+local lvl=&apos;6&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_OR_resetLvl(lvl)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{D224E7C8-024A-4EBE-99C6-4B100C6CAED2}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{3972D6BD-20DA-44BD-B93A-4B842A8411ED}">
+            <Descr>promptSurvey_trigger</Descr>
+            <Script>!lua
+local lvl=&apos;6&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_OR_promptSurvey (lvl)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{554A4184-1412-4D18-ADB6-DA2D8D39091B}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{2FD958F0-47CC-4073-A24A-166D44BEC196}">
+            <Descr>G1Passed_trigger</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+local lvl=&apos;6&apos;
+local gate=1
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gatePassed(lvl, gate)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{10C17CA8-EE33-4B20-8006-E5887D0F01B3}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{8BD2679D-2CBD-4843-87B4-C51F2751358B}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{A974D0B3-0601-479F-AA29-7E2FFB0B5E30}">
+            <Descr>G2Passed_trigger</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+local lvl=&apos;6&apos;
+local gate=2
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gatePassed(lvl, gate)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{617163A6-96A8-497B-A9D2-3BA0CD2DDA09}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{AA28C33A-13B8-480A-AE91-72D64C1FBB53}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{FF9287D5-6A0D-4DF0-BCCC-CE33EAEECEBC}">
+            <Descr>G3Passed_trigger</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+local lvl=&apos;6&apos;
+local gate=3
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gatePassed(lvl, gate)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{46354FA5-F4D6-4E42-9527-52F81B69B066}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{33BFB00E-7602-410F-A1F1-BF18085CC3D9}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{D13F59C9-25A0-482A-A4F0-9E10F5E48B39}">
+            <Descr>G4Passed_trigger</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+local lvl=&apos;6&apos;
+local gate=4
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gatePassed(lvl, gate)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{B8C135A6-4004-4D65-8B03-B9BF0D84B53C}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{F111DAD7-1144-4357-A80B-18B2D7BB400A}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{374CCA74-8A0C-4E4B-89DD-4F39CA60F5C2}">
+            <Descr>G5Passed_trigger</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+local lvl=&apos;6&apos;
+local gate=5
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gatePassed(lvl, gate)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{55C3472D-57F2-4909-8F85-9B5B9488D15A}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{D411CD6B-4A39-4896-9DEA-15BF8B7FAF7A}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{6298226F-F73A-4E24-94EE-50D21BAEE4D7}">
+            <Descr>G6Passed_trigger</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+local lvl=&apos;6&apos;
+local gate=6
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_gatePassed(lvl, gate)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{540D7143-5813-4089-8105-2F31099E5341}">
+                </ObjectReference>
                 <ObjectReference InstanceId="{554A4184-1412-4D18-ADB6-DA2D8D39091B}">
                 </ObjectReference>
             </Actions>
@@ -822,8 +1019,8 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{48422332-68A2-4106-99FF-953A9671E2D5}">
             <Descr>Gate1</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N34° 5' 4.812000",E139° 45' 23.976000",+009400.00</WorldPosition>
-            <Orientation>7.000000,2.000000,259.000000</Orientation>
+            <WorldPosition>N35° 31' 16.511731",E139° 50' 18.411903",+009164.78</WorldPosition>
+            <Orientation>0.000000,0.000000,0.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -832,8 +1029,8 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{94B9C792-C697-475D-AE1E-C04FDE1AC631}">
             <Descr>Gate2</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N34° 0' 31.932000",E139° 51' 18.828000",+009500.00</WorldPosition>
-            <Orientation>0.000000,2.000000,310.000000</Orientation>
+            <WorldPosition>N35° 31' 46.230242",E139° 50' 18.430330",+009164.78</WorldPosition>
+            <Orientation>0.000000,0.000000,0.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -843,8 +1040,8 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{C2FC2FB1-37B9-4D65-8C35-2AD96083D74D}">
             <Descr>Gate3</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N34° 5' 38.724000",E139° 52' 18.768000",+009500.00</WorldPosition>
-            <Orientation>10.000000,0.000000,186.000000</Orientation>
+            <WorldPosition>N35° 32' 16.168708",E139° 50' 18.448756",+009164.78</WorldPosition>
+            <Orientation>0.000000,0.000000,0.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -854,8 +1051,8 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{B5B4E48B-743F-4BAB-ABBA-274F20BABDA5}">
             <Descr>Gate4</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N34° 11' 26.340000",E139° 54' 23.652000",+009700.00</WorldPosition>
-            <Orientation>10.000000,0.000000,8.000000</Orientation>
+            <WorldPosition>N35° 32' 40.262459",E139° 50' 18.467183",+009164.78</WorldPosition>
+            <Orientation>0.000000,0.000000,0.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -865,8 +1062,8 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{72836C13-D188-46F8-933D-D0FCC5FF4AE0}">
             <Descr>Gate5</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N34° 15' 9.252000",E139° 44' 18.168000",+009800.00</WorldPosition>
-            <Orientation>3.000000,180.000000,108.000000</Orientation>
+            <WorldPosition>N35° 33' 7.150197",E139° 50' 18.485609",+009164.78</WorldPosition>
+            <Orientation>0.000000,0.000000,0.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -876,43 +1073,13 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
         <SceneryObjects.LibraryObject InstanceId="{F91B5808-4871-4625-883A-0C5989839304}">
             <Descr>Gate6</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N34° 15' 12.996000",E139° 29' 16.116000",+009900.00</WorldPosition>
-            <Orientation>10.000000,0.000000,284.000000</Orientation>
+            <WorldPosition>N35° 33' 34.711365",E139° 50' 18.504036",+009164.78</WorldPosition>
+            <Orientation>0.000000,0.000000,0.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
             <NoCrash>False</NoCrash>
             <Activated>False</Activated>
-        </SceneryObjects.LibraryObject>
-        <SceneryObjects.LibraryObject InstanceId="{424FF99F-FE78-4CB5-BB54-D448640907EC}">
-            <Descr>Scenery8</Descr>
-            <MDLGuid>{AAD65D6A-671E-4B98-BD9F-CA4BC7B8FB51}</MDLGuid>
-            <WorldPosition>N34° 4' 51.168000",E139° 42' 41.436000",+009400.00</WorldPosition>
-            <Orientation>358.000000,90.000000,211.484000</Orientation>
-            <Scale>16.000000</Scale>
-            <AltitudeIsAGL>True</AltitudeIsAGL>
-            <NoAutogenSuppression>True</NoAutogenSuppression>
-            <NoCrash>False</NoCrash>
-        </SceneryObjects.LibraryObject>
-        <SceneryObjects.LibraryObject InstanceId="{0EF72B32-1C7E-48F0-A09D-938B390ADFBB}">
-            <Descr>Scenery9</Descr>
-            <MDLGuid>{AAD65D6A-671E-4B98-BD9F-CA4BC7B8FB51}</MDLGuid>
-            <WorldPosition>N33° 59' 13.812000",E139° 52' 18.768000",+009500.00</WorldPosition>
-            <Orientation>359.000000,97.000000,99.484000</Orientation>
-            <Scale>16.000000</Scale>
-            <AltitudeIsAGL>True</AltitudeIsAGL>
-            <NoAutogenSuppression>True</NoAutogenSuppression>
-            <NoCrash>False</NoCrash>
-        </SceneryObjects.LibraryObject>
-        <SceneryObjects.LibraryObject InstanceId="{5405D254-A08E-4CAE-8651-A06C6B473798}">
-            <Descr>Scenery10</Descr>
-            <MDLGuid>{AAD65D6A-671E-4B98-BD9F-CA4BC7B8FB51}</MDLGuid>
-            <WorldPosition>N34° 12' 48.924000",E139° 55' 28.272000",+009800.00</WorldPosition>
-            <Orientation>353.000000,88.000000,358.484000</Orientation>
-            <Scale>16.000000</Scale>
-            <AltitudeIsAGL>True</AltitudeIsAGL>
-            <NoAutogenSuppression>True</NoAutogenSuppression>
-            <NoCrash>False</NoCrash>
         </SceneryObjects.LibraryObject>
         <SimMissionUI.ScenarioMetadata InstanceId="{1266AFE6-24BD-4695-86F8-3487E04D0169}">
             <Descr>Scenario Desc Metadata</Descr>
@@ -934,7 +1101,7 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
         </SimMission.Camera>
         <SimMission.UIPanelObject InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
             <Descr>Controls</Descr>
-            <UIPanelFileName>resources\html\controls.html</UIPanelFileName>
+            <UIPanelFileName>html\controls.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
@@ -949,8 +1116,8 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
             </AttachedWorldPosition>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
-            <Descr>Intro</Descr>
-            <UIPanelFileName>resources\html\lvl6_intro.html</UIPanelFileName>
+            <Descr>intro_UI</Descr>
+            <UIPanelFileName>html\lvl6_intro.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
@@ -959,6 +1126,7 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
             <OriginY>-0.400000</OriginY>
+            <Activated>False</Activated>
             <AttachedWorldPosition>
                 <WorldPosition>N35° 27' 29.043479",E139° 44' 41.345215",+000064.00</WorldPosition>
                 <AltitudeIsAGL>True</AltitudeIsAGL>
@@ -1037,7 +1205,7 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
         </SimMission.PointOfInterest>
         <SimMission.UIPanelObject InstanceId="{DA7FAE02-F6F2-4B66-9F37-749B4C2695A0}">
             <Descr>Question1</Descr>
-            <UIPanelFileName>resources\html\question1.html</UIPanelFileName>
+            <UIPanelFileName>html\question1.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
@@ -1045,7 +1213,7 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
-            <OriginY>-0.600000</OriginY>
+            <OriginY>-0.610000</OriginY>
             <Activated>False</Activated>
             <AttachedWorldPosition>
                 <WorldPosition>N35° 27' 29.043479",E139° 44' 41.345215",+000064.00</WorldPosition>
@@ -1054,7 +1222,7 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{37E8A408-3679-4929-AE1B-8E026DCEE26F}">
             <Descr>Question2</Descr>
-            <UIPanelFileName>resources\html\question2.html</UIPanelFileName>
+            <UIPanelFileName>html\question2.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
@@ -1069,9 +1237,9 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
                 <AltitudeIsAGL>True</AltitudeIsAGL>
             </AttachedWorldPosition>
         </SimMission.UIPanelObject>
-        <SimMission.UIPanelObject InstanceId="{EAD285B3-304E-494C-92C5-A0DCF416B8DE}">
-            <Descr>Conclusion</Descr>
-            <UIPanelFileName>resources\html\complete.html</UIPanelFileName>
+        <SimMission.UIPanelObject InstanceId="{478B125B-2043-4CD0-8E1B-597C5938CAD6}">
+            <Descr>complete_UI</Descr>
+            <UIPanelFileName>html\complete.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
@@ -1105,14 +1273,12 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{37E8A408-3679-4929-AE1B-8E026DCEE26F}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{EAD285B3-304E-494C-92C5-A0DCF416B8DE}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{32341791-830D-4873-99AD-639D22D5950C}">
+                <ObjectReference InstanceId="{478B125B-2043-4CD0-8E1B-597C5938CAD6}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{5A57BB23-83B9-4E1E-89F0-2A2C933C6C35}">
-            <Descr>Init</Descr>
+            <Descr>init_Group</Descr>
             <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <GroupedObjects>
@@ -1123,7 +1289,7 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{900BE545-92FE-4EE9-8F62-BBC51D527B2A}">
-            <Descr>Continue1</Descr>
+            <Descr>startLvl_Group</Descr>
             <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <GroupedObjects>
@@ -1152,6 +1318,10 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{10C17CA8-EE33-4B20-8006-E5887D0F01B3}">
                 </ObjectReference>
+                <ObjectReference InstanceId="{2FD958F0-47CC-4073-A24A-166D44BEC196}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{E326CB64-6F23-4671-ABE5-173AA5640C9B}">
+                </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{0A2D3BE6-3B2D-4EB2-97C7-31DC2B4D08AB}">
@@ -1176,6 +1346,10 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
                 <ObjectReference InstanceId="{617163A6-96A8-497B-A9D2-3BA0CD2DDA09}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{6CFDF8B7-F6EA-451F-9572-4FA78DAB5279}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{0FA75F48-7F90-4E43-9D30-51E5C29A434B}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{A974D0B3-0601-479F-AA29-7E2FFB0B5E30}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
@@ -1202,6 +1376,10 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{46354FA5-F4D6-4E42-9527-52F81B69B066}">
                 </ObjectReference>
+                <ObjectReference InstanceId="{FF9287D5-6A0D-4DF0-BCCC-CE33EAEECEBC}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{BEA2D3E0-AF0E-4E32-B5CF-F8797746ECBD}">
+                </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{16587E80-1D8F-4BC8-B2F5-EEE70A1035D1}">
@@ -1226,6 +1404,10 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
                 <ObjectReference InstanceId="{E70F735E-6BAC-4ED1-B338-B6B00CE0FAF1}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{7BA5C367-E577-4021-BC2D-4D19FE602D98}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{69790DF0-A0BA-40E4-ACAF-3A24C32959DA}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{D13F59C9-25A0-482A-A4F0-9E10F5E48B39}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
@@ -1252,6 +1434,10 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{638E4AC8-A73E-4C1B-8D1D-3EF319E1A639}">
                 </ObjectReference>
+                <ObjectReference InstanceId="{374CCA74-8A0C-4E4B-89DD-4F39CA60F5C2}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{E049D260-D993-4BE7-8BA9-1B9F415DF8C0}">
+                </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{B8B41345-7FEB-4177-B1D4-F3C4C09B6107}">
@@ -1276,6 +1462,10 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
                 <ObjectReference InstanceId="{6CC282FB-1FCB-4A15-938E-6480C899EF92}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{B9BC51A3-48D7-474B-9BB7-0D431D0CD5FA}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{7E9802AD-2040-4A78-873A-5B5882DE1C6F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{6298226F-F73A-4E24-94EE-50D21BAEE4D7}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
@@ -1309,16 +1499,30 @@ return varget(&apos;L:_killcode&apos;,&apos;number&apos;)==1</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{CC5B0B0B-B1CA-4B2E-B26F-31DAE852C5AF}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{473EF6C6-CABD-4E81-95BA-2676E8686828}">
+                <ObjectReference InstanceId="{C3899989-4726-4BED-8BAD-E2D0660BB71B}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{340F5DAA-717E-4939-9C2A-49AF6F8F9619}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{E1E485D4-9D83-43B8-A15B-76395FA50FA9}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
-        <ObjectGroup InstanceId="{C1BC898A-12FA-45CF-BC54-8979CC49EC15}">
-            <Descr>KillCode</Descr>
+        <ObjectGroup InstanceId="{556EED26-D2B0-41BF-9E7B-F445F9DC7C39}">
+            <Descr>Triggers</Descr>
             <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <GroupedObjects>
-                <ObjectReference InstanceId="{9A7F5C60-8AF9-434B-810D-A32683ACD161}">
+                <ObjectReference InstanceId="{835DB61B-973F-4435-8E69-408553AFED8B}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{38A13F91-80FF-4259-BC69-16570F450218}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{7BA6671E-810F-4329-B02A-6B46C701C06E}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{3972D6BD-20DA-44BD-B93A-4B842A8411ED}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{395DB581-238C-49D1-A273-31D28D3F193D}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{D224E7C8-024A-4EBE-99C6-4B100C6CAED2}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>

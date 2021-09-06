@@ -5,8 +5,8 @@
     <Filename>intro.fxml</Filename>
     <Flight.Sections>
         <Section Name="Main">
-            <Property Name="Title" Value="Intro [MAIN PROJECT]" />
-            <Property Name="Description" Value="Showcases an introduction to the research study project." />
+            <Property Name="Title" Value="Intro [TOME Testbed]" />
+            <Property Name="Description" Value="Introduces users to the testbed application as a participant." />
             <Property Name="AppVersion" Value="5.1.12.26829" />
             <Property Name="ScenarioVersion" Value="0" />
         </Section>
@@ -98,7 +98,8 @@
             <Property Name="ChaseDirection" Value="-0" />
             <Property Name="ChaseDistance" Value="60" />
             <Property Name="ChaseAltitude" Value="0.9144" />
-            <Property Name="PostProcess.0" Value="FXAAResolve" />
+            <Property Name="PostProcess.0" Value="HDRPostProcess" />
+            <Property Name="PostProcess.1" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.6">
             <Property Name="Guid" Value="{BCA3FDD1-FB83-4BBA-8407-4922A7F0D00D}" />
@@ -148,11 +149,12 @@
             <Property Name="SensorMode" Value="0" />
             <Property Name="Rotation" Value="0.48476925492286682129, 34.018939971923828125, 0" />
             <Property Name="FieldOfView" Value="0, 0" />
-            <Property Name="PostProcess.0" Value="FXAAResolve" />
+            <Property Name="PostProcess.0" Value="HDRPostProcess" />
+            <Property Name="PostProcess.1" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.10">
             <Property Name="Guid" Value="{AA8C80C0-9EE2-4284-A1C2-B20CD3F5F3D9}" />
-            <Property Name="Title" Value="RJTT" />
+            <Property Name="Title" Value="RJTF" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="8" />
             <Property Name="Translation" Value="0, 0, 0" />
@@ -163,7 +165,7 @@
         </Section>
         <Section Name="Camera.1.11">
             <Property Name="Guid" Value="{607C4520-CA6F-4135-AE10-8BF28838068F}" />
-            <Property Name="Title" Value="RJTT-5" />
+            <Property Name="Title" Value="RJTF-17" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.30000001192092895508" />
             <Property Name="Translation" Value="0, 0, 0" />
@@ -296,7 +298,7 @@
             <Property Name="PostProcess.0" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.24">
-            <Property Name="Guid" Value="{04FD9680-E689-487C-85F3-7C21B8AD6DC7}" />
+            <Property Name="Guid" Value="{00130485-A62D-42D9-81C1-39175DED40AB}" />
             <Property Name="Title" Value="UICam Object Camera View" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
@@ -733,9 +735,9 @@
             <Property Name="Latitude" Value="N35&#xB0; 32&apos; 25.20&quot;" />
             <Property Name="Longitude" Value="E139&#xB0; 48&apos; 16.80&quot;" />
             <Property Name="Altitude" Value="+000026.00" />
-            <Property Name="Pitch" Value="-0" />
+            <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
-            <Property Name="Heading" Value="-30.040008220821633245" />
+            <Property Name="Heading" Value="-30.040008137002566002" />
             <Property Name="PVelBodyAxis" Value="0" />
             <Property Name="BVelBodyAxis" Value="0" />
             <Property Name="HVelBodyAxis" Value="0" />
@@ -920,9 +922,9 @@
             <Property Name="LeftFlap" Value="000.00" />
             <Property Name="RightFlap" Value="000.00" />
             <Property Name="GearsHandle" Value="000.01" />
-            <Property Name="Gear1" Value="099.14" />
-            <Property Name="Gear2" Value="099.14" />
-            <Property Name="Gear3" Value="099.14" />
+            <Property Name="Gear1" Value="099.07" />
+            <Property Name="Gear2" Value="099.07" />
+            <Property Name="Gear3" Value="099.07" />
             <Property Name="YokeY" Value="050.00" />
             <Property Name="YokeX" Value="050.00" />
             <Property Name="Rudder" Value="050.00" />
@@ -945,7 +947,7 @@
             <Property Name="Latitude" Value="N35&#xB0; 32&apos; 25.20&quot;" />
             <Property Name="Longitude" Value="E139&#xB0; 48&apos; 16.80&quot;" />
             <Property Name="Altitude" Value="+000026.00" />
-            <Property Name="Pitch" Value="-0" />
+            <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
             <Property Name="Heading" Value="49.999989308416843414" />
             <Property Name="PVelBodyAxis" Value="0" />
@@ -975,7 +977,7 @@
             <Property Name="UndocCoords" Value="0, 0, 0, 0" />
         </Section>
         <Section Name="ResourcePath">
-            <Property Name="Path" Value="../" />
+            <Property Name="Path" Value="..\" />
         </Section>
         <Section Name="SessionInfo">
             <Property Name="StartTime" Value="63720320400" />

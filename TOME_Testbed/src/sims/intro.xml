@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <SimBase.Document Type="ObjectFile" version="5,1">
-    <Descr>Showcases an introduction to the research study project.</Descr>
-    <Title>Intro [MAIN PROJECT]</Title>
+    <Descr>Introduces users to the testbed application as a participant.</Descr>
+    <Title>Intro [TOME Testbed]</Title>
     <WorldBase.Flight>
         <SimContain.UserOwnship InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
             <AltitudeIsAGL>True</AltitudeIsAGL>
@@ -77,7 +77,7 @@ return EVENTS.intro_firstLvl()</Script>
         </SimMission.Camera>
         <SimMission.UIPanelObject InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
             <Descr>Controls</Descr>
-            <UIPanelFileName>html/controls.html</UIPanelFileName>
+            <UIPanelFileName>html\controls.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
@@ -93,7 +93,7 @@ return EVENTS.intro_firstLvl()</Script>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
             <Descr>Intro</Descr>
-            <UIPanelFileName>html/intro.html</UIPanelFileName>
+            <UIPanelFileName>html\intro.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>

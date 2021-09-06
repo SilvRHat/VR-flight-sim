@@ -5,8 +5,8 @@
     <Filename>level2.fxml</Filename>
     <Flight.Sections>
         <Section Name="Main">
-            <Property Name="Title" Value="Level 2 [MAIN PROJECT]" />
-            <Property Name="Description" Value="Unfinished product for level 2" />
+            <Property Name="Title" Value="Level 2 - Minor Turns [TOME Testbed]" />
+            <Property Name="Description" Value="Second level of TOME Testbed Application; features 6 gates requiring user to perform minor turns" />
             <Property Name="AppVersion" Value="5.1.12.26829" />
             <Property Name="ScenarioVersion" Value="0" />
         </Section>
@@ -278,7 +278,7 @@
             <Property Name="PostProcess.0" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.22">
-            <Property Name="Guid" Value="{F970D85B-191C-4B97-A2E4-796388E0365C}" />
+            <Property Name="Guid" Value="{B88C420F-33B3-4F0C-A381-D53EC384E156}" />
             <Property Name="Title" Value="UICam Object Camera View" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
@@ -355,7 +355,7 @@
             <Property Name="WaypointNext" Value="0" />
             <Property Name="AltCleared" Value="-1" />
             <Property Name="HdgAssigned" Value="-1" />
-            <Property Name="SquawkAssigned" Value="7606784" />
+            <Property Name="SquawkAssigned" Value="871305728" />
             <Property Name="LandingSequence" Value="LANDING_NONE" />
             <Property Name="DepartureRequest" Value="DEPARTURE_VFR_REQUEST_NONE" />
             <Property Name="ParkingRequest" Value="PARKING_NAME_NONE" />
@@ -736,16 +736,16 @@
         <Section Name="SimVars.0">
             <Property Name="Latitude" Value="N35&#xB0; 28&apos; 2.28&quot;" />
             <Property Name="Longitude" Value="E140&#xB0; 40&apos; 39.90&quot;" />
-            <Property Name="Altitude" Value="+009999.36" />
+            <Property Name="Altitude" Value="+009999.00" />
             <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
-            <Property Name="Heading" Value="91.499999994412064552" />
+            <Property Name="Heading" Value="90.999999102205038071" />
             <Property Name="PVelBodyAxis" Value="0" />
             <Property Name="BVelBodyAxis" Value="0" />
             <Property Name="HVelBodyAxis" Value="0" />
             <Property Name="XVelBodyAxis" Value="0" />
             <Property Name="YVelBodyAxis" Value="0" />
-            <Property Name="ZVelBodyAxis" Value="438.83056284611518549" />
+            <Property Name="ZVelBodyAxis" Value="438.8305628462878758" />
             <Property Name="SimOnGround" Value="False" />
             <Property Name="OnPlatformHeight" Value="-9999999999" />
             <Property Name="AssociationID" Value="0" />
@@ -924,9 +924,9 @@
             <Property Name="LeftFlap" Value="000.00" />
             <Property Name="RightFlap" Value="000.00" />
             <Property Name="GearsHandle" Value="000.01" />
-            <Property Name="Gear1" Value="098.97" />
-            <Property Name="Gear2" Value="098.97" />
-            <Property Name="Gear3" Value="098.97" />
+            <Property Name="Gear1" Value="098.74" />
+            <Property Name="Gear2" Value="098.74" />
+            <Property Name="Gear3" Value="098.74" />
             <Property Name="YokeY" Value="050.00" />
             <Property Name="YokeX" Value="050.00" />
             <Property Name="Rudder" Value="050.00" />
@@ -948,7 +948,7 @@
             <Property Name="AvatarCamera" Value="{00000000-0000-0000-0000-000000000000}" />
             <Property Name="Latitude" Value="N35&#xB0; 28&apos; 2.28&quot;" />
             <Property Name="Longitude" Value="E140&#xB0; 40&apos; 39.90&quot;" />
-            <Property Name="Altitude" Value="+009999.36" />
+            <Property Name="Altitude" Value="+009999.00" />
             <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
             <Property Name="Heading" Value="49.999989308416843414" />
@@ -979,7 +979,7 @@
             <Property Name="UndocCoords" Value="0, 0, 0, 0" />
         </Section>
         <Section Name="ResourcePath">
-            <Property Name="Path" Value="../" />
+            <Property Name="Path" Value="..\" />
         </Section>
         <Section Name="SessionInfo">
             <Property Name="StartTime" Value="63720320400" />

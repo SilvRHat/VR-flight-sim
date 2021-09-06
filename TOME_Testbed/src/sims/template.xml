@@ -5,13 +5,13 @@
     <Title>TEMPLATE [MAIN PROJECT]</Title>
     <WorldBase.Flight>
         <SimContain.UserOwnship InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
-            <SpeedKnots>260.000000</SpeedKnots>
+            <SpeedKnots>154.045792</SpeedKnots>
             <AltitudeIsAGL>True</AltitudeIsAGL>
         </SimContain.UserOwnship>
         <SimContain.UserAvatar InstanceId="{508FDC98-BF36-4C0F-B22D-27045DF1A0CF}">
         </SimContain.UserAvatar>
         <SimMission.ObjectActivationAction InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
-            <Descr>InitActivate</Descr>
+            <Descr>initActivate_Action</Descr>
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
                 </ObjectReference>
@@ -20,14 +20,14 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.SetPauseAction InstanceId="{DDADA40A-57F4-4A03-8CF7-8D463D1E1719}">
-            <Descr>Pause</Descr>
+            <Descr>pause_Action</Descr>
             <PauseFlight>True</PauseFlight>
         </SimMission.SetPauseAction>
         <SimMission.SetPauseAction InstanceId="{3471EFE2-1D46-4784-AD0F-09CF33084FF0}">
-            <Descr>Unpause</Descr>
+            <Descr>unpause_Action</Descr>
         </SimMission.SetPauseAction>
         <SimMission.ObjectActivationAction InstanceId="{81363D06-593C-4F24-A80C-B8F0AD8F5791}">
-            <Descr>Disable UI</Descr>
+            <Descr>diableUI_Action</Descr>
             <NewObjectState>False</NewObjectState>
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{DDB9694E-4140-4E16-9412-F6957840000B}">
@@ -41,7 +41,7 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ScriptAction InstanceId="{8110B88C-9EA1-42EA-B39D-25EEAFED0109}">
-            <Descr>Set Hit Gate 1</Descr>
+            <Descr>G1Hit_ScriptAction</Descr>
             <Script>!lua
 local lvl=&apos;template&apos;
 local gate=1
@@ -51,7 +51,7 @@ local EVENTS=require(&apos;src\\scripts\\events&apos;)
 return EVENTS.lvl_gateHit(lvl, gate)</Script>
         </SimMission.ScriptAction>
         <SimMission.ObjectActivationAction InstanceId="{10C17CA8-EE33-4B20-8006-E5887D0F01B3}">
-            <Descr>disableG1_Action</Descr>
+            <Descr>Disable G1</Descr>
             <NewObjectState>False</NewObjectState>
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{48422332-68A2-4106-99FF-953A9671E2D5}">
@@ -92,7 +92,7 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ScriptAction InstanceId="{6CFDF8B7-F6EA-451F-9572-4FA78DAB5279}">
-            <Descr>Set Hit Gate2</Descr>
+            <Descr>G2Hit_ScriptAction</Descr>
             <Script>!lua
 local lvl=&apos;template&apos;
 local gate=2
@@ -102,7 +102,7 @@ local EVENTS=require(&apos;src\\scripts\\events&apos;)
 return EVENTS.lvl_gateHit(lvl, gate)</Script>
         </SimMission.ScriptAction>
         <SimMission.ScriptAction InstanceId="{2DA92B2E-708E-4351-8FA3-F0DD34BC0EBD}">
-            <Descr>Set Hit Gate3</Descr>
+            <Descr>G3Hit_ScriptAction</Descr>
             <Script>!lua
 local lvl=&apos;template&apos;
 local gate=3
@@ -166,7 +166,7 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ScriptAction InstanceId="{E70F735E-6BAC-4ED1-B338-B6B00CE0FAF1}">
-            <Descr>Set Hit Gate4</Descr>
+            <Descr>G4Hit_ScriptAction</Descr>
             <Script>!lua
 local lvl=&apos;template&apos;
 local gate=4
@@ -203,7 +203,7 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ScriptAction InstanceId="{0C696F61-442E-46F4-ADB1-F6BA19C413D9}">
-            <Descr>Set Hit Gate5</Descr>
+            <Descr>G5Hit_ScriptAction</Descr>
             <Script>!lua
 local lvl=&apos;template&apos;
 local gate=5
@@ -240,7 +240,7 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ScriptAction InstanceId="{6CC282FB-1FCB-4A15-938E-6480C899EF92}">
-            <Descr>Set Hit Gate6</Descr>
+            <Descr>G6Hit_ScriptAction</Descr>
             <Script>!lua
 local lvl=&apos;template&apos;
 local gate=6
@@ -264,7 +264,6 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
             <Descr>Set Survey Q1</Descr>
             <Script>!lua
 local lvl=&apos;template&apos;
-local gate=6
 function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
 
 local EVENTS=require(&apos;src\\scripts\\events&apos;)
@@ -280,7 +279,6 @@ return EVENTS.lvl_surveyQ1(lvl)</Script>
             <Descr>Set Survey Q2</Descr>
             <Script>!lua
 local lvl=&apos;template&apos;
-local gate=6
 function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
 
 local EVENTS=require(&apos;src\\scripts\\events&apos;)
@@ -313,53 +311,57 @@ return EVENTS.lvl_surveyQ2(lvl)</Script>
             <Descr>Load Lvl2</Descr>
             <ScenarioFileName>sims\template.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
-        <SimMission.ObjectActivationAction InstanceId="{24567588-80C6-4B43-B8B1-D8A5AF977E46}">
-            <Descr>passedG1_Action</Descr>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{F1EF6009-A792-4AAB-9F4B-D21736CCFEE4}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{2482998F-9AE6-46CF-B1B5-E222A30B6C65}">
-            <Descr>G2Passed_Action</Descr>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{EEFAC805-C324-4C32-8279-7745C1A73969}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{AF3A5D44-5ECB-4BA9-8C46-ACDE8E8EC39C}">
-            <Descr>G3Passed_Action</Descr>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{98ECE090-EB86-421E-8B53-7205A13027DB}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{099252F2-E528-4D96-9EB5-E36BAB7E1FCA}">
-            <Descr>G4Passed_Action</Descr>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{0C064878-8B0F-454C-8F0F-8E3632B7CB4B}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{C445F8D4-4BBC-4EF0-A7DB-26C06B45B523}">
-            <Descr>G5Passed_Action</Descr>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{F65647DE-3E86-4659-9355-688A99DD7CDF}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{CEC763F9-FA45-4142-B70C-EBF4096D6B9B}">
-            <Descr>G6Passed_Action</Descr>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{3997BA76-F2F3-4F6C-9A9D-A9980D5AA802}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.ScriptAction InstanceId="{B950D1BB-6EAF-4A4B-9557-CCF2883E49D5}">
-            <Descr>EmptyAction</Descr>
+        <SimMission.ScriptAction InstanceId="{395DB581-238C-49D1-A273-31D28D3F193D}">
+            <Descr>Empty</Descr>
             <Script>!lua
 -- Do nothing</Script>
         </SimMission.ScriptAction>
+        <SimMission.LoadScenarioAction InstanceId="{D224E7C8-024A-4EBE-99C6-4B100C6CAED2}">
+            <Descr>Reload</Descr>
+            <ScenarioFileName>sims\template.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.ObjectActivationAction InstanceId="{E326CB64-6F23-4671-ABE5-173AA5640C9B}">
+            <Descr>G1Passed_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{2FD958F0-47CC-4073-A24A-166D44BEC196}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{0FA75F48-7F90-4E43-9D30-51E5C29A434B}">
+            <Descr>G2Passed_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{A974D0B3-0601-479F-AA29-7E2FFB0B5E30}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{BEA2D3E0-AF0E-4E32-B5CF-F8797746ECBD}">
+            <Descr>G3Passed_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{FF9287D5-6A0D-4DF0-BCCC-CE33EAEECEBC}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{69790DF0-A0BA-40E4-ACAF-3A24C32959DA}">
+            <Descr>G4Passed_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{D13F59C9-25A0-482A-A4F0-9E10F5E48B39}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{E049D260-D993-4BE7-8BA9-1B9F415DF8C0}">
+            <Descr>G5Passed_action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{374CCA74-8A0C-4E4B-89DD-4F39CA60F5C2}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{7E9802AD-2040-4A78-873A-5B5882DE1C6F}">
+            <Descr>G6Passed_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{6298226F-F73A-4E24-94EE-50D21BAEE4D7}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
         <SimMission.RectangleArea InstanceId="{CBD9545F-0CC2-4D85-8916-2737E00BA691}">
             <Descr>HitRegion G1</Descr>
             <Orientation>0.000000,0.000000,0.000000</Orientation>
@@ -562,7 +564,7 @@ return EVENTS.lvl_init(lvl)</Script>
             </Actions>
         </SimMission.ScriptTrigger>
         <SimMission.ScriptTrigger InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
-            <Descr>Continue1</Descr>
+            <Descr>startLvl_trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
 local lvl=&apos;template&apos;
@@ -578,7 +580,7 @@ return EVENTS.lvl_start(lvl)</Script>
             </Actions>
         </SimMission.ScriptTrigger>
         <SimMission.ProximityTrigger InstanceId="{BFC06788-A6B8-4E27-8E83-53B24071C7CE}">
-            <Descr>hitG1_trigger</Descr>
+            <Descr>Success G1</Descr>
             <ObjectFilter>Reference</ObjectFilter>
             <OnEnterActions>
                 <ObjectReference InstanceId="{8110B88C-9EA1-42EA-B39D-25EEAFED0109}">
@@ -594,10 +596,10 @@ return EVENTS.lvl_start(lvl)</Script>
             </OnEnterFilter>
         </SimMission.ProximityTrigger>
         <SimMission.ProximityTrigger InstanceId="{D976880D-5B5F-43F9-9EE0-06DCB7E9F213}">
-            <Descr>passedG1_trigger</Descr>
+            <Descr>Passed G1</Descr>
             <ObjectFilter>Reference</ObjectFilter>
             <OnEnterActions>
-                <ObjectReference InstanceId="{24567588-80C6-4B43-B8B1-D8A5AF977E46}">
+                <ObjectReference InstanceId="{E326CB64-6F23-4671-ABE5-173AA5640C9B}">
                 </ObjectReference>
             </OnEnterActions>
             <Areas>
@@ -633,7 +635,7 @@ return EVENTS.lvl_start(lvl)</Script>
             <ObjectFilter>Reference</ObjectFilter>
             <Activated>False</Activated>
             <OnEnterActions>
-                <ObjectReference InstanceId="{2482998F-9AE6-46CF-B1B5-E222A30B6C65}">
+                <ObjectReference InstanceId="{0FA75F48-7F90-4E43-9D30-51E5C29A434B}">
                 </ObjectReference>
             </OnEnterActions>
             <Areas>
@@ -669,7 +671,7 @@ return EVENTS.lvl_start(lvl)</Script>
             <ObjectFilter>Reference</ObjectFilter>
             <Activated>False</Activated>
             <OnEnterActions>
-                <ObjectReference InstanceId="{AF3A5D44-5ECB-4BA9-8C46-ACDE8E8EC39C}">
+                <ObjectReference InstanceId="{BEA2D3E0-AF0E-4E32-B5CF-F8797746ECBD}">
                 </ObjectReference>
             </OnEnterActions>
             <Areas>
@@ -688,7 +690,7 @@ return EVENTS.lvl_start(lvl)</Script>
             <ObjectFilter>Reference</ObjectFilter>
             <Activated>False</Activated>
             <OnEnterActions>
-                <ObjectReference InstanceId="{099252F2-E528-4D96-9EB5-E36BAB7E1FCA}">
+                <ObjectReference InstanceId="{69790DF0-A0BA-40E4-ACAF-3A24C32959DA}">
                 </ObjectReference>
             </OnEnterActions>
             <Areas>
@@ -724,7 +726,7 @@ return EVENTS.lvl_start(lvl)</Script>
             <ObjectFilter>Reference</ObjectFilter>
             <Activated>False</Activated>
             <OnEnterActions>
-                <ObjectReference InstanceId="{C445F8D4-4BBC-4EF0-A7DB-26C06B45B523}">
+                <ObjectReference InstanceId="{E049D260-D993-4BE7-8BA9-1B9F415DF8C0}">
                 </ObjectReference>
             </OnEnterActions>
             <Areas>
@@ -760,7 +762,7 @@ return EVENTS.lvl_start(lvl)</Script>
             <ObjectFilter>Reference</ObjectFilter>
             <Activated>False</Activated>
             <OnEnterActions>
-                <ObjectReference InstanceId="{CEC763F9-FA45-4142-B70C-EBF4096D6B9B}">
+                <ObjectReference InstanceId="{7E9802AD-2040-4A78-873A-5B5882DE1C6F}">
                 </ObjectReference>
             </OnEnterActions>
             <Areas>
@@ -792,11 +794,10 @@ return EVENTS.lvl_start(lvl)</Script>
             </OnEnterFilter>
         </SimMission.ProximityTrigger>
         <SimMission.ScriptTrigger InstanceId="{B76286AF-F852-4037-98CE-5D4B93184728}">
-            <Descr>Continue 2</Descr>
+            <Descr>Q1Answered_Trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
 local lvl=&apos;template&apos;
-local gate=6
 function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
 
 local EVENTS=require(&apos;src\\scripts\\events&apos;)
@@ -807,11 +808,10 @@ return EVENTS.lvl_surveyQ1Answered(lvl)</Script>
             </Actions>
         </SimMission.ScriptTrigger>
         <SimMission.ScriptTrigger InstanceId="{28EC3561-56FC-4E51-8548-031F1AD7AC7F}">
-            <Descr>Continue 3</Descr>
+            <Descr>Q2Answered_Trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
 local lvl=&apos;template&apos;
-local gate=6
 function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
 
 local EVENTS=require(&apos;src\\scripts\\events&apos;)
@@ -821,8 +821,60 @@ return EVENTS.lvl_surveyQ2Answered(lvl)</Script>
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{F1EF6009-A792-4AAB-9F4B-D21736CCFEE4}">
-            <Descr>passedG1script_trigger</Descr>
+        <SimMission.ScriptTrigger InstanceId="{835DB61B-973F-4435-8E69-408553AFED8B}">
+            <Descr>pollData_trigger</Descr>
+            <Script>!lua
+local lvl=&apos;template&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_pollData(lvl)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{395DB581-238C-49D1-A273-31D28D3F193D}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{38A13F91-80FF-4259-BC69-16570F450218}">
+            <Descr>nextLvl_trigger</Descr>
+            <Script>!lua
+local lvl=&apos;template&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_OR_nextLvl(lvl)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{2B64D3EC-9B1B-4A97-A890-A8A653357C59}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{7BA6671E-810F-4329-B02A-6B46C701C06E}">
+            <Descr>resetLvl_trigger</Descr>
+            <Script>!lua
+local lvl=&apos;template&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_OR_resetLvl(lvl)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{D224E7C8-024A-4EBE-99C6-4B100C6CAED2}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{3972D6BD-20DA-44BD-B93A-4B842A8411ED}">
+            <Descr>promptSurvey_trigger</Descr>
+            <Script>!lua
+local lvl=&apos;template&apos;
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_OR_promptSurvey (lvl)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{554A4184-1412-4D18-ADB6-DA2D8D39091B}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{2FD958F0-47CC-4073-A24A-166D44BEC196}">
+            <Descr>G1Passed_trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
 local lvl=&apos;template&apos;
@@ -838,8 +890,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{EEFAC805-C324-4C32-8279-7745C1A73969}">
-            <Descr>G2PassedScript_trigger</Descr>
+        <SimMission.ScriptTrigger InstanceId="{A974D0B3-0601-479F-AA29-7E2FFB0B5E30}">
+            <Descr>G2Passed_trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
 local lvl=&apos;template&apos;
@@ -855,8 +907,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{98ECE090-EB86-421E-8B53-7205A13027DB}">
-            <Descr>G3PassedScript_trigger</Descr>
+        <SimMission.ScriptTrigger InstanceId="{FF9287D5-6A0D-4DF0-BCCC-CE33EAEECEBC}">
+            <Descr>G3Passed_trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
 local lvl=&apos;template&apos;
@@ -872,8 +924,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{0C064878-8B0F-454C-8F0F-8E3632B7CB4B}">
-            <Descr>G4PassedScript_trigger</Descr>
+        <SimMission.ScriptTrigger InstanceId="{D13F59C9-25A0-482A-A4F0-9E10F5E48B39}">
+            <Descr>G4Passed_trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
 local lvl=&apos;template&apos;
@@ -889,8 +941,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{F65647DE-3E86-4659-9355-688A99DD7CDF}">
-            <Descr>G5PassedScript_Action</Descr>
+        <SimMission.ScriptTrigger InstanceId="{374CCA74-8A0C-4E4B-89DD-4F39CA60F5C2}">
+            <Descr>G5Passed_trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
 local lvl=&apos;template&apos;
@@ -906,8 +958,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{3997BA76-F2F3-4F6C-9A9D-A9980D5AA802}">
-            <Descr>G6PassedScript_trigger</Descr>
+        <SimMission.ScriptTrigger InstanceId="{6298226F-F73A-4E24-94EE-50D21BAEE4D7}">
+            <Descr>G6Passed_trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
 local lvl=&apos;template&apos;
@@ -920,19 +972,6 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 <ObjectReference InstanceId="{540D7143-5813-4089-8105-2F31099E5341}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{554A4184-1412-4D18-ADB6-DA2D8D39091B}">
-                </ObjectReference>
-            </Actions>
-        </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{ABDF3E6C-7769-4971-8168-65654807511C}">
-            <Descr>pollP3DData</Descr>
-            <Script>!lua
-local lvl=&apos;template&apos;
-function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
-
-local EVENTS=require(&apos;src\\scripts\\events&apos;)
-return EVENTS.lvl_pollData(lvl)</Script>
-            <Actions>
-                <ObjectReference InstanceId="{B950D1BB-6EAF-4A4B-9557-CCF2883E49D5}">
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
@@ -1046,7 +1085,7 @@ return EVENTS.lvl_pollData(lvl)</Script>
             </AttachedWorldPosition>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
-            <Descr>Intro</Descr>
+            <Descr>intro_UI</Descr>
             <UIPanelFileName>html\lvl1_intro.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
@@ -1189,7 +1228,7 @@ return EVENTS.lvl_pollData(lvl)</Script>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{5A57BB23-83B9-4E1E-89F0-2A2C933C6C35}">
-            <Descr>Init</Descr>
+            <Descr>init_Group</Descr>
             <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <GroupedObjects>
@@ -1200,7 +1239,7 @@ return EVENTS.lvl_pollData(lvl)</Script>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{900BE545-92FE-4EE9-8F62-BBC51D527B2A}">
-            <Descr>Continue1</Descr>
+            <Descr>startLvl_Group</Descr>
             <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <GroupedObjects>
@@ -1229,9 +1268,9 @@ return EVENTS.lvl_pollData(lvl)</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{10C17CA8-EE33-4B20-8006-E5887D0F01B3}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{24567588-80C6-4B43-B8B1-D8A5AF977E46}">
+                <ObjectReference InstanceId="{2FD958F0-47CC-4073-A24A-166D44BEC196}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{F1EF6009-A792-4AAB-9F4B-D21736CCFEE4}">
+                <ObjectReference InstanceId="{E326CB64-6F23-4671-ABE5-173AA5640C9B}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
@@ -1258,9 +1297,9 @@ return EVENTS.lvl_pollData(lvl)</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{6CFDF8B7-F6EA-451F-9572-4FA78DAB5279}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{EEFAC805-C324-4C32-8279-7745C1A73969}">
+                <ObjectReference InstanceId="{0FA75F48-7F90-4E43-9D30-51E5C29A434B}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{2482998F-9AE6-46CF-B1B5-E222A30B6C65}">
+                <ObjectReference InstanceId="{A974D0B3-0601-479F-AA29-7E2FFB0B5E30}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
@@ -1287,9 +1326,9 @@ return EVENTS.lvl_pollData(lvl)</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{46354FA5-F4D6-4E42-9527-52F81B69B066}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{AF3A5D44-5ECB-4BA9-8C46-ACDE8E8EC39C}">
+                <ObjectReference InstanceId="{FF9287D5-6A0D-4DF0-BCCC-CE33EAEECEBC}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{98ECE090-EB86-421E-8B53-7205A13027DB}">
+                <ObjectReference InstanceId="{BEA2D3E0-AF0E-4E32-B5CF-F8797746ECBD}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
@@ -1316,9 +1355,9 @@ return EVENTS.lvl_pollData(lvl)</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{7BA5C367-E577-4021-BC2D-4D19FE602D98}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{0C064878-8B0F-454C-8F0F-8E3632B7CB4B}">
+                <ObjectReference InstanceId="{69790DF0-A0BA-40E4-ACAF-3A24C32959DA}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{099252F2-E528-4D96-9EB5-E36BAB7E1FCA}">
+                <ObjectReference InstanceId="{D13F59C9-25A0-482A-A4F0-9E10F5E48B39}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
@@ -1345,9 +1384,9 @@ return EVENTS.lvl_pollData(lvl)</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{638E4AC8-A73E-4C1B-8D1D-3EF319E1A639}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{C445F8D4-4BBC-4EF0-A7DB-26C06B45B523}">
+                <ObjectReference InstanceId="{374CCA74-8A0C-4E4B-89DD-4F39CA60F5C2}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{F65647DE-3E86-4659-9355-688A99DD7CDF}">
+                <ObjectReference InstanceId="{E049D260-D993-4BE7-8BA9-1B9F415DF8C0}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
@@ -1374,9 +1413,9 @@ return EVENTS.lvl_pollData(lvl)</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{B9BC51A3-48D7-474B-9BB7-0D431D0CD5FA}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{CEC763F9-FA45-4142-B70C-EBF4096D6B9B}">
+                <ObjectReference InstanceId="{7E9802AD-2040-4A78-873A-5B5882DE1C6F}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{3997BA76-F2F3-4F6C-9A9D-A9980D5AA802}">
+                <ObjectReference InstanceId="{6298226F-F73A-4E24-94EE-50D21BAEE4D7}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
@@ -1411,6 +1450,25 @@ return EVENTS.lvl_pollData(lvl)</Script>
                 <ObjectReference InstanceId="{CC5B0B0B-B1CA-4B2E-B26F-31DAE852C5AF}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{2B64D3EC-9B1B-4A97-A890-A8A653357C59}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{556EED26-D2B0-41BF-9E7B-F445F9DC7C39}">
+            <Descr>Triggers</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{835DB61B-973F-4435-8E69-408553AFED8B}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{38A13F91-80FF-4259-BC69-16570F450218}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{7BA6671E-810F-4329-B02A-6B46C701C06E}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{3972D6BD-20DA-44BD-B93A-4B842A8411ED}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{395DB581-238C-49D1-A273-31D28D3F193D}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{D224E7C8-024A-4EBE-99C6-4B100C6CAED2}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>

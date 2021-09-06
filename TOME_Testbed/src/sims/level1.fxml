@@ -5,8 +5,8 @@
     <Filename>level1.fxml</Filename>
     <Flight.Sections>
         <Section Name="Main">
-            <Property Name="Title" Value="Level 1 [MAIN PROJECT]" />
-            <Property Name="Description" Value="Unfinished product for level 1 - flying straight through gates" />
+            <Property Name="Title" Value="Level1 - Straight [TOME Testbed]" />
+            <Property Name="Description" Value="First level of TOME Testbed Application; features 6 gates requiring user to fly straight." />
             <Property Name="AppVersion" Value="5.1.12.26829" />
             <Property Name="ScenarioVersion" Value="0" />
         </Section>
@@ -154,7 +154,7 @@
         </Section>
         <Section Name="Camera.1.10">
             <Property Name="Guid" Value="{AA8C80C0-9EE2-4284-A1C2-B20CD3F5F3D9}" />
-            <Property Name="Title" Value="RJTF" />
+            <Property Name="Title" Value="RJTT" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="8" />
             <Property Name="Translation" Value="0, 0, 0" />
@@ -298,7 +298,7 @@
             <Property Name="PostProcess.0" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.24">
-            <Property Name="Guid" Value="{FF8B1962-19AC-4B20-949F-8A9AA77E87F1}" />
+            <Property Name="Guid" Value="{38882072-A187-43CD-8634-035A20576F96}" />
             <Property Name="Title" Value="UICam Object Camera View" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
@@ -353,7 +353,7 @@
             <Property Name="WaypointNext" Value="0" />
             <Property Name="AltCleared" Value="-1" />
             <Property Name="HdgAssigned" Value="-1" />
-            <Property Name="SquawkAssigned" Value="7606784" />
+            <Property Name="SquawkAssigned" Value="871305728" />
             <Property Name="LandingSequence" Value="LANDING_NONE" />
             <Property Name="DepartureRequest" Value="DEPARTURE_VFR_REQUEST_NONE" />
             <Property Name="ParkingRequest" Value="PARKING_NAME_NONE" />
@@ -733,17 +733,17 @@
         </Section>
         <Section Name="SimVars.0">
             <Property Name="Latitude" Value="N35&#xB0; 30&apos; 1.62&quot;" />
-            <Property Name="Longitude" Value="E139&#xB0; 45&apos; 59.65&quot;" />
-            <Property Name="Altitude" Value="+010021.66" />
+            <Property Name="Longitude" Value="E139&#xB0; 45&apos; 56.05&quot;" />
+            <Property Name="Altitude" Value="+010027.56" />
             <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
-            <Property Name="Heading" Value="93.999999929219484329" />
+            <Property Name="Heading" Value="93.999998839572072029" />
             <Property Name="PVelBodyAxis" Value="0" />
             <Property Name="BVelBodyAxis" Value="0" />
             <Property Name="HVelBodyAxis" Value="0" />
             <Property Name="XVelBodyAxis" Value="0" />
             <Property Name="YVelBodyAxis" Value="0" />
-            <Property Name="ZVelBodyAxis" Value="438.83056284612075615" />
+            <Property Name="ZVelBodyAxis" Value="438.8305628462822483" />
             <Property Name="SimOnGround" Value="False" />
             <Property Name="OnPlatformHeight" Value="-9999999999" />
             <Property Name="AssociationID" Value="0" />
@@ -922,9 +922,9 @@
             <Property Name="LeftFlap" Value="000.00" />
             <Property Name="RightFlap" Value="000.00" />
             <Property Name="GearsHandle" Value="000.01" />
-            <Property Name="Gear1" Value="098.98" />
-            <Property Name="Gear2" Value="098.98" />
-            <Property Name="Gear3" Value="098.98" />
+            <Property Name="Gear1" Value="098.81" />
+            <Property Name="Gear2" Value="098.81" />
+            <Property Name="Gear3" Value="098.81" />
             <Property Name="YokeY" Value="050.00" />
             <Property Name="YokeX" Value="050.00" />
             <Property Name="Rudder" Value="050.00" />
@@ -945,8 +945,8 @@
             <Property Name="UserCamera" Value="{00000000-0000-0000-0000-000000000000}" />
             <Property Name="AvatarCamera" Value="{00000000-0000-0000-0000-000000000000}" />
             <Property Name="Latitude" Value="N35&#xB0; 30&apos; 1.62&quot;" />
-            <Property Name="Longitude" Value="E139&#xB0; 45&apos; 59.65&quot;" />
-            <Property Name="Altitude" Value="+010021.66" />
+            <Property Name="Longitude" Value="E139&#xB0; 45&apos; 56.05&quot;" />
+            <Property Name="Altitude" Value="+010027.56" />
             <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
             <Property Name="Heading" Value="49.999989308416843414" />
@@ -977,7 +977,7 @@
             <Property Name="UndocCoords" Value="0, 0, 0, 0" />
         </Section>
         <Section Name="ResourcePath">
-            <Property Name="Path" Value="../" />
+            <Property Name="Path" Value="..\" />
         </Section>
         <Section Name="SessionInfo">
             <Property Name="StartTime" Value="63720320400" />

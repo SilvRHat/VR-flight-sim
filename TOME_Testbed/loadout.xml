@@ -2,7 +2,7 @@
 
 <SimBase.Document Type="ObjectFile" version="5,1">
     <Descr>Allows user to load a specific scenario and setup the experiment environment for data collection.</Descr>
-    <Title>Loadout [MAIN PROJECT]</Title>
+    <Title>Loadout [TOME Testbed]</Title>
     <WorldBase.Flight>
         <SimContain.UserOwnship InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
             <AltitudeIsAGL>True</AltitudeIsAGL>
@@ -30,31 +30,31 @@
         </SimMission.ObjectActivationAction>
         <SimMission.LoadScenarioAction InstanceId="{D65DE049-A927-4FBB-96F9-43EDA799601B}">
             <Descr>Load Intro</Descr>
-            <ScenarioFileName>src/sims/intro.fxml</ScenarioFileName>
+            <ScenarioFileName>src\sims\intro.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{C9994C5C-9005-44FD-AC26-9FB2636BFD0C}">
             <Descr>Load Lvl1</Descr>
-            <ScenarioFileName>src/sims/level1.fxml</ScenarioFileName>
+            <ScenarioFileName>src\sims\level1.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{8AF4CEF1-B3CA-4BDD-B1AE-095A1091CD5F}">
             <Descr>Load Lvl2</Descr>
-            <ScenarioFileName>src/sims/level2.fxml</ScenarioFileName>
+            <ScenarioFileName>src\sims\level2.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{949AE1B4-1FA5-4440-B07D-1F3717ACF582}">
             <Descr>Load Lvl3</Descr>
-            <ScenarioFileName>src/sims/level3.fxml</ScenarioFileName>
+            <ScenarioFileName>src\sims\level3.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{113D104B-1631-4828-9C2C-0E8BD22EE2E0}">
             <Descr>Load Lvl4</Descr>
-            <ScenarioFileName>src/sims/level4.fxml</ScenarioFileName>
+            <ScenarioFileName>src\sims\level4.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{B465011E-6EC4-4BF1-BAA1-2412A78A50C2}">
             <Descr>Load Lvl5</Descr>
-            <ScenarioFileName>src/sims/level5.fxml</ScenarioFileName>
+            <ScenarioFileName>src\sims\level5.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
             <Descr>Load Lvl6</Descr>
-            <ScenarioFileName>src/sims/level6.fxml</ScenarioFileName>
+            <ScenarioFileName>src\sims\level6.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.ObjectActivationAction InstanceId="{F5B4172B-D9A9-4D53-9E4E-0A02AF82C571}">
             <Descr>enableView1_Action</Descr>
@@ -69,7 +69,7 @@
         </SimMission.ObjectActivationAction>
         <SimMission.LoadScenarioAction InstanceId="{078E615E-1F12-4446-8EAF-C2A0FE54B7B7}">
             <Descr>loadNew_Action</Descr>
-            <ScenarioFileName>src/sims/intro.fxml</ScenarioFileName>
+            <ScenarioFileName>src\sims\intro.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.ObjectActivationAction InstanceId="{DF025B91-6281-4483-B8F2-E4022FAEBD8F}">
             <Descr>disableView1_Action</Descr>
@@ -167,7 +167,7 @@ return varget(&apos;L:_ui_toggle5&apos;)==1</Script>
             <Descr>Load lvl6</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_ui_toggle6&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle6&apos;)==1 or varget(&apos;L:_continue&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
                 </ObjectReference>
@@ -237,7 +237,7 @@ return EVENTS.loadout_loadLvl()</Script>
         </SimMission.Camera>
         <SimMission.UIPanelObject InstanceId="{C6E34582-CCEB-45D7-BD75-1091C3838D45}">
             <Descr>Loadout2</Descr>
-            <UIPanelFileName>src/html/loadout2.html</UIPanelFileName>
+            <UIPanelFileName>src\html\loadout2.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,600.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
@@ -266,7 +266,7 @@ return EVENTS.loadout_loadLvl()</Script>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{82923290-D1AF-44A9-B63D-01A4D2C9C27F}">
             <Descr>Loadout1</Descr>
-            <UIPanelFileName>src/html/loadout1.html</UIPanelFileName>
+            <UIPanelFileName>src\html\loadout1.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,600.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
