@@ -7,17 +7,17 @@
 
 // updateVisuals - Will update which element is selected and focused on
 function updateVisuals() {
-    let n = VarGet('L:_options','number')
+    let n = VarGet('L:_ui_options','number')
 
     for (let i=0; i<=n; i++) {
-        if (VarGet('_ui_toggle'.concat(i.toString()), 'number')>0) {
+        if (VarGet('L:_ui_toggle'.concat(i.toString()), 'number')>0) {
             $('#interactive'.concat(i.toString())).addClass('_selected');
         }
         else {
             $('#interactive'.concat(i.toString())).removeClass('_selected');
         }
 
-        if (VarGet('L:_ui_focuson','number') % (n+1) == i) {
+        if (VarGet('L:_ui_focuson','number') % (n) == i) {
             $('#interactive'.concat(i.toString())).addClass('_focus');
         }
         else {

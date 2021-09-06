@@ -9,96 +9,8 @@
         </SimContain.UserOwnship>
         <SimContain.UserAvatar InstanceId="{508FDC98-BF36-4C0F-B22D-27045DF1A0CF}">
         </SimContain.UserAvatar>
-        <SimMission.ObjectActivationAction InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
-            <Descr>InitActivate</Descr>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{64A8A27B-84FA-464C-BB38-119CD4881A4F}">
-            <Descr>Continue1 Activate</Descr>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{C6E34582-CCEB-45D7-BD75-1091C3838D45}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{FF0E7C3D-3A4F-4B87-A971-C9FC200454FB}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{85A6402B-F0D1-4B5B-9036-D3C44102E993}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{F79775A3-AB2B-4071-8790-5E04D00253DD}">
-            <Descr>Continue1 Deactivate</Descr>
-            <NewObjectState>False</NewObjectState>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{82923290-D1AF-44A9-B63D-01A4D2C9C27F}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.ScriptAction InstanceId="{4B74A1FF-02AC-432E-A215-494AE282EAB1}">
-            <Descr>Reset Data</Descr>
-            <Script>!lua
--- Reset Data</Script>
-            <OnCompleteActions>
-                <ObjectReference InstanceId="{E252DE85-5513-4AB5-BF99-421883DD5EC6}">
-                </ObjectReference>
-            </OnCompleteActions>
-        </SimMission.ScriptAction>
-        <SimMission.ScriptAction InstanceId="{BCD00779-72EB-49C7-B25C-B90B1730B143}">
-            <Descr>Setup State 2</Descr>
-            <Script>!lua
--- INIT script
-local lvars = {
-    [&apos;_continue&apos;] = 0;
-    [&apos;_state&apos;] = 1;
-    [&apos;_options&apos;] = 7;
-    [&apos;_level&apos;] = 0;
-    [&apos;_gate&apos;] = 0;
-    [&apos;_hit&apos;] = 0;
-    [&apos;_ui_focus_id&apos;] = (8*200) -1;
-    [&apos;_last_poll&apos;] = 0;
-}
-function state2()
-    for lvar, default in pairs(lvars) do
-        varset(&apos;L:&apos;..lvar, default)
-    end
-    for i=0, 15, 1 do
-        varset(&apos;L:_toggle&apos;..i, 0)
-    end
-    varset(&apos;L:_toggle0&apos;, 1)
-end
-
-state2()</Script>
-            <OnCompleteActions>
-                <ObjectReference InstanceId="{C59BEEBB-A43B-48E7-B705-C758FC7F7C9B}">
-                </ObjectReference>
-            </OnCompleteActions>
-        </SimMission.ScriptAction>
-        <SimMission.ObjectActivationAction InstanceId="{E252DE85-5513-4AB5-BF99-421883DD5EC6}">
-            <Descr>Deactivate Reset</Descr>
-            <NewObjectState>False</NewObjectState>
-            <OnCompleteActions>
-                <ObjectReference InstanceId="{BCD00779-72EB-49C7-B25C-B90B1730B143}">
-                </ObjectReference>
-            </OnCompleteActions>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{FF0E7C3D-3A4F-4B87-A971-C9FC200454FB}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{85A6402B-F0D1-4B5B-9036-D3C44102E993}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{C59BEEBB-A43B-48E7-B705-C758FC7F7C9B}">
-            <Descr>Continue 1 Activate Continue 2</Descr>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{33B28C46-B484-4163-8249-1BE01E218D08}">
-                </ObjectReference>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
         <SimMission.ObjectActivationAction InstanceId="{132C58A2-5276-4B40-8F68-E38B7716922C}">
-            <Descr>Continue2 Activate</Descr>
+            <Descr>loadLevelFromToggle_Action</Descr>
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{A91551DA-2247-4057-9CF2-B8DF1A403050}">
                 </ObjectReference>
@@ -118,104 +30,76 @@ state2()</Script>
         </SimMission.ObjectActivationAction>
         <SimMission.LoadScenarioAction InstanceId="{D65DE049-A927-4FBB-96F9-43EDA799601B}">
             <Descr>Load Intro</Descr>
-            <ScenarioFileName>sims\intro.fxml</ScenarioFileName>
+            <ScenarioFileName>src/sims/intro.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{C9994C5C-9005-44FD-AC26-9FB2636BFD0C}">
             <Descr>Load Lvl1</Descr>
-            <ScenarioFileName>sims/level1.fxml</ScenarioFileName>
+            <ScenarioFileName>src/sims/level1.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{8AF4CEF1-B3CA-4BDD-B1AE-095A1091CD5F}">
             <Descr>Load Lvl2</Descr>
-            <ScenarioFileName>sims/level2.fxml</ScenarioFileName>
+            <ScenarioFileName>src/sims/level2.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{949AE1B4-1FA5-4440-B07D-1F3717ACF582}">
             <Descr>Load Lvl3</Descr>
-            <ScenarioFileName>sims/level3.fxml</ScenarioFileName>
+            <ScenarioFileName>src/sims/level3.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{113D104B-1631-4828-9C2C-0E8BD22EE2E0}">
             <Descr>Load Lvl4</Descr>
-            <ScenarioFileName>sims/level4.fxml</ScenarioFileName>
+            <ScenarioFileName>src/sims/level4.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{B465011E-6EC4-4BF1-BAA1-2412A78A50C2}">
             <Descr>Load Lvl5</Descr>
-            <ScenarioFileName>sims/level5.fxml</ScenarioFileName>
+            <ScenarioFileName>src/sims/level5.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
             <Descr>Load Lvl6</Descr>
-            <ScenarioFileName>sims/level6.fxml</ScenarioFileName>
+            <ScenarioFileName>src/sims/level6.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
+        <SimMission.ObjectActivationAction InstanceId="{F5B4172B-D9A9-4D53-9E4E-0A02AF82C571}">
+            <Descr>enableView1_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{82923290-D1AF-44A9-B63D-01A4D2C9C27F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{63CB4B99-EA88-4936-BB99-86F30C4C96B8}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{86388F4F-BE26-404E-BF67-A21A6549E14E}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.LoadScenarioAction InstanceId="{078E615E-1F12-4446-8EAF-C2A0FE54B7B7}">
+            <Descr>loadNew_Action</Descr>
+            <ScenarioFileName>src/sims/intro.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.ObjectActivationAction InstanceId="{DF025B91-6281-4483-B8F2-E4022FAEBD8F}">
+            <Descr>disableView1_Action</Descr>
+            <NewObjectState>False</NewObjectState>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{63CB4B99-EA88-4936-BB99-86F30C4C96B8}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{86388F4F-BE26-404E-BF67-A21A6549E14E}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{82923290-D1AF-44A9-B63D-01A4D2C9C27F}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{93132AB5-D9D3-4751-91A3-63139229E078}">
+            <Descr>EnableView2_Action</Descr>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{C6E34582-CCEB-45D7-BD75-1091C3838D45}">
+                </ObjectReference>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
         <SimMission.ScriptTrigger InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
             <Descr>Init</Descr>
             <Script>!lua
--- INIT script
-local lvars = {
-    [&apos;_continue&apos;] = 0;
-    [&apos;_state&apos;] = 1;
-    [&apos;_options&apos;] = 2;
-    [&apos;_level&apos;] = 0;
-    [&apos;_gate&apos;] = 0;
-    [&apos;_hit&apos;] = 0;
-    [&apos;_ui_focus_id&apos;] = (3*200) -1;
-    [&apos;_last_poll&apos;] = 0;
-}
-function init()
-    for lvar, default in pairs(lvars) do
-        varset(&apos;L:&apos;..lvar, default)
-    end
-    for i=0, 15, 1 do
-        varset(&apos;L:_toggle&apos;..i, 0)
-    end
-    varset(&apos;L:_toggle0&apos;, 1)
-end
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;
 
-init()
-return true</Script>
+local EVENTS = require(&apos;src\\scripts\\events.lua&apos;)
+
+return EVENTS.loadout_init()</Script>
             <Actions>
-                <ObjectReference InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
-                </ObjectReference>
-            </Actions>
-        </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
-            <Descr>Continue1</Descr>
-            <Activated>False</Activated>
-            <OneShot>False</OneShot>
-            <Script>!lua
-return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
-            <Actions>
-                <ObjectReference InstanceId="{64A8A27B-84FA-464C-BB38-119CD4881A4F}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{F79775A3-AB2B-4071-8790-5E04D00253DD}">
-                </ObjectReference>
-            </Actions>
-        </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{FF0E7C3D-3A4F-4B87-A971-C9FC200454FB}">
-            <Descr>Reset Data Yes</Descr>
-            <Activated>False</Activated>
-            <Script>!lua
-return varget(&apos;L:_toggle0&apos;,&apos;number&apos;)==1</Script>
-            <Actions>
-                <ObjectReference InstanceId="{4B74A1FF-02AC-432E-A215-494AE282EAB1}">
-                </ObjectReference>
-            </Actions>
-        </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{85A6402B-F0D1-4B5B-9036-D3C44102E993}">
-            <Descr>Reset Data No</Descr>
-            <Activated>False</Activated>
-            <Script>!lua
-return varget(&apos;L:_toggle0&apos;,&apos;number&apos;)~=1</Script>
-            <Actions>
-                <ObjectReference InstanceId="{E252DE85-5513-4AB5-BF99-421883DD5EC6}">
-                </ObjectReference>
-            </Actions>
-        </SimMission.ScriptTrigger>
-        <SimMission.ScriptTrigger InstanceId="{33B28C46-B484-4163-8249-1BE01E218D08}">
-            <Descr>Continue 2</Descr>
-            <Activated>False</Activated>
-            <OneShot>False</OneShot>
-            <Script>!lua
-return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
-            <Actions>
-                <ObjectReference InstanceId="{132C58A2-5276-4B40-8F68-E38B7716922C}">
+                <ObjectReference InstanceId="{F5B4172B-D9A9-4D53-9E4E-0A02AF82C571}">
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
@@ -223,7 +107,7 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             <Descr>Load Intro</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_toggle0&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle0&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{D65DE049-A927-4FBB-96F9-43EDA799601B}">
                 </ObjectReference>
@@ -233,7 +117,7 @@ return varget(&apos;L:_toggle0&apos;)==1</Script>
             <Descr>Load lvl1</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_toggle1&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle1&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{C9994C5C-9005-44FD-AC26-9FB2636BFD0C}">
                 </ObjectReference>
@@ -243,7 +127,7 @@ return varget(&apos;L:_toggle1&apos;)==1</Script>
             <Descr>Load lvl2</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_toggle2&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle2&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{8AF4CEF1-B3CA-4BDD-B1AE-095A1091CD5F}">
                 </ObjectReference>
@@ -253,7 +137,7 @@ return varget(&apos;L:_toggle2&apos;)==1</Script>
             <Descr>Load lvl3</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_toggle3&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle3&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{949AE1B4-1FA5-4440-B07D-1F3717ACF582}">
                 </ObjectReference>
@@ -263,7 +147,7 @@ return varget(&apos;L:_toggle3&apos;)==1</Script>
             <Descr>Load lvl4</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_toggle4&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle4&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{113D104B-1631-4828-9C2C-0E8BD22EE2E0}">
                 </ObjectReference>
@@ -273,7 +157,7 @@ return varget(&apos;L:_toggle4&apos;)==1</Script>
             <Descr>Load lvl5</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_toggle5&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle5&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{B465011E-6EC4-4BF1-BAA1-2412A78A50C2}">
                 </ObjectReference>
@@ -283,9 +167,43 @@ return varget(&apos;L:_toggle5&apos;)==1</Script>
             <Descr>Load lvl6</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_toggle6&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle6&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{63CB4B99-EA88-4936-BB99-86F30C4C96B8}">
+            <Descr>loadNew_trigger</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;
+
+local EVENTS = require(&apos;src\\scripts\\events.lua&apos;)
+
+return EVENTS.loadout_loadNew()</Script>
+            <Actions>
+                <ObjectReference InstanceId="{078E615E-1F12-4446-8EAF-C2A0FE54B7B7}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{DF025B91-6281-4483-B8F2-E4022FAEBD8F}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{86388F4F-BE26-404E-BF67-A21A6549E14E}">
+            <Descr>loadLvl_trigger</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;
+
+local EVENTS = require(&apos;src\\scripts\\events.lua&apos;)
+
+return EVENTS.loadout_loadLvl()</Script>
+            <Actions>
+                <ObjectReference InstanceId="{132C58A2-5276-4B40-8F68-E38B7716922C}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{DF025B91-6281-4483-B8F2-E4022FAEBD8F}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{93132AB5-D9D3-4751-91A3-63139229E078}">
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
@@ -319,14 +237,12 @@ return varget(&apos;L:_toggle6&apos;)==1</Script>
         </SimMission.Camera>
         <SimMission.UIPanelObject InstanceId="{C6E34582-CCEB-45D7-BD75-1091C3838D45}">
             <Descr>Loadout2</Descr>
-            <UIPanelFileName>resources\html\loadout.html</UIPanelFileName>
+            <UIPanelFileName>src/html/loadout2.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,600.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
             <WorldSize>48.000000,18.000000,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
-            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
-            <HasMouseInteractivity>True</HasMouseInteractivity>
             <Activated>False</Activated>
             <OriginY>-0.600000</OriginY>
             <AttachedWorldPosition>
@@ -336,14 +252,12 @@ return varget(&apos;L:_toggle6&apos;)==1</Script>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
             <Descr>Controls</Descr>
-            <UIPanelFileName>resources\html\controls.html</UIPanelFileName>
+            <UIPanelFileName>src\html\controls.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
             <WorldSize>33.000000,14.000000,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,303.999969</Orientation>
-            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
-            <HasMouseInteractivity>True</HasMouseInteractivity>
             <OriginY>-0.750000</OriginY>
             <AttachedWorldPosition>
                 <WorldPosition>N35° 27' 28.509839",E139° 44' 40.832797",+000064.00</WorldPosition>
@@ -352,15 +266,14 @@ return varget(&apos;L:_toggle6&apos;)==1</Script>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{82923290-D1AF-44A9-B63D-01A4D2C9C27F}">
             <Descr>Loadout1</Descr>
-            <UIPanelFileName>resources\html\reset_data.html</UIPanelFileName>
+            <UIPanelFileName>src/html/loadout1.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,600.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
             <WorldSize>48.000000,18.000000,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
-            <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
-            <HasMouseInteractivity>True</HasMouseInteractivity>
             <OriginY>-0.600000</OriginY>
+            <Activated>False</Activated>
             <AttachedWorldPosition>
                 <WorldPosition>N35° 27' 28.913319",E139° 44' 41.404429",+000064.47</WorldPosition>
                 <AltitudeIsAGL>True</AltitudeIsAGL>
@@ -384,48 +297,19 @@ return varget(&apos;L:_toggle6&apos;)==1</Script>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{5A57BB23-83B9-4E1E-89F0-2A2C933C6C35}">
-            <Descr>Init</Descr>
+            <Descr>init_Group</Descr>
             <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <GroupedObjects>
                 <ObjectReference InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
-                </ObjectReference>
-            </GroupedObjects>
-        </ObjectGroup>
-        <ObjectGroup InstanceId="{900BE545-92FE-4EE9-8F62-BBC51D527B2A}">
-            <Descr>Continue1</Descr>
-            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
-            <AltitudeIsAGL>True</AltitudeIsAGL>
-            <GroupedObjects>
-                <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{64A8A27B-84FA-464C-BB38-119CD4881A4F}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{F79775A3-AB2B-4071-8790-5E04D00253DD}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{FF0E7C3D-3A4F-4B87-A971-C9FC200454FB}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{85A6402B-F0D1-4B5B-9036-D3C44102E993}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{4B74A1FF-02AC-432E-A215-494AE282EAB1}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{BCD00779-72EB-49C7-B25C-B90B1730B143}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{E252DE85-5513-4AB5-BF99-421883DD5EC6}">
-                </ObjectReference>
-                <ObjectReference InstanceId="{C59BEEBB-A43B-48E7-B705-C758FC7F7C9B}">
-                </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{BA47D6BC-D391-4971-A207-CCD581C785BA}">
-            <Descr>Continue2</Descr>
+            <Descr>loadLevel_Group</Descr>
             <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <GroupedObjects>
-                <ObjectReference InstanceId="{33B28C46-B484-4163-8249-1BE01E218D08}">
-                </ObjectReference>
                 <ObjectReference InstanceId="{132C58A2-5276-4B40-8F68-E38B7716922C}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{A91551DA-2247-4057-9CF2-B8DF1A403050}">
@@ -455,6 +339,32 @@ return varget(&apos;L:_toggle6&apos;)==1</Script>
                 <ObjectReference InstanceId="{B465011E-6EC4-4BF1-BAA1-2412A78A50C2}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{A438ED36-9B9B-4AC5-B13B-5BE217105DB6}">
+            <Descr>loadoutView1_Group</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{F5B4172B-D9A9-4D53-9E4E-0A02AF82C571}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{63CB4B99-EA88-4936-BB99-86F30C4C96B8}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{86388F4F-BE26-404E-BF67-A21A6549E14E}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{078E615E-1F12-4446-8EAF-C2A0FE54B7B7}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{DF025B91-6281-4483-B8F2-E4022FAEBD8F}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{4C71D526-A92C-4A83-96DD-B5FE762110F8}">
+            <Descr>loadoutView2_Group</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{93132AB5-D9D3-4751-91A3-63139229E078}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>

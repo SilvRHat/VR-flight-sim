@@ -163,7 +163,7 @@
         </Section>
         <Section Name="Camera.1.11">
             <Property Name="Guid" Value="{607C4520-CA6F-4135-AE10-8BF28838068F}" />
-            <Property Name="Title" Value="RJTF-17" />
+            <Property Name="Title" Value="RJTT-5" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.30000001192092895508" />
             <Property Name="Translation" Value="0, 0, 0" />
@@ -296,7 +296,7 @@
             <Property Name="PostProcess.0" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.24">
-            <Property Name="Guid" Value="{01819E2E-6E26-4473-B89C-7AC9E90ED387}" />
+            <Property Name="Guid" Value="{04FD9680-E689-487C-85F3-7C21B8AD6DC7}" />
             <Property Name="Title" Value="UICam Object Camera View" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
@@ -733,7 +733,7 @@
             <Property Name="Latitude" Value="N35&#xB0; 32&apos; 25.20&quot;" />
             <Property Name="Longitude" Value="E139&#xB0; 48&apos; 16.80&quot;" />
             <Property Name="Altitude" Value="+000026.00" />
-            <Property Name="Pitch" Value="0" />
+            <Property Name="Pitch" Value="-0" />
             <Property Name="Bank" Value="0" />
             <Property Name="Heading" Value="-30.040008220821633245" />
             <Property Name="PVelBodyAxis" Value="0" />
@@ -920,9 +920,9 @@
             <Property Name="LeftFlap" Value="000.00" />
             <Property Name="RightFlap" Value="000.00" />
             <Property Name="GearsHandle" Value="000.01" />
-            <Property Name="Gear1" Value="099.17" />
-            <Property Name="Gear2" Value="099.17" />
-            <Property Name="Gear3" Value="099.17" />
+            <Property Name="Gear1" Value="099.14" />
+            <Property Name="Gear2" Value="099.14" />
+            <Property Name="Gear3" Value="099.14" />
             <Property Name="YokeY" Value="050.00" />
             <Property Name="YokeX" Value="050.00" />
             <Property Name="Rudder" Value="050.00" />
@@ -945,7 +945,7 @@
             <Property Name="Latitude" Value="N35&#xB0; 32&apos; 25.20&quot;" />
             <Property Name="Longitude" Value="E139&#xB0; 48&apos; 16.80&quot;" />
             <Property Name="Altitude" Value="+000026.00" />
-            <Property Name="Pitch" Value="0" />
+            <Property Name="Pitch" Value="-0" />
             <Property Name="Bank" Value="0" />
             <Property Name="Heading" Value="49.999989308416843414" />
             <Property Name="PVelBodyAxis" Value="0" />

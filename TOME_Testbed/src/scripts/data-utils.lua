@@ -16,8 +16,8 @@
     load = load or loadstring or {}
 
 -- Dependencies
-function require(filename)local user = os.getenv('USERNAME');local paths = {''};local fileexts = {'','.lua'};local PATHFILE_EXT = 'P3D_PROJECT_PATH.txt';local pathfile = io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths, line) end;pathfile:close();end;for _, path in ipairs(paths) do;for _, ext in ipairs(fileexts) do;local f = io.open(string.format("%s%s%s", path, filename, ext), 'r');if f then;local src = f:read('*a');f:close();return load(src)();end;end;end;end;
-
+-- Minature Require
+function require(filename)local user=os.getenv('USERNAME');local paths={'',string.format('C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\',user)};local fileexts={'','.lua'};local PATHFILE_EXT='P3D_PROJECT_PATH.txt';local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format("%s%s%s",path,filename,ext),'r');if f then;local src=f:read('*a');f:close();return load(src)(),path;end;end;end;end;
 local CONFIG, srcpath = require('CONFIG.lua')
 
 
@@ -42,15 +42,16 @@ end
     -- @param focus - The element to focus on
 function DATA_UTILS.setUIState(options, multichoice, focus)
     varset('L:_ui_multichoice', multichoice and '1' or '0')
-    varset('L:_ui_options', tostring(options) or '1')
-    varset('L:_ui_focuson', tostring((100*options) + ((focus or 1) - 1)))
+    varset('L:_ui_options', tostring(options) or 1)
+    varset('L:_ui_focuson', tostring((100*options) + (focus or 1) - 1))
 end
 
 
 -- clearToggles - Clears toggles describing if UI elements are selected or not
 function DATA_UTILS.clearToggles()
-    for i = 0, CONFIG.max_ui_options - 1 do
-        varset(string.format('L:_ui_toggle%d', i), 0) end
+    for i = 0, CONFIG.max_ui_options do
+        varset(string.format('L:_ui_toggle%d', i), tostring(0)) end
+    varset('L:_continue', '0')
 end
 
 
@@ -60,7 +61,7 @@ function DATA_UTILS.saveTogglesTo(var_prefix)
     for i = 0, CONFIG.max_ui_options - 1 do
         varset(
             string.format('L:%s%d', var_prefix, i), 
-            varget(string.format('L:_ui_toggle%d', i), 'number')
+            tostring(varget(string.format('L:_ui_toggle%d', i), 'number'))
         ) 
     end
 end
@@ -74,7 +75,7 @@ function DATA_UTILS.saveSurvey(surveyId)
     local f = io.open(path, 'r')
     if not f then  -- Test if file exists
         -- Create file
-        f = io.open(path, 'w')
+        f = io.open(path, 'a+')
 
         -- Write Data entries
         local datacolumns = {   -- In order
@@ -90,18 +91,19 @@ function DATA_UTILS.saveSurvey(surveyId)
             'dizzy',
             'vertigo'
         }
+        
         for i=1,CONFIG.max_gates do
-            table.insert(string.format('hit_gate%d', i))
+            table.insert(datacolumns, string.format('hit_gate%d', i))
         end
-
+        
         for i, col in ipairs(datacolumns) do
             f:write(string.format("%s%s", col, i<#datacolumns and CONFIG.seperator or ''))
         end f:write('\n')
     else
         f:close()
-        f = io.open(path, 'w')
+        f = io.open(path, 'a+')
     end
-
+    
     -- Save data
     local data = {
         surveyId,
@@ -109,23 +111,24 @@ function DATA_UTILS.saveSurvey(surveyId)
     
     -- Save data from question 2
     local mental_demand = -1
-    for i=1, CONFIG.max_ui_options do
-        if tonumber(varget(string.format('_surveyq2%d', i), 'number'))>0 then
-            mental_demand = i
-        return end
+    for i=0, CONFIG.max_ui_options do
+        if varget(string.format('L:_surveyq2%d', i), 'number')==1 then
+            mental_demand = i + 1
+            break
+        end
     end
     table.insert(data, mental_demand)
-
+    
     -- Save data from question 1
     for i=0, 8 do
-        table.insert(data, varget(string.format('_surveyq1%d', i), 'number'))
+        table.insert(data, varget(string.format('L:_surveyq1%d', i), 'number') or -1)
     end
-
+    
     -- Save data from gates
     for i=1, CONFIG.max_gates do
-        table.insert(data, varget(string.format('_hitgate%d', i), 'number'))
+        table.insert(data, varget(string.format('L:_hitgate%d', i), 'number') or -1)
     end
-
+    
     -- Save data
     for i, col in ipairs(data) do
         f:write(string.format("%s%s", col, i<#data and CONFIG.seperator or ''))
@@ -142,7 +145,7 @@ function DATA_UTILS.logEvent(event)
     local f = io.open(path, 'r')
     if not f then  -- Test if file exists
         -- Create file
-        f = io.open(path, 'w')
+        f = io.open(path, 'a+')
 
         -- Write Data entries
         local datacolumns = {   -- In order
@@ -155,7 +158,7 @@ function DATA_UTILS.logEvent(event)
         end f:write('\n')
     else
         f:close()
-        f = io.open(path, 'w')
+        f = io.open(path, 'a+')
     end
 
     -- Construct data
@@ -176,30 +179,32 @@ end
     -- List of variables is set in CONFIG file
 function DATA_UTILS.pollP3D()
     -- Limit Polling
+    if (not CONFIG.poll_while_paused) and (varget('P:SIM PAUSED','Bool')==1) then
+        return end
     if (os.clock() - (tonumber(varget('L:_lastpollclock','number')) or 0))<CONFIG.simvar_poll_rate then
         return end
     varset('L:_lastpollclock', os.clock())
-
+    
     local path = string.format('%s%s/%s%s', srcpath, CONFIG.data_folder, CONFIG.data_filenames_prefix, CONFIG.simvar_log_filename)
     
     local f = io.open(path, 'r')
     if not f then  -- Test if file exists
         -- Create file
-        f = io.open(path, 'w')
+        f = io.open(path, 'a+')
 
         -- Write Data entries
         local datacolumns = {
             'timestamp'
         }
         for _, var in ipairs(CONFIG.SIMVARS) do
-            table.insert(datacolumns, var.Name) end
+            table.insert(datacolumns, var.Label or var.Name or 'untitled') end
         
         for i, col in ipairs(datacolumns) do
             f:write(string.format("%s%s", col, i<#datacolumns and CONFIG.seperator or ''))
         end f:write('\n')
     else
         f:close()
-        f = io.open(path, 'w')
+        f = io.open(path, 'a+')
     end
 
 
@@ -208,7 +213,7 @@ function DATA_UTILS.pollP3D()
         os.clock()
     }
     for _, var in ipairs(CONFIG.SIMVARS) do
-        table.insert(data, varget(var.Name, var.Units)) end
+        table.insert(data, varget(var.Name or '', var.Units or '') or -1) end
 
 
     -- Save data
@@ -216,6 +221,13 @@ function DATA_UTILS.pollP3D()
         f:write(string.format("%s%s", col, i<#data and CONFIG.seperator or ''))
     end f:write('\n')
     f:close()
+    
+end
+
+
+function DATA_UTILS.clearFiles()
+    local filenames = {CONFIG.event_log_filename, CONFIG.simvar_log_filename, CONFIG.survey_log_filename}
+    
 end
 
 

@@ -12,10 +12,9 @@ local P3D_Var = {}
 P3D_Var.__index = P3D_Var
 
 -- Constructor
-function P3D_Var.new(var_name, var_units, short_name)
+function P3D_Var.new(var_name, var_units)
     local self = setmetatable({}, P3D_Var)
 
-    self.Label = short_name
     self.Name = var_name
     self.Units = var_units
 
@@ -51,11 +50,11 @@ local CONFIG = {
 
     -- Full list of sim vars available at: https://www.prepar3d.com/SDKv5/LearningCenter.php
 CONFIG.SIMVARS = {
-    P3D_Var.new('A:GROUND VELOCITY', 'Knots', 'ground_vel');
-    P3D_Var.new('A:TOTAL WORLD VELOCITY','Feet per second', 'total_world_vel');
-    P3D_Var.new('A:VELOCITY BODY Z','Feet per second', 'body_vel_x');
-    P3D_Var.new('A:VELOCITY BODY X','Feet per second', 'body_vel_y');
-    P3D_Var.new('A:VELOCITY BODY Y','Feet per second', 'body_vel_z');
+    ['ground_vel'] = P3D_Var.new('A:GROUND VELOCITY', 'Knots');
+    ['world_vel'] = P3D_Var.new('A:TOTAL WORLD VELOCITY','Feet per second');
+    ['vel_body_z'] = P3D_Var.new('A:VELOCITY BODY Z','Feet per second');
+    ['vel_body_x'] = P3D_Var.new('A:VELOCITY BODY X','Feet per second');
+    ['vel_body_y'] = P3D_Var.new('A:VELOCITY BODY Y','Feet per second');
 }
 
 

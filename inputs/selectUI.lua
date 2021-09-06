@@ -8,12 +8,12 @@
 ipc = ipc or {}
 
 local options = ipc.readLvar('L:_ui_options')
-local focus_id = ipc.readLvar('L:_ui_focuson') % (options+1)
+local focus_id = ipc.readLvar('L:_ui_focuson') % (options)
 
 
 local function selectSingle()
     -- If last option, toggle continue indicator
-    if focus_id==options then
+    if focus_id==options-1 then
         ipc.writeLvar('L:_continue', 1) 
     return end
 
@@ -24,7 +24,7 @@ end
 
 local function selectMultichoice()
     -- If last option, toggle continue indicator
-    if focus_id==options then
+    if focus_id==options-1 then
         ipc.writeLvar('L:_continue', 1) 
     end
     -- Toggle ui element
@@ -33,7 +33,7 @@ local function selectMultichoice()
 end
 
 
-if ipc.readLvar('L:_ui_multichoice') then
+if ipc.readLvar('L:_ui_multichoice')==1 then
     selectMultichoice()
 else
     selectSingle()

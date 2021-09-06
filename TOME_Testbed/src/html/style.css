@@ -84,6 +84,10 @@ button._selected {
     color: white;
 }
 
+button._selected._focus {
+    background-color: rgb(33, 140, 210);
+    color: white;
+}
 
 
 /* Text Rules */
@@ -112,11 +116,19 @@ h2 {
 
 .question._focus {
     background-color: rgb(35, 193, 255);
+    color: white;
 }
 
 .question._selected {
     background-color: rgb(27, 88, 146);
+    color: white;
 }
+
+.question._selected._focus {
+    background-color: rgb(33, 140, 210);
+    color: white;
+}
+
 
 .question .checkbox {
     width: 16px;
@@ -129,7 +141,7 @@ h2 {
 }
 
 .question._selected .checkbox {
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(26, 26, 60);
 }
 
 .question p {

@@ -10,8 +10,10 @@
         <SimContain.UserAvatar InstanceId="{508FDC98-BF36-4C0F-B22D-27045DF1A0CF}">
         </SimContain.UserAvatar>
         <SimMission.ObjectActivationAction InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
-            <Descr>InitActivate</Descr>
+            <Descr>initView1_Action</Descr>
             <ObjectReferenceList>
+                <ObjectReference InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
+                </ObjectReference>
                 <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
                 </ObjectReference>
             </ObjectReferenceList>
@@ -21,42 +23,25 @@
             <ScenarioFileName>sims\level1.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.ScriptTrigger InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
-            <Descr>Init</Descr>
+            <Descr>init_trigger</Descr>
             <Script>!lua
--- INIT script
-local lvars = {
-    [&apos;_continue&apos;] = 0;
-    [&apos;_state&apos;] = 1;
-    [&apos;_options&apos;] = 0;
-    [&apos;_level&apos;] = 0;
-    [&apos;_gate&apos;] = 0;
-    [&apos;_hit&apos;] = 0;
-    [&apos;_ui_focus_id&apos;] = (3*200) -1;
-    [&apos;_last_poll&apos;] = 0;
-}
-function init()
-    for lvar, default in pairs(lvars) do
-        varset(&apos;L:&apos;..lvar, default)
-    end
-    for i=0, 15, 1 do
-        varset(&apos;L:_toggle&apos;..i, 0)
-    end
-    varset(&apos;L:_toggle0&apos;, 1)
-end
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
 
-init()
-return true</Script>
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.intro_init()</Script>
             <Actions>
                 <ObjectReference InstanceId="{4B94798D-C2B4-4DCD-98E5-24AFC421E5A4}">
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
         <SimMission.ScriptTrigger InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
-            <Descr>Continue1</Descr>
+            <Descr>loadLvl1_trigger</Descr>
             <Activated>False</Activated>
-            <OneShot>False</OneShot>
             <Script>!lua
-return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.intro_firstLvl()</Script>
             <Actions>
                 <ObjectReference InstanceId="{87CA8F6A-791E-4DD6-9308-6C0C191CE8A5}">
                 </ObjectReference>
@@ -92,7 +77,7 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
         </SimMission.Camera>
         <SimMission.UIPanelObject InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
             <Descr>Controls</Descr>
-            <UIPanelFileName>resources\html\controls.html</UIPanelFileName>
+            <UIPanelFileName>html/controls.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
@@ -108,7 +93,7 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
             <Descr>Intro</Descr>
-            <UIPanelFileName>resources\html\intro.html</UIPanelFileName>
+            <UIPanelFileName>html/intro.html</UIPanelFileName>
             <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
@@ -117,6 +102,7 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
             <OriginY>-0.400000</OriginY>
+            <Activated>False</Activated>
             <AttachedWorldPosition>
                 <WorldPosition>N35° 27' 29.043479",E139° 44' 41.345215",+000064.00</WorldPosition>
                 <AltitudeIsAGL>True</AltitudeIsAGL>
@@ -149,7 +135,7 @@ return varget(&apos;L:_continue&apos;,&apos;number&apos;)==1</Script>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{900BE545-92FE-4EE9-8F62-BBC51D527B2A}">
-            <Descr>Continue1</Descr>
+            <Descr>loadLvl1_Group</Descr>
             <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <GroupedObjects>
