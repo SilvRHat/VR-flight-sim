@@ -75,6 +75,8 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{94B9C792-C697-475D-AE1E-C04FDE1AC631}">
                 </ObjectReference>
+                <ObjectReference InstanceId="{9C45325D-407B-4ECA-87AB-1DC91C016CDE}">
+                </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ObjectActivationAction InstanceId="{617163A6-96A8-497B-A9D2-3BA0CD2DDA09}">
@@ -88,6 +90,8 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
                 <ObjectReference InstanceId="{77996277-2166-4472-8B39-05EED0A9CCC2}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{8C1DC823-E4D4-41D2-8062-A12CCEC07BAC}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{9C45325D-407B-4ECA-87AB-1DC91C016CDE}">
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
@@ -122,6 +126,8 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{C2FC2FB1-37B9-4D65-8C35-2AD96083D74D}">
                 </ObjectReference>
+                <ObjectReference InstanceId="{495827D3-00A5-412E-962B-9DD1CC50BDF1}">
+                </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ObjectActivationAction InstanceId="{46354FA5-F4D6-4E42-9527-52F81B69B066}">
@@ -135,6 +141,8 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
                 <ObjectReference InstanceId="{DEF43667-4357-4780-A36C-D5854026F17B}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{09DC8CCB-304D-4A03-B879-88594BA7999B}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{495827D3-00A5-412E-962B-9DD1CC50BDF1}">
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
@@ -187,6 +195,8 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{638E4AC8-A73E-4C1B-8D1D-3EF319E1A639}">
                 </ObjectReference>
+                <ObjectReference InstanceId="{2BA21C16-C847-48F4-AC2B-A371717D19E5}">
+                </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ObjectActivationAction InstanceId="{F111DAD7-1144-4357-A80B-18B2D7BB400A}">
@@ -199,6 +209,8 @@ return EVENTS.lvl_gateHit(lvl, gate)</Script>
                 <ObjectReference InstanceId="{38147CDB-46F1-4EC2-AC93-5A86642B4B6C}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{638E4AC8-A73E-4C1B-8D1D-3EF319E1A639}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{2BA21C16-C847-48F4-AC2B-A371717D19E5}">
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
@@ -387,9 +399,9 @@ return EVENTS.lvl_surveyQ2(lvl)</Script>
             <Descr>Survey_Deactivate</Descr>
             <NewObjectState>False</NewObjectState>
             <ObjectReferenceList>
-                <ObjectReference InstanceId="{3972D6BD-20DA-44BD-B93A-4B842A8411ED}">
-                </ObjectReference>
                 <ObjectReference InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{3972D6BD-20DA-44BD-B93A-4B842A8411ED}">
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
@@ -1019,8 +1031,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
         <SceneryObjects.LibraryObject InstanceId="{48422332-68A2-4106-99FF-953A9671E2D5}">
             <Descr>Gate1</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 31' 16.511731",E139° 50' 18.411903",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 5' 4.812000",E139° 45' 23.976000",+009400.00</WorldPosition>
+            <Orientation>0.000000,0.000000,259.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -1029,8 +1041,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
         <SceneryObjects.LibraryObject InstanceId="{94B9C792-C697-475D-AE1E-C04FDE1AC631}">
             <Descr>Gate2</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 31' 46.230242",E139° 50' 18.430330",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 0' 31.932000",E139° 51' 18.828000",+009500.00</WorldPosition>
+            <Orientation>0.000000,0.000000,310.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -1040,8 +1052,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
         <SceneryObjects.LibraryObject InstanceId="{C2FC2FB1-37B9-4D65-8C35-2AD96083D74D}">
             <Descr>Gate3</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 32' 16.168708",E139° 50' 18.448756",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 5' 38.724000",E139° 53' 36.708000",+009600.00</WorldPosition>
+            <Orientation>0.000000,0.000000,186.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -1051,8 +1063,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
         <SceneryObjects.LibraryObject InstanceId="{B5B4E48B-743F-4BAB-ABBA-274F20BABDA5}">
             <Descr>Gate4</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 32' 40.262459",E139° 50' 18.467183",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 11' 26.340000",E139° 54' 23.652000",+009700.00</WorldPosition>
+            <Orientation>0.000000,0.000000,8.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -1062,8 +1074,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
         <SceneryObjects.LibraryObject InstanceId="{72836C13-D188-46F8-933D-D0FCC5FF4AE0}">
             <Descr>Gate5</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 33' 7.150197",E139° 50' 18.485609",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 15' 9.252000",E139° 44' 18.168000",+009800.00</WorldPosition>
+            <Orientation>0.000000,0.000000,108.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -1073,13 +1085,46 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
         <SceneryObjects.LibraryObject InstanceId="{F91B5808-4871-4625-883A-0C5989839304}">
             <Descr>Gate6</Descr>
             <MDLGuid>{00985A24-4AF0-4F5E-BA64-32F165A7FE55}</MDLGuid>
-            <WorldPosition>N35° 33' 34.711365",E139° 50' 18.504036",+009164.78</WorldPosition>
-            <Orientation>0.000000,0.000000,0.000000</Orientation>
+            <WorldPosition>N34° 15' 12.996000",E139° 29' 16.116000",+009900.00</WorldPosition>
+            <Orientation>0.000000,0.000000,284.000000</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
             <NoCrash>False</NoCrash>
             <Activated>False</Activated>
+        </SceneryObjects.LibraryObject>
+        <SceneryObjects.LibraryObject InstanceId="{9C45325D-407B-4ECA-87AB-1DC91C016CDE}">
+            <Descr>Gate2_Arrow</Descr>
+            <MDLGuid>{292CF96C-122B-431D-897E-D38BF6815382}</MDLGuid>
+            <WorldPosition>N34° 4' 51.168000",E139° 42' 41.436000",+009400.00</WorldPosition>
+            <Orientation>358.000000,90.000000,211.000000</Orientation>
+            <Scale>16.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <Activated>False</Activated>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
+        </SceneryObjects.LibraryObject>
+        <SceneryObjects.LibraryObject InstanceId="{495827D3-00A5-412E-962B-9DD1CC50BDF1}">
+            <Descr>Gate3_Arrow</Descr>
+            <MDLGuid>{292CF96C-122B-431D-897E-D38BF6815382}</MDLGuid>
+            <WorldPosition>N33° 59' 13.812000",E139° 52' 18.768000",+009500.00</WorldPosition>
+            <Orientation>359.000000,97.000000,99.000000</Orientation>
+            <Scale>16.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <Activated>False</Activated>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
+        </SceneryObjects.LibraryObject>
+        <SceneryObjects.LibraryObject InstanceId="{2BA21C16-C847-48F4-AC2B-A371717D19E5}">
+            <Descr>Gate5_Arrow</Descr>
+            <MDLGuid>{292CF96C-122B-431D-897E-D38BF6815382}</MDLGuid>
+            <WorldPosition>N34° 12' 48.924000",E139° 55' 28.272000",+009800.00</WorldPosition>
+            <Orientation>353.000000,88.000000,358.000000</Orientation>
+            <Scale>16.000000</Scale>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <Activated>False</Activated>
+            <NoAutogenSuppression>True</NoAutogenSuppression>
+            <NoCrash>False</NoCrash>
         </SceneryObjects.LibraryObject>
         <SimMissionUI.ScenarioMetadata InstanceId="{1266AFE6-24BD-4695-86F8-3487E04D0169}">
             <Descr>Scenario Desc Metadata</Descr>
@@ -1351,6 +1396,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 </ObjectReference>
                 <ObjectReference InstanceId="{A974D0B3-0601-479F-AA29-7E2FFB0B5E30}">
                 </ObjectReference>
+                <ObjectReference InstanceId="{9C45325D-407B-4ECA-87AB-1DC91C016CDE}">
+                </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
         <ObjectGroup InstanceId="{CC1A95E8-6D45-4C12-8E80-70A990A4A676}">
@@ -1379,6 +1426,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 <ObjectReference InstanceId="{FF9287D5-6A0D-4DF0-BCCC-CE33EAEECEBC}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{BEA2D3E0-AF0E-4E32-B5CF-F8797746ECBD}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{495827D3-00A5-412E-962B-9DD1CC50BDF1}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
@@ -1437,6 +1486,8 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 <ObjectReference InstanceId="{374CCA74-8A0C-4E4B-89DD-4F39CA60F5C2}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{E049D260-D993-4BE7-8BA9-1B9F415DF8C0}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{2BA21C16-C847-48F4-AC2B-A371717D19E5}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>
