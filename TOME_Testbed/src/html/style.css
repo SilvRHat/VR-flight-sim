@@ -1,6 +1,6 @@
 /* Background Rules */ 
 body {
-    background-image: url(https://cdn.britannica.com/34/94834-050-16DB7EEB/USS-Carl-Vinson-aircraft-carrier-US-Navy-2005.jpg);
+    background-color: rgba(255,255,255,0);   
 } 
 
 .background {
