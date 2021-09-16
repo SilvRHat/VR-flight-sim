@@ -34,7 +34,7 @@ function EVENTS.loadout_init()
     -- Initialize variables
     DATA_UTILS.logEvent(string.format('Level: Loadout; Testbed application loaded'))
     DATA_UTILS.setUIState(3, true, 1)
-    varset('L:_ui_toggle2', '1')
+    --varset('L:_ui_toggle2', '1')
     return true
 end
 
