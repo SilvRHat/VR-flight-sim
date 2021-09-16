@@ -28,10 +28,11 @@ end
 local CONFIG = {
     -- DATA SAVING
     data_folder = 'datastore';                           -- Location of folder to write data files to; IMPORTANT (if set, path must end with '/' character)
-    data_filenames_prefix = '';                             -- Appends to start of every data filename (allows for convenient file iteration)
+    data_filenames_prefix = 'participant1_';                -- Appends to start of every data filename (allows for convenient file iteration)
     event_log_filename = 'event_data.csv';                  -- Name of file to store timestamped event logs (Tracks when gates are hit and when scenarios are loaded)
     simvar_log_filename = 'simulation_data.csv';            -- Name of file to store polled variables (position, speed, etc)
     survey_log_filename = 'survey_data.csv';                -- Name of file to store survey data
+    
     seperator = ', ';                                   -- String seperating data
     max_gates = 6;                                      -- Number of gates to track if hit in data
 

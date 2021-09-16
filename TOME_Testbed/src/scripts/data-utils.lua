@@ -237,5 +237,9 @@ function DATA_UTILS.clearFiles()
     end
 end
 
+function DATA_UTILS.createNewFiles()
+
+end
+
 
 return DATA_UTILS
