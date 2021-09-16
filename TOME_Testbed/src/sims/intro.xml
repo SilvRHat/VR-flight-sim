@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<SimBase.Document Type="ObjectFile" version="5,1">
+<SimBase.Document Type="ObjectFile" version="5,2">
     <Descr>Introduces users to the testbed application as a participant.</Descr>
     <Title>Intro [TOME Testbed]</Title>
     <WorldBase.Flight>
@@ -21,6 +21,10 @@
         <SimMission.LoadScenarioAction InstanceId="{87CA8F6A-791E-4DD6-9308-6C0C191CE8A5}">
             <Descr>Load lvl1</Descr>
             <ScenarioFileName>sims\level1.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
+        <SimMission.LoadScenarioAction InstanceId="{C6510DC2-159E-45B4-ABD4-73274D69ECD1}">
+            <Descr>Load Menu</Descr>
+            <ScenarioFileName>..\loadout.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.ScriptTrigger InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
             <Descr>init_trigger</Descr>
@@ -47,11 +51,25 @@ return EVENTS.intro_firstLvl()</Script>
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{8AEC824B-5E68-46CC-AAE3-424F63782975}">
+            <Descr>Menu Trigger</Descr>
+            <Script>!lua
+local lvl=&apos;intro&apos;
+local gate=1
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_OR_menuLvl (lvl)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{C6510DC2-159E-45B4-ABD4-73274D69ECD1}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
         <SceneryObjects.LibraryObject InstanceId="{F5FA16C8-ACBC-4721-85DD-F136DEBF4297}">
             <Descr>Menu Boat</Descr>
             <MDLGuid>{93615C8E-9789-49A9-B7B0-EC3D2A2625E6}</MDLGuid>
-            <WorldPosition>N35° 27' 27.536682",E139° 44' 41.591427",+000000.00</WorldPosition>
-            <Orientation>0.000000,0.000000,180.000000</Orientation>
+            <WorldPosition>N35° 27' 28.449635",E139° 44' 42.195917",+000000.00</WorldPosition>
+            <Orientation>0.000000,0.000000,213.999994</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -78,10 +96,10 @@ return EVENTS.intro_firstLvl()</Script>
         <SimMission.UIPanelObject InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
             <Descr>Controls</Descr>
             <UIPanelFileName>html\controls.html</UIPanelFileName>
-            <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <UIPanelFileResolution>574.000000,619.578003,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
-            <WorldSize>33.000000,14.000000,-1.000000,-1.000000</WorldSize>
+            <WorldSize>15.500000,16.731001,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,303.999969</Orientation>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
@@ -94,17 +112,17 @@ return EVENTS.intro_firstLvl()</Script>
         <SimMission.UIPanelObject InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
             <Descr>Intro</Descr>
             <UIPanelFileName>html\intro.html</UIPanelFileName>
-            <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <UIPanelFileResolution>574.000000,314.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
-            <WorldSize>55.000000,22.000000,-1.000000,-1.000000</WorldSize>
+            <WorldSize>19.375999,10.599000,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
             <OriginY>-0.400000</OriginY>
             <Activated>False</Activated>
             <AttachedWorldPosition>
-                <WorldPosition>N35° 27' 29.043479",E139° 44' 41.345215",+000064.00</WorldPosition>
+                <WorldPosition>N35° 27' 29.043479",E139° 44' 41.345215",+000085.05</WorldPosition>
                 <AltitudeIsAGL>True</AltitudeIsAGL>
             </AttachedWorldPosition>
         </SimMission.UIPanelObject>
@@ -142,6 +160,17 @@ return EVENTS.intro_firstLvl()</Script>
                 <ObjectReference InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{87CA8F6A-791E-4DD6-9308-6C0C191CE8A5}">
+                </ObjectReference>
+            </GroupedObjects>
+        </ObjectGroup>
+        <ObjectGroup InstanceId="{426CBEF4-B706-4EA5-B1EF-45DAD4507F11}">
+            <Descr>Specials</Descr>
+            <GroupColor>0.000000,151.000000,140.000000,255.000000</GroupColor>
+            <AltitudeIsAGL>True</AltitudeIsAGL>
+            <GroupedObjects>
+                <ObjectReference InstanceId="{8AEC824B-5E68-46CC-AAE3-424F63782975}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{C6510DC2-159E-45B4-ABD4-73274D69ECD1}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>

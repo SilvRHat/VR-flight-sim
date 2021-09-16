@@ -1,0 +1,103 @@
+timestamp, event
+31.731, Level: Loadout; Testbed application loaded
+5056.207, Level: Loadout; Testbed application loaded
+5130.911, Level: Loadout; User began game from beginning
+5131.411, Level: Intro; Loaded
+5156.67, Level: 1; Loaded
+5174.319, Level: 1; Started
+5219.583, Level: 1; 1 gate passed
+5288.239, Level: 1; 2 gate passed
+5342.864, Level: intro; Researcher jumped to menu
+5343.387, Level: Loadout; Testbed application loaded
+5350.221, Level: Loadout; User began game from specific level
+5356.189, Level: 3; Loaded
+5364.479, Level: 3; Started
+5377.878, Level: 3; 1 gate passed
+249.822, Level: 3; Loaded
+267.313, Level: 3; Loaded
+14.844, Level: Loadout; Testbed application loaded
+49.767, Level: Loadout; User began game from specific level
+56.006, Level: 3; Loaded
+61.187, Level: 3; Started
+68.0, Level: 3; Researcher jumped to menu
+68.519, Level: Loadout; Testbed application loaded
+73.972, Level: Loadout; User began game from specific level
+77.136, Level: 2; Loaded
+81.188, Level: 2; Started
+127.684, Level: 2; Researcher reset level
+128.224, Level: 2; Loaded
+131.43, Level: 2; Started
+144.594, Level: 2; 1 gate passed
+209.413, Level: 2; 2 gate passed
+287.659, Level: 2; 3 gate passed
+547.423, Level: 2; Loaded
+561.332, Level: 2; Started
+583.556, Level: 3; Loaded
+1101.474, Level: 4; Loaded
+577.185, Level: 4; Loaded
+582.76, Level: 4; Started
+597.364, Level: 4; 1 gate passed
+805.169, Level: 4; Loaded
+810.241, Level: 4; Started
+835.513, Level: 4; 1 gate passed
+994.785, Level: 4; Loaded
+1003.206, Level: 4; Started
+1051.727, Level: 4; Loaded
+1058.645, Level: 4; Started
+1171.939, Level: 4; Loaded
+1178.867, Level: 4; Started
+1258.352, Level: 4; Loaded
+1265.105, Level: 4; Started
+1278.291, Level: 4; 1 gate passed
+2376.385, Level: 6; Loaded
+2393.593, Level: 6; Researcher jumped to menu
+2394.042, Level: Loadout; Testbed application loaded
+2431.388, Level: Loadout; User began game from beginning
+2431.866, Level: Intro; Loaded
+2442.071, Level: 1; Loaded
+2446.815, Level: 1; Started
+19.328, Level: Loadout; Testbed application loaded
+33.314, Level: Loadout; User began game from beginning
+34.484, Level: Intro; Loaded
+40.527, Level: 1; Loaded
+43.967, Level: 1; Started
+280.02, Level: 4; Loaded
+370.518, Level: 4; Loaded
+372.733, Level: 4; Researcher jumped to menu
+373.236, Level: Loadout; Testbed application loaded
+379.547, Level: Loadout; User began game from beginning
+380.045, Level: Intro; Loaded
+386.789, Level: 1; Loaded
+390.288, Level: 1; Started
+396.023, Level: 1; Researcher skipped to survey
+396.026, Level: 1; Survey started
+404.303, Level: 1; Survey saved
+404.806, Level: 2; Loaded
+408.813, Level: 2; Started
+410.584, Level: 2; Researcher skipped to survey
+410.588, Level: 2; Survey started
+416.789, Level: 2; Survey saved
+417.355, Level: 3; Loaded
+424.454, Level: 3; Started
+470.217, Level: 3; Loaded
+484.529, Level: 3; Started
+495.102, Level: 3; Researcher skipped to survey
+495.105, Level: 3; Survey started
+501.345, Level: 3; Survey saved
+501.859, Level: 4; Loaded
+505.633, Level: 4; Started
+512.155, Level: 4; Researcher skipped to survey
+512.158, Level: 4; Survey started
+517.645, Level: 4; Survey saved
+518.152, Level: 5; Loaded
+522.007, Level: 5; Started
+529.035, Level: 5; Researcher skipped to survey
+529.038, Level: 5; Survey started
+534.842, Level: 5; Survey saved
+535.403, Level: 6; Loaded
+540.332, Level: 6; Started
+541.647, Level: 6; Researcher skipped to survey
+541.65, Level: 6; Survey started
+545.712, Level: 6; Survey saved
+552.628, Level: 6; Researcher jumped to menu
+553.121, Level: Loadout; Testbed application loaded

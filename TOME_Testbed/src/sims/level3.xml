@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<SimBase.Document Type="ObjectFile" version="5,1">
+<SimBase.Document Type="ObjectFile" version="5,2">
     <Descr>Third level of TOME Testbed Application; features 6 gates requiring user to perform wide 180 turns</Descr>
     <Title>Level 3 - 180s [TOME Testbed]</Title>
     <WorldBase.Flight>
         <SimContain.UserOwnship InstanceId="{1CCF6D89-BA36-445F-B5C8-47571ABC0773}">
-            <SpeedKnots>260.000000</SpeedKnots>
+            <SpeedKnots>360.000000</SpeedKnots>
             <AltitudeIsAGL>True</AltitudeIsAGL>
         </SimContain.UserOwnship>
         <SimContain.UserAvatar InstanceId="{508FDC98-BF36-4C0F-B22D-27045DF1A0CF}">
@@ -394,6 +394,10 @@ return EVENTS.lvl_surveyQ2(lvl)</Script>
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
+        <SimMission.LoadScenarioAction InstanceId="{9FBF0245-1807-4BAF-871B-4D9FE6D02453}">
+            <Descr>Load Menu</Descr>
+            <ScenarioFileName>..\loadout.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
         <SimMission.RectangleArea InstanceId="{CBD9545F-0CC2-4D85-8916-2737E00BA691}">
             <Descr>HitRegion G1</Descr>
             <Orientation>0.000000,0.000000,0.000000</Orientation>
@@ -1007,11 +1011,25 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{C368A135-1FFC-4B5C-A046-E439ACA5D19C}">
+            <Descr>Menu Load</Descr>
+            <Script>!lua
+local lvl=&apos;3&apos;
+local gate=1
+function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)
+
+local EVENTS=require(&apos;src\\scripts\\events&apos;)
+return EVENTS.lvl_OR_menuLvl (lvl)</Script>
+            <Actions>
+                <ObjectReference InstanceId="{9FBF0245-1807-4BAF-871B-4D9FE6D02453}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
         <SceneryObjects.LibraryObject InstanceId="{F5FA16C8-ACBC-4721-85DD-F136DEBF4297}">
             <Descr>Menu Boat</Descr>
             <MDLGuid>{93615C8E-9789-49A9-B7B0-EC3D2A2625E6}</MDLGuid>
-            <WorldPosition>N35° 27' 27.536682",E139° 44' 41.591427",+000000.00</WorldPosition>
-            <Orientation>0.000000,0.000000,180.000000</Orientation>
+            <WorldPosition>N35° 27' 28.065969",E139° 44' 41.940006",+000000.00</WorldPosition>
+            <Orientation>0.000000,0.000000,207.999987</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -1158,33 +1176,33 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
         <SimMission.UIPanelObject InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
             <Descr>Controls</Descr>
             <UIPanelFileName>html\controls.html</UIPanelFileName>
-            <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <UIPanelFileResolution>574.000000,619.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
-            <WorldSize>33.000000,14.000000,-1.000000,-1.000000</WorldSize>
+            <WorldSize>15.500000,16.677000,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,303.999969</Orientation>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
             <OriginY>-0.750000</OriginY>
             <AttachedWorldPosition>
-                <WorldPosition>N35° 27' 28.509839",E139° 44' 40.832797",+000064.00</WorldPosition>
+                <WorldPosition>N35° 27' 28.509839",E139° 44' 40.832797",+000062.52</WorldPosition>
                 <AltitudeIsAGL>True</AltitudeIsAGL>
             </AttachedWorldPosition>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{E6D8C566-61D2-405A-9F75-F697B2342DC2}">
             <Descr>intro_UI</Descr>
             <UIPanelFileName>html\lvl3_intro.html</UIPanelFileName>
-            <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <UIPanelFileResolution>574.000000,314.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
-            <WorldSize>55.000000,22.000000,-1.000000,-1.000000</WorldSize>
+            <WorldSize>19.377001,10.532000,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
             <OriginY>-0.400000</OriginY>
             <Activated>False</Activated>
             <AttachedWorldPosition>
-                <WorldPosition>N35° 27' 29.043479",E139° 44' 41.345215",+000064.00</WorldPosition>
+                <WorldPosition>N35° 27' 29.043479",E139° 44' 41.345215",+000091.92</WorldPosition>
                 <AltitudeIsAGL>True</AltitudeIsAGL>
             </AttachedWorldPosition>
         </SimMission.UIPanelObject>
@@ -1262,10 +1280,10 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
         <SimMission.UIPanelObject InstanceId="{DA7FAE02-F6F2-4B66-9F37-749B4C2695A0}">
             <Descr>Question1</Descr>
             <UIPanelFileName>html\question1.html</UIPanelFileName>
-            <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <UIPanelFileResolution>474.000000,582.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
-            <WorldSize>55.000000,22.000000,-1.000000,-1.000000</WorldSize>
+            <WorldSize>16.000000,19.646000,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
@@ -1279,10 +1297,10 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
         <SimMission.UIPanelObject InstanceId="{37E8A408-3679-4929-AE1B-8E026DCEE26F}">
             <Descr>Question2</Descr>
             <UIPanelFileName>html\question2.html</UIPanelFileName>
-            <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <UIPanelFileResolution>474.000000,564.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
-            <WorldSize>55.000000,22.000000,-1.000000,-1.000000</WorldSize>
+            <WorldSize>16.000000,19.038000,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
             <HasKeyboardInteractivity>True</HasKeyboardInteractivity>
             <HasMouseInteractivity>True</HasMouseInteractivity>
@@ -1568,6 +1586,10 @@ return EVENTS.lvl_gatePassed(lvl, gate)</Script>
                 <ObjectReference InstanceId="{395DB581-238C-49D1-A273-31D28D3F193D}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{D224E7C8-024A-4EBE-99C6-4B100C6CAED2}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{9FBF0245-1807-4BAF-871B-4D9FE6D02453}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{C368A135-1FFC-4B5C-A046-E439ACA5D19C}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>

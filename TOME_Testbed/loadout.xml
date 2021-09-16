@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<SimBase.Document Type="ObjectFile" version="5,1">
+<SimBase.Document Type="ObjectFile" version="5,2">
     <Descr>Allows user to load a specific scenario and setup the experiment environment for data collection.</Descr>
     <Title>Loadout [TOME Testbed]</Title>
     <WorldBase.Flight>
@@ -210,8 +210,8 @@ return EVENTS.loadout_loadLvl()</Script>
         <SceneryObjects.LibraryObject InstanceId="{F5FA16C8-ACBC-4721-85DD-F136DEBF4297}">
             <Descr>Menu Boat</Descr>
             <MDLGuid>{93615C8E-9789-49A9-B7B0-EC3D2A2625E6}</MDLGuid>
-            <WorldPosition>N35° 27' 27.536682",E139° 44' 41.591427",+000000.00</WorldPosition>
-            <Orientation>0.000000,0.000000,180.000000</Orientation>
+            <WorldPosition>N35° 27' 28.395548",E139° 44' 41.925028",+000000.00</WorldPosition>
+            <Orientation>0.000000,0.000000,196.999994</Orientation>
             <Scale>1.000000</Scale>
             <AltitudeIsAGL>True</AltitudeIsAGL>
             <NoAutogenSuppression>True</NoAutogenSuppression>
@@ -238,10 +238,10 @@ return EVENTS.loadout_loadLvl()</Script>
         <SimMission.UIPanelObject InstanceId="{C6E34582-CCEB-45D7-BD75-1091C3838D45}">
             <Descr>Loadout2</Descr>
             <UIPanelFileName>src\html\loadout2.html</UIPanelFileName>
-            <UIPanelFileResolution>1600.000000,600.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <UIPanelFileResolution>474.000000,571.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
-            <WorldSize>48.000000,18.000000,-1.000000,-1.000000</WorldSize>
+            <WorldSize>16.000000,19.274000,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
             <Activated>False</Activated>
             <OriginY>-0.600000</OriginY>
@@ -253,29 +253,29 @@ return EVENTS.loadout_loadLvl()</Script>
         <SimMission.UIPanelObject InstanceId="{1AC5A6E8-5C77-4F2B-96CD-58367D227A26}">
             <Descr>Controls</Descr>
             <UIPanelFileName>src\html\controls.html</UIPanelFileName>
-            <UIPanelFileResolution>1600.000000,640.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <UIPanelFileResolution>574.000000,619.578003,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
-            <WorldSize>33.000000,14.000000,-1.000000,-1.000000</WorldSize>
+            <WorldSize>15.500000,16.731001,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,303.999969</Orientation>
             <OriginY>-0.750000</OriginY>
             <AttachedWorldPosition>
-                <WorldPosition>N35° 27' 28.509839",E139° 44' 40.832797",+000064.00</WorldPosition>
+                <WorldPosition>N35° 27' 28.509839",E139° 44' 40.832797",+000058.45</WorldPosition>
                 <AltitudeIsAGL>True</AltitudeIsAGL>
             </AttachedWorldPosition>
         </SimMission.UIPanelObject>
         <SimMission.UIPanelObject InstanceId="{82923290-D1AF-44A9-B63D-01A4D2C9C27F}">
             <Descr>Loadout1</Descr>
             <UIPanelFileName>src\html\loadout1.html</UIPanelFileName>
-            <UIPanelFileResolution>1600.000000,600.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <UIPanelFileResolution>474.000000,395.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
-            <WorldSize>48.000000,18.000000,-1.000000,-1.000000</WorldSize>
+            <WorldSize>16.000000,13.333333,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
             <OriginY>-0.600000</OriginY>
             <Activated>False</Activated>
             <AttachedWorldPosition>
-                <WorldPosition>N35° 27' 28.913319",E139° 44' 41.404429",+000064.47</WorldPosition>
+                <WorldPosition>N35° 27' 28.913319",E139° 44' 41.404429",+000076.20</WorldPosition>
                 <AltitudeIsAGL>True</AltitudeIsAGL>
             </AttachedWorldPosition>
         </SimMission.UIPanelObject>
