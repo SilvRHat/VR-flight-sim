@@ -166,6 +166,7 @@ end
 -- lvl_OR_promptSurvey - Passes after researcher uses override button to skip to survey
 function EVENTS.lvl_OR_promptSurvey (lvl)
     local flag = varget('L:_override_survey', 'number')==1
+    varset('L:_override_survey', '0')
     if not flag then
         return false end
     
