@@ -17,6 +17,7 @@
     
 -- Utility function for importing lua scripts
     -- Improves upon the default require function (sandboxed in prepar3d)
+    -- @param filename - File to look for, resolved relatively
 function require(filename)
     local user = os.getenv('USERNAME');
     local paths = {
@@ -44,6 +45,7 @@ function require(filename)
             f:close()
             return load(src)(), path
         end
+
     end 
     end
 end

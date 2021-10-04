@@ -12,10 +12,13 @@ local P3D_Var = {}
 P3D_Var.__index = P3D_Var
 
 -- Constructor
+    -- @param var_name - Name of variable in prepar3D
+    -- @param var_units - The unit of variable in prepar3D
+    -- @param short_name (optional) - A name to use in csv files
 function P3D_Var.new(var_name, var_units, short_name)
     local self = setmetatable({}, P3D_Var)
 
-    self.Label = short_name
+    self.Label = short_name or var_name
     self.Name = var_name
     self.Units = var_units
 
@@ -27,8 +30,11 @@ end
     -- [IMPORTANT] Relative paths are resolved relative to the parent directory of the 'src' directory!
 local CONFIG = {
     -- DATA SAVING
-    data_folder = 'datastore';                           -- Location of folder to write data files to; IMPORTANT (if set, path must end with '/' character)
-    data_filenames_prefix = 'participant1_';                -- Appends to start of every data filename (allows for convenient file iteration)
+    data_folder = 'datastore';                           -- Location of folder to write data files to; Resolved relatively or absolutely
+    
+    data_subfolder_name ='tome_run';            -- Name of directory under data folder or data to be named.
+    data_filenames_prefix = '';                 -- Appends to start of every data filename (allows for convenient file iteration)
+    
     event_log_filename = 'event_data.csv';                  -- Name of file to store timestamped event logs (Tracks when gates are hit and when scenarios are loaded)
     simvar_log_filename = 'simulation_data.csv';            -- Name of file to store polled variables (position, speed, etc)
     survey_log_filename = 'survey_data.csv';                -- Name of file to store survey data
@@ -46,17 +52,20 @@ local CONFIG = {
 
 
 -- A list of simulation variables to poll
--- Dictionary of objects:
-    -- Key: Name of variable to log in file
-    -- Value: A simple object made of the variable name and its units in prepar3d
+-- Array of objects:
+    -- Value: A simple object made of the variable name, its units in prepar3d, and a name to call it in csv files
 
     -- Full list of sim vars available at: https://www.prepar3d.com/SDKv5/LearningCenter.php
 CONFIG.SIMVARS = {
     P3D_Var.new('A:GROUND VELOCITY', 'Knots', 'ground_vel');
-    P3D_Var.new('A:TOTAL WORLD VELOCITY','Feet per second', 'total_world_vel');
-    P3D_Var.new('A:VELOCITY BODY Z','Feet per second', 'body_vel_x');
-    P3D_Var.new('A:VELOCITY BODY X','Feet per second', 'body_vel_y');
-    P3D_Var.new('A:VELOCITY BODY Y','Feet per second', 'body_vel_z');
+    P3D_Var.new('A:INCIDENCE ALPHA', 'Radians', 'angle_of_attack_rad');
+    P3D_Var.new('A:INCIDENCE BETA', 'Radians', 'sideslip_angle_rad');
+    P3D_Var.new('A:ROTATION VELOCITY BODY X', 'Radians per second', 'rot_vel_x');
+    P3D_Var.new('A:ROTATION VELOCITY BODY Y', 'Radians per second', 'rot_vel_y');
+    P3D_Var.new('A:ROTATION VELOCITY BODY Z', 'Radians per second', 'rot_vel_z');
+    P3D_Var.new('A:G FORCE', 'GForce', 'g_force');
+    P3D_Var.new('A:STALL WARNING', 'Bool', 'stall_warning');
+    P3D_Var.new('A:ANGLE OF ATTACK INDICATOR', 'Radians', 'aoa_indicator');
 }
 
 

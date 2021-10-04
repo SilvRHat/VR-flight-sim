@@ -2,7 +2,7 @@
     Data Utility Functions
     SHINE Lab & Aptima | Collaborative VR Flight Sim Research Project
 
-    Class which abstracts logic for data saving and changing state of scenario
+    Library which abstracts logic for data saving and changing state of scenario
 ]]
 
 
@@ -15,25 +15,17 @@
     io = io or {}
     load = load or loadstring or {}
 
+
 -- Dependencies
 -- Minature Require
 function require(filename)local user=os.getenv('USERNAME');local paths={'',string.format('C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\',user)};local fileexts={'','.lua'};local PATHFILE_EXT='P3D_PROJECT_PATH.txt';local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format("%s%s%s",path,filename,ext),'r');if f then;local src=f:read('*a');f:close();return load(src)(),path;end;end;end;end;
-local CONFIG, srcpath = require('CONFIG.lua')
+local CONFIG, projpath = require('CONFIG.lua')
 
 
 
 -- Library
 local DATA_UTILS = {}
 
-
--- initVars - In prepar3D, lua scripts can read/write 'local' (Globally accesible) variables
-    -- This function is called to initialize a set of variables used specifically for this application
-function DATA_UTILS.initVars()
-    if varget() then
-        return end
-    
-    -- Set vars to default
-end
 
 
 -- setUIState - Sets variables describing the state of the user interface
@@ -70,8 +62,7 @@ end
 -- saveSurvey - Saves survey data to file
     --@param surveyID - The id number of the survey
 function DATA_UTILS.saveSurvey(surveyId)
-    local path = string.format('%s%s/%s%s', srcpath, CONFIG.data_folder, CONFIG.data_filenames_prefix, CONFIG.survey_log_filename)
-    
+    local path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, DATA_UTILS.getLastDataDirectory(), CONFIG.data_filenames_prefix, CONFIG.survey_log_filename)
     local f = io.open(path, 'r')
     if not f then  -- Test if file exists
         -- Create file
@@ -140,7 +131,7 @@ end
 -- logEvent - Will timestamp an event
     -- @param event - Event message to timestamp on log file
 function DATA_UTILS.logEvent(event)
-    local path = string.format('%s%s/%s%s', srcpath, CONFIG.data_folder, CONFIG.data_filenames_prefix, CONFIG.event_log_filename)
+    local path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, DATA_UTILS.getLastDataDirectory(), CONFIG.data_filenames_prefix, CONFIG.event_log_filename)
     
     local f = io.open(path, 'r')
     if not f then  -- Test if file exists
@@ -163,7 +154,7 @@ function DATA_UTILS.logEvent(event)
 
     -- Construct data
     local data = {
-        os.clock(),
+        os.time(),
         event
     }
 
@@ -185,8 +176,10 @@ function DATA_UTILS.pollP3D(args)
         return end
     varset('L:_lastpollclock', os.clock())
     
-    local path = string.format('%s%s/%s%s', srcpath, CONFIG.data_folder, CONFIG.data_filenames_prefix, CONFIG.simvar_log_filename)
     
+    local path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, DATA_UTILS.getLastDataDirectory(), CONFIG.data_filenames_prefix, CONFIG.simvar_log_filename)
+    
+
     local f = io.open(path, 'r')
     if not f then  -- Test if file exists
         -- Create file
@@ -212,7 +205,7 @@ function DATA_UTILS.pollP3D(args)
 
     -- Get Simvars
     local data = {
-        os.clock()
+        os.time()
     }
     for _, val in pairs(args) do
         table.insert(data, val) end
@@ -229,16 +222,73 @@ function DATA_UTILS.pollP3D(args)
 end
 
 
-function DATA_UTILS.clearFiles()
-    local filenames = {CONFIG.event_log_filename, CONFIG.simvar_log_filename, CONFIG.survey_log_filename}
-    for _, fn in ipairs(filenames) do
-        local path = string.format('%s%s/%s%s', srcpath, CONFIG.data_folder, CONFIG.data_filenames_prefix, fn)
-        os.remove(path)
+
+
+-- createDataDirectory - Creates a new directory for saving a single run's data inside of
+function DATA_UTILS.createDataDirectory()
+    for i=0, 10000 do
+        -- Check if directory exists
+        local dirname = string.format('%s%d/', CONFIG.data_subfolder_name, i)
+        local path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, dirname)
+        if DATA_UTILS.dirExists(path) then
+            continue end
+
+        -- Remember directory name
+        local ldf_path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, 'lastdatafolder')
+        local ldfile = io.open(ldf_path, 'w')
+        ldfile:write(path)
+        ldfile:close()
+        
+        -- Create directory
+        os.execute('mkdir %s', path)
+        break
     end
 end
 
-function DATA_UTILS.createNewFiles()
+-- getLastDataDirectory - Returns the name of the last subfolder used for saving data within the current data folder
+    -- @return Name of directory used for most current data saving
+function DATA_UTILS.getLastDataDirectory()
+    local df_path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, 'lastdatafolder')
+    
+    local ldfile = io.open(df_path 'r')
+    if not ldfile then
+        DATA_UTILS.createDataDirectory()
+        return DATA_UTILS.getLastDataDirectory()
+    end
 
+    local dir = ldfile:read('*l')
+    ldfile:close()
+
+    
+    if DATA_UTILS.dirExists( DATA_UTILS.constructPath(projpath, CONFIG.data_folder, dir) ) then
+        return dir
+    else
+        DATA_UTILS.createDataDirectory()
+        return DATA_UTILS.getLastDataDirectory()
+    end
+end
+
+-- dirExists - Will check if a directory exists
+    -- @param name - Directory path
+    -- @return - Returns if exists
+function DATA_UTILS.dirExists(path) 
+    path = DATA_UTILS.constructPath(path, '')   -- Validate that last character is '/'
+    local suc = os.rename(path, path)
+    return suc
+end
+
+-- constructPath - Will construct a directory path
+    -- @params - Individual pieces in order to include in path
+    -- @return - Final path
+function DATA_UTILS.constructPath(...)
+    local pieces = {...}
+    local path=''
+    for _, pc in ipairs(pieces) do
+        local drive = string.match(path,'^(%a):')   -- If a piece is absolute, it will no be resolved from there
+        local newpath = (string.match(path,'/$') or string.len(path)<1) and path or path..'/'   -- Appends '/' if needed
+        path = string.format('%s%s', not drive and newpath or '', pc)   -- Alters path
+    end
+    return path
 end
 
 
