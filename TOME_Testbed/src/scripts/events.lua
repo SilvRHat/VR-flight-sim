@@ -6,6 +6,11 @@
     This allows complex coding on scenario environment to be done outside of prepar3D Application
 ]]
 
+function print(str)
+    local out = io.open('output.txt', 'a+')
+    out:write(string.format('%s\n',str))
+    out:close()
+end
 
 -- Compatibility
     -- Prepar3D Funcs
@@ -19,22 +24,25 @@
 
 -- Dependencies
 -- Minature Require
-function require(filename)local user=os.getenv('USERNAME');local paths={'',string.format('C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\',user)};local fileexts={'','.lua'};local PATHFILE_EXT='P3D_PROJECT_PATH.txt';local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format("%s%s%s",path,filename,ext),'r');if f then;local src=f:read('*a');f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require('CONFIG.lua')
-local DATA_UTILS = require('src\\scripts\\data-utils.lua')
+function require(filename)local user=os.getenv('USERNAME');local paths={'',string.format('C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\',user)};local fileexts={'','.lua'};local PATHFILE_EXT='P3D_PROJECT_PATH.txt';local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format("%s%s%s",path,filename,ext),'r');if f then;local src=f:read('*a');f:close();return load(src)(),path;end;end;end;end;
+local CONFIG, srcpath = require('CONFIG.lua')
 
+
+local DATA_UTILS = require('src\\scripts\\data-utils.lua')
 
 -- Module
 local EVENTS = {}
 
 
--- TRIGGERS ---------------------------------------------------------------
 
+
+-- EVENT HANDLERS ---------------------------------------------------------------
+-- Loadout Scenario events
 -- loadout_init - Fires when the testbed application is started from the loadout scenario
 function EVENTS.loadout_init()
-    -- Initialize variables
-    DATA_UTILS.logEvent(string.format('Level: Loadout; Testbed application loaded'))
+    --DATA_UTILS.logEvent(string.format('Level: Loadout; Testbed application loaded'))
     DATA_UTILS.setUIState(3, true, 1)
-    --varset('L:_ui_toggle2', '1')
+    varset('L:_ui_toggle2', '1')        -- Set default to create new data folder
     return true
 end
 
@@ -46,7 +54,7 @@ function EVENTS.loadout_loadNew()
 
     -- Check if files should be cleared
     if varget('L:_ui_toggle2','number')==1 then
-        DATA_UTILS.clearFiles()
+        DATA_UTILS.createDataDirectory()
     end
     DATA_UTILS.logEvent(string.format('Level: Loadout; User began game from beginning'))
     return true
@@ -60,7 +68,7 @@ function EVENTS.loadout_loadLvl()
 
     -- Check if files should be cleared
     if varget('L:_ui_toggle2','number')==1 then
-        DATA_UTILS.clearFiles()
+        DATA_UTILS.createDataDirectory()
     end
 
     DATA_UTILS.clearToggles()
@@ -71,7 +79,7 @@ end
 
 
 
-
+-- Intro Scenario events
 -- intro_init - Fires when intro level is loaded
 function EVENTS.intro_init()
     DATA_UTILS.setUIState(1, true, 1)
@@ -92,7 +100,7 @@ end
 
 
 
-
+-- Level-based Scenario events
 -- lvl_init - Fires when a level is loaded
 function EVENTS.lvl_init(lvl)
     DATA_UTILS.setUIState(1, true, 1)
@@ -141,8 +149,34 @@ function EVENTS.lvl_surveyQ2Answered(lvl)
     return true
 end
 
+-- lvl_gateHit - Fires when the inner gate hit box is hit
+function EVENTS.lvl_gateHit(lvl, gate)
+    varset(string.format('L:_hitgate%d', gate), '1')
+end
+
+-- lvl_surveyQ2 - Fires when survey q1 is displayed
+function EVENTS.lvl_surveyQ1(lvl)
+    DATA_UTILS.clearToggles()
+    DATA_UTILS.setUIState(11, true, 1)
+    DATA_UTILS.logEvent(string.format('Level: %s; Survey started',lvl))
+end
+
+-- lvl_surveyQ2 - Fires when survey q2 is displayed
+function EVENTS.lvl_surveyQ2(lvl)
+    DATA_UTILS.setUIState(11, false, 5)
+    DATA_UTILS.clearToggles()
+    varset('L:_ui_toggle4', '1')
+end
+
+-- lvl_pollData - Invokes the function to poll P3D data, saving simvars specified in CONFIG
+function EVENTS.lvl_pollData(lvl)
+    DATA_UTILS.pollP3D{lvl=lvl}
+    return false
+end
 
 
+
+-- Input Scenario events
 -- lvl_OR_resetLvl - Passes after researcher uses override button to reset level
 function EVENTS.lvl_OR_resetLvl(lvl)
     local flag = varget('L:_override_resetlvl', 'number')==1
@@ -184,36 +218,7 @@ function EVENTS.lvl_OR_menuLvl (lvl)
     return true
 end
 
-
-
--- ACTIONS ---------------------------------------------------------------
--- lvl_gateHit - Fires when the inner gate hit box is hit
-function EVENTS.lvl_gateHit(lvl, gate)
-    varset(string.format('L:_hitgate%d', gate), '1')
-end
-
--- lvl_surveyQ2 - Fires when survey q1 is displayed
-function EVENTS.lvl_surveyQ1(lvl)
-    DATA_UTILS.clearToggles()
-    DATA_UTILS.setUIState(11, true, 1)
-    DATA_UTILS.logEvent(string.format('Level: %s; Survey started',lvl))
-end
-
--- lvl_surveyQ2 - Fires when survey q2 is displayed
-function EVENTS.lvl_surveyQ2(lvl)
-    DATA_UTILS.setUIState(11, false, 5)
-    DATA_UTILS.clearToggles()
-    varset('L:_ui_toggle4', '1')
-end
-
--- lvl_pollData - Invokes the function to poll P3D data, saving simvars specified in CONFIG
-function EVENTS.lvl_pollData(lvl)
-    DATA_UTILS.pollP3D{lvl=lvl}
-    return false
-end
-
-
-
+return EVENTS
 
 
 -- TEMPLATE Prepar3D Script Format
@@ -228,6 +233,3 @@ function require(filename)local user=os.getenv('USERNAME');local paths={'',strin
 local EVENTS=require('src\\scripts\\events')
 return EVENTS.lvl_OR_menuLvl (lvl)
 ]]
-
--- Return Module
-return EVENTS
