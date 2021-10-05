@@ -5,6 +5,16 @@
     Library which abstracts logic for data saving and changing state of scenario
 ]]
 
+function print(...)
+    local out = io.open('output.txt', 'a+')
+    for i, str in ipairs({...}) do
+        out:write(string.format('%s ',tostring(str)))
+    end
+    out:write('\n')
+    out:close()
+end
+
+
 
 -- Compatibility
     -- Prepar3D Funcs
@@ -20,7 +30,6 @@
 -- Minature Require
 function require(filename)local user=os.getenv('USERNAME');local paths={'',string.format('C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\',user)};local fileexts={'','.lua'};local PATHFILE_EXT='P3D_PROJECT_PATH.txt';local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format("%s%s%s",path,filename,ext),'r');if f then;local src=f:read('*a');f:close();return load(src)(),path;end;end;end;end;
 local CONFIG, projpath = require('CONFIG.lua')
-
 
 
 -- Library
@@ -39,12 +48,14 @@ function DATA_UTILS.setUIState(options, multichoice, focus)
 end
 
 
+
 -- clearToggles - Clears toggles describing if UI elements are selected or not
 function DATA_UTILS.clearToggles()
     for i = 0, CONFIG.max_ui_options do
         varset(string.format('L:_ui_toggle%d', i), tostring(0)) end
     varset('L:_continue', '0')
 end
+
 
 
 -- saveTogglesTo - Saves the toggle values to a different set of variables
@@ -57,6 +68,7 @@ function DATA_UTILS.saveTogglesTo(var_prefix)
         ) 
     end
 end
+
 
 
 -- saveSurvey - Saves survey data to file
@@ -128,10 +140,13 @@ function DATA_UTILS.saveSurvey(surveyId)
 end
 
 
+
 -- logEvent - Will timestamp an event
     -- @param event - Event message to timestamp on log file
 function DATA_UTILS.logEvent(event)
+    
     local path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, DATA_UTILS.getLastDataDirectory(), CONFIG.data_filenames_prefix, CONFIG.event_log_filename)
+    
     
     local f = io.open(path, 'r')
     if not f then  -- Test if file exists
@@ -164,6 +179,7 @@ function DATA_UTILS.logEvent(event)
     end f:write('\n')
     f:close()
 end
+
 
 
 -- pollP3D - Polls prepar3D for a list of simulation variables
@@ -218,9 +234,7 @@ function DATA_UTILS.pollP3D(args)
         f:write(string.format("%s%s", col, i<#data and CONFIG.seperator or ''))
     end f:write('\n')
     f:close()
-    
 end
-
 
 
 
@@ -230,37 +244,41 @@ function DATA_UTILS.createDataDirectory()
         -- Check if directory exists
         local dirname = string.format('%s%d/', CONFIG.data_subfolder_name, i)
         local path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, dirname)
-        if DATA_UTILS.dirExists(path) then
-            continue end
-
-        -- Remember directory name
-        local ldf_path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, 'lastdatafolder')
-        local ldfile = io.open(ldf_path, 'w')
-        ldfile:write(path)
-        ldfile:close()
+        if not DATA_UTILS.dirExists(path) then
+            -- Remember directory name
+            local ldf_path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, 'lastdatafolder')
+            local ldfile = io.open(ldf_path, 'w')
+            ldfile:write(path)
+            ldfile:close()
         
-        -- Create directory
-        os.execute('mkdir %s', path)
-        break
+            -- Create directory
+            os.execute(string.format('mkdir "%s"', string.match(path, '^(.*)[\\/]$')))
+            break
+        end
     end
 end
+
+
 
 -- getLastDataDirectory - Returns the name of the last subfolder used for saving data within the current data folder
     -- @return Name of directory used for most current data saving
 function DATA_UTILS.getLastDataDirectory()
     local df_path = DATA_UTILS.constructPath(projpath, CONFIG.data_folder, 'lastdatafolder')
     
-    local ldfile = io.open(df_path 'r')
+    local ldfile = io.open(df_path, 'r')
+    
     if not ldfile then
         DATA_UTILS.createDataDirectory()
         return DATA_UTILS.getLastDataDirectory()
     end
+    
+
 
     local dir = ldfile:read('*l')
     ldfile:close()
-
     
-    if DATA_UTILS.dirExists( DATA_UTILS.constructPath(projpath, CONFIG.data_folder, dir) ) then
+    
+    if DATA_UTILS.dirExists( DATA_UTILS.constructPath(dir) ) then
         return dir
     else
         DATA_UTILS.createDataDirectory()
@@ -268,14 +286,18 @@ function DATA_UTILS.getLastDataDirectory()
     end
 end
 
+
+
 -- dirExists - Will check if a directory exists
     -- @param name - Directory path
     -- @return - Returns if exists
 function DATA_UTILS.dirExists(path) 
-    path = DATA_UTILS.constructPath(path, '')   -- Validate that last character is '/'
-    local suc = os.rename(path, path)
+    path = DATA_UTILS.constructPath(path, '')   -- Validate that last character is '\'
+    local suc, x, y = os.rename(path, path)
     return suc
 end
+
+
 
 -- constructPath - Will construct a directory path
     -- @params - Individual pieces in order to include in path
@@ -284,10 +306,11 @@ function DATA_UTILS.constructPath(...)
     local pieces = {...}
     local path=''
     for _, pc in ipairs(pieces) do
-        local drive = string.match(path,'^(%a):')   -- If a piece is absolute, it will no be resolved from there
-        local newpath = (string.match(path,'/$') or string.len(path)<1) and path or path..'/'   -- Appends '/' if needed
-        path = string.format('%s%s', not drive and newpath or '', pc)   -- Alters path
+        local drive = string.match(pc,'^(%a):')   -- If a piece is absolute, it will no be resolved from there
+        local newpath = (string.match(path,'[\\/]$') or string.len(path)<1) and path or path..'\\'   -- Appends '/' if needed
+        path = string.format('%s%s', (not drive) and newpath or '', pc)   -- Alters path
     end
+    
     return path
 end
 

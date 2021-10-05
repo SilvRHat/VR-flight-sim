@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<SimBase.Document Type="ScenarioFile" version="5,1" id="loadout">
+<SimBase.Document Type="ScenarioFile" version="5,1">
     <Descr>AceXML Document</Descr>
-    <Filename>loadout.fxml</Filename>
     <Flight.Sections>
         <Section Name="Main">
             <Property Name="Title" Value="Loadout [TOME Testbed]" />
@@ -315,13 +314,13 @@
             <Property Name="PostProcess.1" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.24">
-            <Property Name="Guid" Value="{FE688313-8A58-4AD9-9188-236CBB09C909}" />
+            <Property Name="Guid" Value="{E8447F15-6028-4A43-AA40-B9F6E36D2F9F}" />
             <Property Name="Title" Value="UICam Object Camera View" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
             <Property Name="Translation" Value="0, 0, 0" />
             <Property Name="SensorMode" Value="0" />
-            <Property Name="Rotation" Value="-6.1248779296875, -1.593017578125, 0" />
+            <Property Name="Rotation" Value="0, 0, 0" />
             <Property Name="FieldOfView" Value="0, 0" />
             <Property Name="PostProcess.0" Value="HDRPostProcess" />
             <Property Name="PostProcess.1" Value="FXAAResolve" />
@@ -371,7 +370,7 @@
             <Property Name="WaypointNext" Value="0" />
             <Property Name="AltCleared" Value="-1" />
             <Property Name="HdgAssigned" Value="-1" />
-            <Property Name="SquawkAssigned" Value="-1610608128" />
+            <Property Name="SquawkAssigned" Value="7606784" />
             <Property Name="LandingSequence" Value="LANDING_NONE" />
             <Property Name="DepartureRequest" Value="DEPARTURE_VFR_REQUEST_NONE" />
             <Property Name="ParkingRequest" Value="PARKING_NAME_NONE" />
@@ -397,7 +396,7 @@
             <Property Name="AircraftSignature" Value="1,0" />
         </Section>
         <Section Name="ATC_AircraftManager">
-            <Property Name="NumberofAircraft" Value="0" />
+            <Property Name="NumberofAircraft" Value="1" />
         </Section>
         <Section Name="ATC_MessageSystem">
             <Property Name="FrequencyNodes" Value="0" />
@@ -421,7 +420,7 @@
             <Property Name="ID" Value="0" />
             <Property Name="ViewsOn" Value="1" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="0" />
         </Section>
         <Section Name="Panel.2">
@@ -435,7 +434,7 @@
             <Property Name="ID" Value="50" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="50" />
         </Section>
         <Section Name="Panel.3">
@@ -449,7 +448,7 @@
             <Property Name="ID" Value="225" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="225" />
         </Section>
         <Section Name="Panel.4">
@@ -463,7 +462,7 @@
             <Property Name="ID" Value="10010" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="10010" />
         </Section>
         <Section Name="Panel.20">
@@ -477,7 +476,7 @@
             <Property Name="ID" Value="22012" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22012" />
             <Property Name="3DPWorldspaceOffset" Value="-1.0440000295639038086, 0.1620000302791595459, 1" />
         </Section>
@@ -492,7 +491,7 @@
             <Property Name="ID" Value="22013" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22013" />
             <Property Name="3DPWorldspaceOffset" Value="0, -1, 1.5" />
             <Property Name="3DPSize" Value="2, 2" />
@@ -508,7 +507,7 @@
             <Property Name="ID" Value="22014" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22014" />
             <Property Name="3DPWorldspaceOffset" Value="-0.016499878838658332825, 1.01399993896484375, 1" />
             <Property Name="3DPCameraReference" Value="3" />
@@ -524,7 +523,7 @@
             <Property Name="ID" Value="-1" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="-1" />
             <Property Name="3DPWorldspaceOffset" Value="-0.021000020205974578857, 0.85000014305114746094, 1" />
             <Property Name="3DPCameraReference" Value="3" />
@@ -540,7 +539,7 @@
             <Property Name="ID" Value="22015" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22015" />
             <Property Name="3DPWorldspaceOffset" Value="0, -1, 1.5" />
             <Property Name="3DPSize" Value="2, 2" />
@@ -556,7 +555,7 @@
             <Property Name="ID" Value="22018" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22018" />
             <Property Name="3DPWorldspaceOffset" Value="0, 1, 2" />
             <Property Name="3DPSize" Value="2, 2" />
@@ -572,7 +571,7 @@
             <Property Name="ID" Value="22017" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22017" />
             <Property Name="3DPWorldspaceOffset" Value="-1.0515002012252807617, -0.65400016307830810547, 1" />
         </Section>
@@ -755,7 +754,7 @@
             <Property Name="Latitude" Value="N35&#xB0; 32&apos; 25.20&quot;" />
             <Property Name="Longitude" Value="E139&#xB0; 48&apos; 16.80&quot;" />
             <Property Name="Altitude" Value="+000026.00" />
-            <Property Name="Pitch" Value="-0" />
+            <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
             <Property Name="Heading" Value="-30.040008220821633245" />
             <Property Name="PVelBodyAxis" Value="0" />
@@ -942,9 +941,9 @@
             <Property Name="LeftFlap" Value="000.00" />
             <Property Name="RightFlap" Value="000.00" />
             <Property Name="GearsHandle" Value="000.01" />
-            <Property Name="Gear1" Value="099.08" />
-            <Property Name="Gear2" Value="099.08" />
-            <Property Name="Gear3" Value="099.08" />
+            <Property Name="Gear1" Value="099.07" />
+            <Property Name="Gear2" Value="099.07" />
+            <Property Name="Gear3" Value="099.07" />
             <Property Name="YokeY" Value="050.00" />
             <Property Name="YokeX" Value="050.00" />
             <Property Name="Rudder" Value="050.00" />
@@ -967,7 +966,7 @@
             <Property Name="Latitude" Value="N35&#xB0; 32&apos; 25.20&quot;" />
             <Property Name="Longitude" Value="E139&#xB0; 48&apos; 16.80&quot;" />
             <Property Name="Altitude" Value="+000026.00" />
-            <Property Name="Pitch" Value="-0" />
+            <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
             <Property Name="Heading" Value="49.999989308416843414" />
             <Property Name="PVelBodyAxis" Value="0" />
@@ -1042,7 +1041,7 @@
             <Property Name="ID" Value="-1" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="-1" />
         </Section>
         <Section Name="Panel.6">
@@ -1056,7 +1055,7 @@
             <Property Name="ID" Value="-1" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="-1" />
         </Section>
         <Section Name="Panel.7">
@@ -1070,7 +1069,7 @@
             <Property Name="ID" Value="22001" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22001" />
             <Property Name="3DPWorldspaceOffset" Value="-0.68849992752075195312, 0.75999999046325683594, 1" />
         </Section>
@@ -1085,7 +1084,7 @@
             <Property Name="ID" Value="22002" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22002" />
             <Property Name="3DPWorldspaceOffset" Value="-0.016499878838658332825, 1.01399993896484375, 1" />
         </Section>
@@ -1100,7 +1099,7 @@
             <Property Name="ID" Value="22003" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22003" />
             <Property Name="3DPWorldspaceOffset" Value="-0.021000020205974578857, 0.85000014305114746094, 1" />
         </Section>
@@ -1115,7 +1114,7 @@
             <Property Name="ID" Value="22004" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22004" />
             <Property Name="3DPWorldspaceOffset" Value="-1.0035003423690795898, 0.78399986028671264648, 1" />
         </Section>
@@ -1130,7 +1129,7 @@
             <Property Name="ID" Value="22004" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22004" />
             <Property Name="3DPWorldspaceOffset" Value="0.40799996256828308105, 0.99200004339218139648, 1" />
         </Section>
@@ -1145,7 +1144,7 @@
             <Property Name="ID" Value="22005" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22005" />
             <Property Name="3DPWorldspaceOffset" Value="0.68849998712539672852, 1.0659999847412109375, 1" />
         </Section>
@@ -1160,7 +1159,7 @@
             <Property Name="ID" Value="22004" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22004" />
             <Property Name="3DPWorldspaceOffset" Value="-0.13350000977516174316, -0.89200013875961303711, 1" />
         </Section>
@@ -1175,7 +1174,7 @@
             <Property Name="ID" Value="22006" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22006" />
             <Property Name="3DPWorldspaceOffset" Value="-1.0170001983642578125, -0.30800008773803710938, 1" />
         </Section>
@@ -1190,7 +1189,7 @@
             <Property Name="ID" Value="22007" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22007" />
             <Property Name="3DPWorldspaceOffset" Value="1.088999629020690918, 1.0159997940063476562, 1" />
         </Section>
@@ -1205,7 +1204,7 @@
             <Property Name="ID" Value="22008" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22008" />
             <Property Name="3DPWorldspaceOffset" Value="-0.90450000762939453125, 0.3540000617504119873, 1" />
         </Section>
@@ -1220,7 +1219,7 @@
             <Property Name="ID" Value="22009" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22009" />
             <Property Name="3DPWorldspaceOffset" Value="-1.0515002012252807617, -0.65400016307830810547, 1" />
         </Section>
@@ -1235,7 +1234,7 @@
             <Property Name="ID" Value="22010" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22010" />
             <Property Name="3DPWorldspaceOffset" Value="0.8279997706413269043, 0.44800004363059997559, 1" />
         </Section>
@@ -1250,7 +1249,7 @@
             <Property Name="ID" Value="22011" />
             <Property Name="ViewsOn" Value="0" />
             <Property Name="Adapter_Number" Value="0" />
-            <Property Name="ParentWindowTitle" Value=" " />
+            <Property Name="ParentWindowTitle" />
             <Property Name="OriginalID" Value="22011" />
             <Property Name="3DPWorldspaceOffset" Value="-1.0200003385543823242, -0.85000008344650268555, 1" />
         </Section>
