@@ -66,6 +66,9 @@ CONFIG.SIMVARS = {
     P3D_Var.new('A:G FORCE', 'GForce', 'g_force');
     P3D_Var.new('A:STALL WARNING', 'Bool', 'stall_warning');
     P3D_Var.new('A:ANGLE OF ATTACK INDICATOR', 'Radians', 'aoa_indicator');
+    P3D_Var.new('A:STALL WARNING', 'Bool', 'stall_warning');
+    P3D_Var.new('A:YOKE Y POSITION', 'Position', 'yoke_y');
+    P3D_Var.new('A:YOKE X POSITION', 'Position', 'yoke_x');
 }
 
 
