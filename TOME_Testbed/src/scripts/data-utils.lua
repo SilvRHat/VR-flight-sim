@@ -70,6 +70,14 @@ function DATA_UTILS.saveTogglesTo(var_prefix)
 end
 
 
+function DATA_UTILS.playAudio(audioName, delay)
+    local path = DATA_UTILS.constructPath(projpath, 'src', 'signals', 'audio.fsig')
+    local f = io.open(path, 'r+')
+    f:write(string.format("PlayAudio %s %d", audioName, delay))
+    f:close()
+end
+
+
 
 -- saveSurvey - Saves survey data to file
     --@param surveyID - The id number of the survey
