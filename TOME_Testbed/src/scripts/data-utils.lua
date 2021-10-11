@@ -92,7 +92,8 @@ function DATA_UTILS.saveSurvey(surveyId)
             'fulness_of_head',
             'blurred_vision',
             'dizzy',
-            'vertigo'
+            'vertigo',
+            'nausea'
         }
         
         for i=1,CONFIG.max_gates do
@@ -123,7 +124,7 @@ function DATA_UTILS.saveSurvey(surveyId)
     table.insert(data, mental_demand)
     
     -- Save data from question 1
-    for i=0, 8 do
+    for i=0, 9 do
         table.insert(data, varget(string.format('L:_surveyq1%d', i), 'number') or -1)
     end
     

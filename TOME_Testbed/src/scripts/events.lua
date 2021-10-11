@@ -165,7 +165,7 @@ end
 function EVENTS.lvl_surveyQ2(lvl)
     DATA_UTILS.setUIState(11, false, 5)
     DATA_UTILS.clearToggles()
-    varset('L:_ui_toggle4', '1')
+    --varset('L:_ui_toggle4', '1')
 end
 
 -- lvl_pollData - Invokes the function to poll P3D data, saving simvars specified in CONFIG
