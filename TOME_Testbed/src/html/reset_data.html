@@ -8,6 +8,7 @@
         <script src="../scripts/focus.js"></script>
     </head>
     <body>
+        
         <div class = 'background'>
             <div class='dec_border'></div>
             <div id='content' style="width: 400px;">
@@ -15,15 +16,19 @@
                 <h2>Setup</h2>
                 <p class='stats'>&emsp;Load 1/2</p>
                 <p>
-                   Select from the following<br>
-                   By default, a NEW folder is created to store participant data. If continuing from a crashed run, toggle that feature off.
+                    Welcome to setup. Before starting a new trial, please select the setup options as follows:<br><br>
+                    Do you want to clear/ reset .csv files?<br>
+                    If not any new data will be appended to the exisiting files.
                 </p>
-                <button id='interactive0' class='Interactive'>Load from Start</button>
-                <button id='interactive1' class='Interactive'>Load from Level</button>
-                <div id='interactive2' class='question Interactive'>
+                <div id='interactive0' class='question Interactive'>
                     <div class='checkbox'></div>
-                    <p>Create new data folder on launch</p>
+                    <p>Yes</p>
                 </div>
+                <div id='interactive1' class='question Interactive'>
+                    <div class='checkbox'></div>
+                    <p>No</p>
+                </div>
+                <button id='interactive2' class='Interactive'>Continue</button>
                 <img class='prepar3dlogo' src='../img/11Logo_1600.png'>
             </div>
         </div>
