@@ -77,6 +77,13 @@ function DATA_UTILS.playAudio(audioName, delay)
     f:close()
 end
 
+function DATA_UTILS.adjustPosition()
+    local path = DATA_UTILS.constructPath(projpath, 'src', 'signals', 'position.fsig')
+    local f = io.open(path, 'a')
+    f:write("adjustPosition")
+    f:close()
+end
+
 
 
 -- saveSurvey - Saves survey data to file

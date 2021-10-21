@@ -116,6 +116,7 @@ function EVENTS.lvl_start(lvl)
     if not selected then
         return false end
     
+    DATA_UTILS.adjustPosition()
     DATA_UTILS.logEvent(string.format('Level: %s; Started',lvl))
     DATA_UTILS.clearToggles()
     return true
