@@ -72,7 +72,7 @@ end
 
 function DATA_UTILS.playAudio(audioName, delay)
     local path = DATA_UTILS.constructPath(projpath, 'src', 'signals', 'audio.fsig')
-    local f = io.open(path, 'r+')
+    local f = io.open(path, 'a')
     f:write(string.format("PlayAudio %s %d\n", audioName, delay))
     f:close()
 end
