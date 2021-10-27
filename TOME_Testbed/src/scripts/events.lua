@@ -125,6 +125,17 @@ end
 -- lvl_gatePassed - Fires after a gate is passed (uses outer hit box)
 function EVENTS.lvl_gatePassed(lvl, gate)
     DATA_UTILS.playAudio('GatePassed.wav', 0)
+    if (1 <= gate && gate <= 5) {
+      if (lvl == 4) {
+          DATA_UTILS.playAudio('LoopNow.wav', 30)
+      }
+      if (lvl == 5) {
+          DATA_UTILS.playAudio('DoABarrelRoll.wav', 30)
+      }
+      if (lvl == 6) {
+          DATA_UTILS.playAudio('PleaseReport.wav', 30)
+      }
+    }
     DATA_UTILS.logEvent(string.format('Level: %s; %d gate passed',lvl, gate))
     return true
 end
