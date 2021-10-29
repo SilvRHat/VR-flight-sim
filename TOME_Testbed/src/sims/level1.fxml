@@ -315,7 +315,7 @@
             <Property Name="PostProcess.1" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.24">
-            <Property Name="Guid" Value="{E3C46FF2-E2FB-4CE7-83C0-FFC400201BD5}" />
+            <Property Name="Guid" Value="{9EF5DD2F-2E97-45DE-9327-4BC2A75AA42A}" />
             <Property Name="Title" Value="UICam Object Camera View" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
@@ -371,7 +371,7 @@
             <Property Name="WaypointNext" Value="0" />
             <Property Name="AltCleared" Value="-1" />
             <Property Name="HdgAssigned" Value="-1" />
-            <Property Name="SquawkAssigned" Value="871305728" />
+            <Property Name="SquawkAssigned" Value="1882919424" />
             <Property Name="LandingSequence" Value="LANDING_NONE" />
             <Property Name="DepartureRequest" Value="DEPARTURE_VFR_REQUEST_NONE" />
             <Property Name="ParkingRequest" Value="PARKING_NAME_NONE" />
@@ -397,7 +397,7 @@
             <Property Name="AircraftSignature" Value="1,0" />
         </Section>
         <Section Name="ATC_AircraftManager">
-            <Property Name="NumberofAircraft" Value="0" />
+            <Property Name="NumberofAircraft" Value="1" />
         </Section>
         <Section Name="ATC_MessageSystem">
             <Property Name="FrequencyNodes" Value="0" />

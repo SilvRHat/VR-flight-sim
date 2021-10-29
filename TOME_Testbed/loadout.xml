@@ -26,6 +26,8 @@
                 </ObjectReference>
                 <ObjectReference InstanceId="{C4877870-FA5D-4558-AD9F-79C49700EB1E}">
                 </ObjectReference>
+                <ObjectReference InstanceId="{2D017C0C-16DA-45F6-B2FF-C1A33C118FDA}">
+                </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.LoadScenarioAction InstanceId="{D65DE049-A927-4FBB-96F9-43EDA799601B}">
@@ -90,6 +92,10 @@
                 </ObjectReference>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
+        <SimMission.LoadScenarioAction InstanceId="{5DAD9968-CF44-4826-A226-1D47CD24F37A}">
+            <Descr>Load Tutorial</Descr>
+            <ScenarioFileName>src\sims\tutorial.fxml</ScenarioFileName>
+        </SimMission.LoadScenarioAction>
         <SimMission.ScriptTrigger InstanceId="{ED13AD6A-1030-4BD1-9D4F-4ADA56648DC3}">
             <Descr>Init</Descr>
             <Script>!lua
@@ -117,7 +123,7 @@ return varget(&apos;L:_ui_toggle0&apos;)==1</Script>
             <Descr>Load lvl1</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_ui_toggle1&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle2&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{C9994C5C-9005-44FD-AC26-9FB2636BFD0C}">
                 </ObjectReference>
@@ -127,7 +133,7 @@ return varget(&apos;L:_ui_toggle1&apos;)==1</Script>
             <Descr>Load lvl2</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_ui_toggle2&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle3&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{8AF4CEF1-B3CA-4BDD-B1AE-095A1091CD5F}">
                 </ObjectReference>
@@ -137,7 +143,7 @@ return varget(&apos;L:_ui_toggle2&apos;)==1</Script>
             <Descr>Load lvl3</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_ui_toggle3&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle4&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{949AE1B4-1FA5-4440-B07D-1F3717ACF582}">
                 </ObjectReference>
@@ -147,7 +153,7 @@ return varget(&apos;L:_ui_toggle3&apos;)==1</Script>
             <Descr>Load lvl4</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_ui_toggle4&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle5&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{113D104B-1631-4828-9C2C-0E8BD22EE2E0}">
                 </ObjectReference>
@@ -157,7 +163,7 @@ return varget(&apos;L:_ui_toggle4&apos;)==1</Script>
             <Descr>Load lvl5</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_ui_toggle5&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle6&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{B465011E-6EC4-4BF1-BAA1-2412A78A50C2}">
                 </ObjectReference>
@@ -167,7 +173,7 @@ return varget(&apos;L:_ui_toggle5&apos;)==1</Script>
             <Descr>Load lvl6</Descr>
             <Activated>False</Activated>
             <Script>!lua
-return varget(&apos;L:_ui_toggle6&apos;)==1 or varget(&apos;L:_continue&apos;)==1</Script>
+return varget(&apos;L:_ui_toggle7&apos;)==1 or varget(&apos;L:_continue&apos;)==1</Script>
             <Actions>
                 <ObjectReference InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
                 </ObjectReference>
@@ -207,6 +213,16 @@ return EVENTS.loadout_loadLvl()</Script>
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>
+        <SimMission.ScriptTrigger InstanceId="{2D017C0C-16DA-45F6-B2FF-C1A33C118FDA}">
+            <Descr>Load Tutorial</Descr>
+            <Activated>False</Activated>
+            <Script>!lua
+return varget(&apos;L:_ui_toggle1&apos;)==1</Script>
+            <Actions>
+                <ObjectReference InstanceId="{5DAD9968-CF44-4826-A226-1D47CD24F37A}">
+                </ObjectReference>
+            </Actions>
+        </SimMission.ScriptTrigger>
         <SceneryObjects.LibraryObject InstanceId="{F5FA16C8-ACBC-4721-85DD-F136DEBF4297}">
             <Descr>Menu Boat</Descr>
             <MDLGuid>{93615C8E-9789-49A9-B7B0-EC3D2A2625E6}</MDLGuid>
@@ -238,15 +254,15 @@ return EVENTS.loadout_loadLvl()</Script>
         <SimMission.UIPanelObject InstanceId="{C6E34582-CCEB-45D7-BD75-1091C3838D45}">
             <Descr>Loadout2</Descr>
             <UIPanelFileName>src\html\loadout2.html</UIPanelFileName>
-            <UIPanelFileResolution>474.000000,571.000000,-1.000000,-1.000000</UIPanelFileResolution>
+            <UIPanelFileResolution>474.000000,615.000000,-1.000000,-1.000000</UIPanelFileResolution>
             <InstanceName>Menu</InstanceName>
             <ViewRenderCondition>RenderInAllViews</ViewRenderCondition>
-            <WorldSize>16.000000,19.274000,-1.000000,-1.000000</WorldSize>
+            <WorldSize>16.000000,21.299999,-1.000000,-1.000000</WorldSize>
             <Orientation>0.000000,0.000000,340.000000</Orientation>
             <Activated>False</Activated>
             <OriginY>-0.600000</OriginY>
             <AttachedWorldPosition>
-                <WorldPosition>N35° 27' 28.913319",E139° 44' 41.404429",+000064.47</WorldPosition>
+                <WorldPosition>N35° 27' 28.913319",E139° 44' 41.404429",+000059.99</WorldPosition>
                 <AltitudeIsAGL>True</AltitudeIsAGL>
             </AttachedWorldPosition>
         </SimMission.UIPanelObject>
@@ -339,6 +355,10 @@ return EVENTS.loadout_loadLvl()</Script>
                 <ObjectReference InstanceId="{B465011E-6EC4-4BF1-BAA1-2412A78A50C2}">
                 </ObjectReference>
                 <ObjectReference InstanceId="{37239521-1906-4736-B7C1-F193F10C7A30}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{2D017C0C-16DA-45F6-B2FF-C1A33C118FDA}">
+                </ObjectReference>
+                <ObjectReference InstanceId="{5DAD9968-CF44-4826-A226-1D47CD24F37A}">
                 </ObjectReference>
             </GroupedObjects>
         </ObjectGroup>

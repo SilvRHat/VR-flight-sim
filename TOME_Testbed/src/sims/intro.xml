@@ -19,8 +19,8 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.LoadScenarioAction InstanceId="{87CA8F6A-791E-4DD6-9308-6C0C191CE8A5}">
-            <Descr>Load lvl1</Descr>
-            <ScenarioFileName>sims\level1.fxml</ScenarioFileName>
+            <Descr>Load tutorial</Descr>
+            <ScenarioFileName>sims\tutorial.fxml</ScenarioFileName>
         </SimMission.LoadScenarioAction>
         <SimMission.LoadScenarioAction InstanceId="{C6510DC2-159E-45B4-ABD4-73274D69ECD1}">
             <Descr>Load Menu</Descr>
@@ -39,7 +39,7 @@ return EVENTS.intro_init()</Script>
             </Actions>
         </SimMission.ScriptTrigger>
         <SimMission.ScriptTrigger InstanceId="{5EE5863F-DEC1-4A58-9E95-3806B6E2731B}">
-            <Descr>loadLvl1_trigger</Descr>
+            <Descr>loadTutorial_trigger</Descr>
             <Activated>False</Activated>
             <Script>!lua
 function require(filename)local user=os.getenv(&apos;USERNAME&apos;);local paths={&apos;&apos;,string.format(&apos;C:\\Users\\%s\\Documents\\Prepar3D v5 Files\\TOME_Testbed\\&apos;,user)};local fileexts={&apos;&apos;,&apos;.lua&apos;};local PATHFILE_EXT=&apos;P3D_PROJECT_PATH.txt&apos;;local pathfile=io.open(PATHFILE_EXT);if pathfile then;for line in io.lines(PATHFILE_EXT) do table.insert(paths,line) end;pathfile:close();end;for _,path in ipairs(paths) do;for _,ext in ipairs(fileexts)do;local f=io.open(string.format(&quot;%s%s%s&quot;,path,filename,ext),&apos;r&apos;);if f then;local src=f:read(&apos;*a&apos;);f:close();return load(src)(),path;end;end;end;end;local CONFIG, srcpath = require(&apos;CONFIG.lua&apos;)

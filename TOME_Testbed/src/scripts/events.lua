@@ -72,7 +72,7 @@ function EVENTS.loadout_loadLvl()
     end
 
     DATA_UTILS.clearToggles()
-    DATA_UTILS.setUIState(7, false, 1)
+    DATA_UTILS.setUIState(8, false, 1)
     DATA_UTILS.logEvent(string.format('Level: Loadout; User began game from specific level'))
     return true
 end
@@ -122,9 +122,27 @@ function EVENTS.lvl_start(lvl)
     return true
 end
 
+
+-- playAudioFromLvlGate - A function to enumerate audio sound
+function playAudioFromLvlGate(lvl, gate)
+    DATA_UTILS.playAudio('GatePassed.wav', 0)
+    audio_data = {
+        {lvl = true; gate = true; sound = 'GatePassed.wav'; delay = 0;};
+    }
+    
+    for audio in pairs(audio_data) do
+        if ((lvl==audio.lvl or audio.lvl==true) and (gate==audio.gate or audio.gate==true)) then
+            DATA_UTILS.playAudio(audio.sound, audio.delay)
+        end
+    end
+end
+
 -- lvl_gatePassed - Fires after a gate is passed (uses outer hit box)
 function EVENTS.lvl_gatePassed(lvl, gate)
-    DATA_UTILS.playAudio('GatePassed.wav', 0)
+    
+    DATA_UTILS.logEvent(string.format('Level: %s; %d gate passed',lvl, gate))
+    
+    --playAudioFromLvlGate(tonumber(lvl), tonumber(gate))
     if 1 <= gate and gate <= 5 then
       if lvl == '4' then
           DATA_UTILS.playAudio('LoopNow.wav', 30)
@@ -136,7 +154,8 @@ function EVENTS.lvl_gatePassed(lvl, gate)
           DATA_UTILS.playAudio('PleaseReport.wav', 30)
       end
     end
-    DATA_UTILS.logEvent(string.format('Level: %s; %d gate passed',lvl, gate))
+    
+    
     return true
 end
 

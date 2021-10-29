@@ -294,7 +294,7 @@
             <Property Name="PostProcess.1" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.22">
-            <Property Name="Guid" Value="{9DCE073E-AF02-42F1-A7CB-63C7A9FADAC8}" />
+            <Property Name="Guid" Value="{56706E13-288B-461A-B691-A712790E2AD8}" />
             <Property Name="Title" Value="UICam Object Camera View" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
