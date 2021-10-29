@@ -72,7 +72,7 @@ function EVENTS.loadout_loadLvl()
     end
 
     DATA_UTILS.clearToggles()
-    DATA_UTILS.setUIState(7, false, 1)
+    DATA_UTILS.setUIState(8, false, 1)
     DATA_UTILS.logEvent(string.format('Level: Loadout; User began game from specific level'))
     return true
 end
@@ -124,19 +124,9 @@ end
 
 -- lvl_gatePassed - Fires after a gate is passed (uses outer hit box)
 function EVENTS.lvl_gatePassed(lvl, gate)
-    DATA_UTILS.playAudio('GatePassed.wav', 0)
-    if 1 <= gate and gate <= 5 then
-      if lvl == '4' then
-          DATA_UTILS.playAudio('LoopNow.wav', 30)
-      end
-      if lvl == '5' then
-          DATA_UTILS.playAudio('DoABarrelRoll.wav', 30)
-      end
-      if lvl == '6' then
-          DATA_UTILS.playAudio('PleaseReport.wav', 30)
-      end
-    end
+    
     DATA_UTILS.logEvent(string.format('Level: %s; %d gate passed',lvl, gate))
+    DATA_UTILS.playAudio('GatePassed.wav', 0)
     return true
 end
 

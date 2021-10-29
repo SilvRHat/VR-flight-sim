@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<SimBase.Document Type="ScenarioFile" version="5,2" id="intro">
+<SimBase.Document Type="ScenarioFile" version="5,2" id="tutorial">
     <Descr>AceXML Document</Descr>
-    <Filename>intro.fxml</Filename>
+    <Filename>tutorial.fxml</Filename>
     <Flight.Sections>
         <Section Name="Main">
-            <Property Name="Title" Value="Intro [TOME Testbed]" />
-            <Property Name="Description" Value="Introduces users to the testbed application as a participant." />
+            <Property Name="Title" Value="Tutorial [TOME Testbed]" />
+            <Property Name="Description" Value="First level of TOME Testbed Application; features 6 gates requiring user to fly straight." />
             <Property Name="AppVersion" Value="5.2.22.27615" />
             <Property Name="ScenarioVersion" Value="0" />
         </Section>
@@ -315,7 +315,7 @@
             <Property Name="PostProcess.1" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.24">
-            <Property Name="Guid" Value="{F933166A-E712-47BF-94CE-17748D3F3C3F}" />
+            <Property Name="Guid" Value="{342DD654-3E84-4233-B186-71E11C9901D6}" />
             <Property Name="Title" Value="UICam Object Camera View" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
@@ -371,7 +371,7 @@
             <Property Name="WaypointNext" Value="0" />
             <Property Name="AltCleared" Value="-1" />
             <Property Name="HdgAssigned" Value="-1" />
-            <Property Name="SquawkAssigned" Value="7606784" />
+            <Property Name="SquawkAssigned" Value="4608" />
             <Property Name="LandingSequence" Value="LANDING_NONE" />
             <Property Name="DepartureRequest" Value="DEPARTURE_VFR_REQUEST_NONE" />
             <Property Name="ParkingRequest" Value="PARKING_NAME_NONE" />
@@ -752,19 +752,19 @@
             <Property Name="Descr" Value="plr" />
         </Section>
         <Section Name="SimVars.0">
-            <Property Name="Latitude" Value="N35&#xB0; 32&apos; 25.20&quot;" />
-            <Property Name="Longitude" Value="E139&#xB0; 48&apos; 16.80&quot;" />
-            <Property Name="Altitude" Value="+000026.00" />
+            <Property Name="Latitude" Value="N35&#xB0; 30&apos; 1.80&quot;" />
+            <Property Name="Longitude" Value="E139&#xB0; 45&apos; 55.80&quot;" />
+            <Property Name="Altitude" Value="+010027.56" />
             <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
-            <Property Name="Heading" Value="-30.04000805318355205" />
+            <Property Name="Heading" Value="93.999998420476927663" />
             <Property Name="PVelBodyAxis" Value="0" />
             <Property Name="BVelBodyAxis" Value="0" />
             <Property Name="HVelBodyAxis" Value="0" />
             <Property Name="XVelBodyAxis" Value="0" />
             <Property Name="YVelBodyAxis" Value="0" />
-            <Property Name="ZVelBodyAxis" Value="0" />
-            <Property Name="SimOnGround" Value="True" />
+            <Property Name="ZVelBodyAxis" Value="607.61154855642655548" />
+            <Property Name="SimOnGround" Value="False" />
             <Property Name="OnPlatformHeight" Value="-9999999999" />
             <Property Name="AssociationID" Value="0" />
             <Property Name="HealthPoints" Value="1" />
@@ -818,7 +818,7 @@
         </Section>
         <Section Name="Engine Parameters.1.0">
             <Property Name="Combustion" Value="True" />
-            <Property Name="ThrottleLeverPct" Value="0" />
+            <Property Name="ThrottleLeverPct" Value="0.8" />
             <Property Name="PropellerLeverPct" Value="0.999146" />
             <Property Name="MixtureLeverPct" Value="0.999146" />
             <Property Name="Pct Engine RPM" Value="1" />
@@ -941,10 +941,10 @@
             <Property Name="FlapsHandle" Value="000.00" />
             <Property Name="LeftFlap" Value="000.00" />
             <Property Name="RightFlap" Value="000.00" />
-            <Property Name="GearsHandle" Value="000.01" />
-            <Property Name="Gear1" Value="099.02" />
-            <Property Name="Gear2" Value="099.02" />
-            <Property Name="Gear3" Value="099.02" />
+            <Property Name="GearsHandle" Value="000.00" />
+            <Property Name="Gear1" Value="000.00" />
+            <Property Name="Gear2" Value="000.00" />
+            <Property Name="Gear3" Value="000.00" />
             <Property Name="YokeY" Value="050.00" />
             <Property Name="YokeX" Value="050.00" />
             <Property Name="Rudder" Value="050.00" />
@@ -964,9 +964,9 @@
             <Property Name="ContainerTitle" Value="Civilian Male White Shirt Blue Jeans" />
             <Property Name="UserCamera" Value="{00000000-0000-0000-0000-000000000000}" />
             <Property Name="AvatarCamera" Value="{00000000-0000-0000-0000-000000000000}" />
-            <Property Name="Latitude" Value="N35&#xB0; 32&apos; 25.20&quot;" />
-            <Property Name="Longitude" Value="E139&#xB0; 48&apos; 16.80&quot;" />
-            <Property Name="Altitude" Value="+000026.00" />
+            <Property Name="Latitude" Value="N35&#xB0; 30&apos; 1.80&quot;" />
+            <Property Name="Longitude" Value="E139&#xB0; 45&apos; 55.80&quot;" />
+            <Property Name="Altitude" Value="+010027.56" />
             <Property Name="Pitch" Value="0" />
             <Property Name="Bank" Value="0" />
             <Property Name="Heading" Value="49.999989308416843414" />
@@ -976,7 +976,7 @@
             <Property Name="XVelBodyAxis" Value="0" />
             <Property Name="YVelBodyAxis" Value="0" />
             <Property Name="ZVelBodyAxis" Value="0" />
-            <Property Name="SimOnGround" Value="True" />
+            <Property Name="SimOnGround" Value="False" />
             <Property Name="OnPlatformHeight" Value="-9999999999" />
             <Property Name="AssociationID" Value="0" />
             <Property Name="HealthPoints" Value="1" />
@@ -1004,7 +1004,7 @@
             <Property Name="DurationTotal" Value="0" />
         </Section>
         <Section Name="ObjectFile">
-            <Property Name="File" Value="intro" />
+            <Property Name="File" Value="tutorial" />
         </Section>
         <Section Name="Camera.1.27">
             <Property Name="Guid" Value="{61C3B6FB-FF9E-4B9C-978E-AA7C7F70F5A9}" />

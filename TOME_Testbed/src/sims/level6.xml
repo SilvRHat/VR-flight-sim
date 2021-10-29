@@ -622,7 +622,7 @@ return EVENTS.lvl_start(lvl)</Script>
             <Actions>
                 <ObjectReference InstanceId="{81363D06-593C-4F24-A80C-B8F0AD8F5791}">
                 </ObjectReference>
-                <ObjectReference InstanceId="{3471EFE2-1D46-4784-AD0F-09CF33084FF0}">
+                <ObjectReference InstanceId="{DDADA40A-57F4-4A03-8CF7-8D463D1E1719}">
                 </ObjectReference>
             </Actions>
         </SimMission.ScriptTrigger>

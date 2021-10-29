@@ -157,7 +157,7 @@
         </Section>
         <Section Name="Camera.1.10">
             <Property Name="Guid" Value="{AA8C80C0-9EE2-4284-A1C2-B20CD3F5F3D9}" />
-            <Property Name="Title" Value="RJTF" />
+            <Property Name="Title" Value="RJTQ" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="8" />
             <Property Name="Translation" Value="0, 0, 0" />
@@ -168,7 +168,7 @@
         </Section>
         <Section Name="Camera.1.11">
             <Property Name="Guid" Value="{607C4520-CA6F-4135-AE10-8BF28838068F}" />
-            <Property Name="Title" Value="RJTF-17" />
+            <Property Name="Title" Value="RJTQ-2" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.30000001192092895508" />
             <Property Name="Translation" Value="0, 0, 0" />
@@ -313,30 +313,18 @@
             <Property Name="PostProcess.1" Value="FXAAResolve" />
         </Section>
         <Section Name="Camera.1.24">
-            <Property Name="Guid" Value="{F42AE4CB-B071-4270-959D-4FE8181657C9}" />
+            <Property Name="Guid" Value="{B99A8775-CB33-424C-A674-F6593C769266}" />
             <Property Name="Title" Value="UICam Object Camera View" />
-            <Property Name="PanelOnlyView" Value="False" />
-            <Property Name="Zoom" Value="0.5" />
-            <Property Name="Translation" Value="0, 0, 0" />
-            <Property Name="SensorMode" Value="0" />
-            <Property Name="Rotation" Value="-0.010986328125, -35.518798828125, 0" />
-            <Property Name="FieldOfView" Value="0, 0" />
-            <Property Name="PostProcess.0" Value="HDRPostProcess" />
-            <Property Name="PostProcess.1" Value="FXAAResolve" />
-        </Section>
-        <Section Name="Camera.1.25">
-            <Property Name="Guid" Value="{DDB9694E-4140-4E16-9412-F6957840000B}" />
-            <Property Name="Title" Value="UICam" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.5" />
             <Property Name="Translation" Value="0, 0, 0" />
             <Property Name="SensorMode" Value="0" />
             <Property Name="Rotation" Value="0, 0, 0" />
             <Property Name="FieldOfView" Value="0, 0" />
-            <Property Name="PostProcess.0" Value="NVGBloomPostProcess" />
-            <Property Name="PostProcess.1" Value="GreenScaleInverter" />
+            <Property Name="PostProcess.0" Value="HDRPostProcess" />
+            <Property Name="PostProcess.1" Value="FXAAResolve" />
         </Section>
-        <Section Name="Camera.1.26">
+        <Section Name="Camera.1.25">
             <Property Name="Guid" Value="{57A3758A-D596-4260-8AF0-302A5E4DF5CE}" />
             <Property Name="Title" Value="IR (White Hot)" />
             <Property Name="PanelOnlyView" Value="False" />
@@ -346,6 +334,18 @@
             <Property Name="Rotation" Value="0, 0, 0" />
             <Property Name="FieldOfView" Value="0, 0" />
             <Property Name="PostProcess.0" Value="NVGBloomPostProcess" />
+            <Property Name="PostProcess.1" Value="GreenScaleInverter" />
+        </Section>
+        <Section Name="Camera.1.26">
+            <Property Name="Guid" Value="{DD3A45A5-C8BE-417A-B69E-32F402D56F36}" />
+            <Property Name="Title" Value="IR (Black Hot)" />
+            <Property Name="PanelOnlyView" Value="False" />
+            <Property Name="Zoom" Value="0.2999999999999999889" />
+            <Property Name="Translation" Value="0, 0, 0" />
+            <Property Name="SensorMode" Value="2" />
+            <Property Name="Rotation" Value="0, 0, 0" />
+            <Property Name="FieldOfView" Value="0, 0" />
+            <Property Name="PostProcess.0" Value="InvertColor" />
         </Section>
         <Section Name="EFIS">
             <Property Name="Active" Value="False" />
@@ -1005,18 +1005,6 @@
             <Property Name="File" Value="level6" />
         </Section>
         <Section Name="Camera.1.27">
-            <Property Name="Guid" Value="{DD3A45A5-C8BE-417A-B69E-32F402D56F36}" />
-            <Property Name="Title" Value="IR (Black Hot)" />
-            <Property Name="PanelOnlyView" Value="False" />
-            <Property Name="Zoom" Value="0.2999999999999999889" />
-            <Property Name="Translation" Value="0, 0, 0" />
-            <Property Name="SensorMode" Value="2" />
-            <Property Name="Rotation" Value="0, 0, 0" />
-            <Property Name="FieldOfView" Value="0, 0" />
-            <Property Name="PostProcess.0" Value="InvertColor" />
-            <Property Name="PostProcess.1" Value="HDRPostProcess" />
-        </Section>
-        <Section Name="Camera.1.28">
             <Property Name="Guid" Value="{61C3B6FB-FF9E-4B9C-978E-AA7C7F70F5A9}" />
             <Property Name="Title" Value="NVG (White Hot)" />
             <Property Name="PanelOnlyView" Value="False" />
@@ -1027,6 +1015,18 @@
             <Property Name="FieldOfView" Value="0, 0" />
             <Property Name="PostProcess.0" Value="NVGBloomPostProcess" />
             <Property Name="PostProcess.1" Value="HDRPostProcess" />
+        </Section>
+        <Section Name="Camera.1.28">
+            <Property Name="Guid" Value="{28212611-2528-4BD4-B944-565C30A39985}" />
+            <Property Name="Title" Value="NVG (Black Hot)" />
+            <Property Name="PanelOnlyView" Value="False" />
+            <Property Name="Zoom" Value="0.2999999999999999889" />
+            <Property Name="Translation" Value="0, 0, 0" />
+            <Property Name="SensorMode" Value="0" />
+            <Property Name="Rotation" Value="0, 0, 0" />
+            <Property Name="FieldOfView" Value="0, 0" />
+            <Property Name="PostProcess.0" Value="NVGBloomPostProcess" />
+            <Property Name="PostProcess.1" Value="GreenScaleInverter" />
             <Property Name="PostProcess.2" Value="HDRPostProcess" />
         </Section>
         <Section Name="Panel.5">
@@ -1257,12 +1257,12 @@
             <Property Name="Switch" Value="True" />
         </Section>
         <Section Name="Camera.1.29">
-            <Property Name="Guid" Value="{28212611-2528-4BD4-B944-565C30A39985}" />
-            <Property Name="Title" Value="NVG (Black Hot)" />
+            <Property Name="Guid" Value="{037AB312-F502-4900-A853-581C9544F971}" />
+            <Property Name="Title" Value="RadarCamera" />
             <Property Name="PanelOnlyView" Value="False" />
             <Property Name="Zoom" Value="0.2999999999999999889" />
             <Property Name="Translation" Value="0, 0, 0" />
-            <Property Name="SensorMode" Value="0" />
+            <Property Name="SensorMode" Value="3" />
             <Property Name="Rotation" Value="0, 0, 0" />
             <Property Name="FieldOfView" Value="0, 0" />
             <Property Name="PostProcess.0" Value="NVGBloomPostProcess" />
