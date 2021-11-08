@@ -164,13 +164,13 @@ h2 {
     background-color: rgba(187, 177, 33, 0.89);
     border: rgb(255, 209, 4) 2px solid;
     color: rgb(250, 255, 183);
-    content: "Light";
+    content: "Mild";
 }
 .question._rating2 .enum_rater:after {
     background-color: rgba(241, 122, 11, 0.918);
     border: rgba(240, 120, 8, 0.932) 2px solid;
     color: rgb(255, 230, 202);
-    content: "Intermediate";
+    content: "Moderate";
 }
 .question._rating3 .enum_rater:after {
     background-color: rgba(255, 0, 0, 0.5);

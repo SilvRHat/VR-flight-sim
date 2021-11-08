@@ -105,9 +105,9 @@ function DATA_UTILS.saveSurvey(surveyId)
             'eyestrain',
             'difficulty_focusing',
             'headache',
-            'fulness_of_head',
+            'fullness_of_head',
             'blurred_vision',
-            'dizzy',
+            'dizziness',
             'vertigo',
             'nausea'
         }
