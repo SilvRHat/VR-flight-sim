@@ -14,14 +14,14 @@ function updateVisuals() {
     let n = VarGet('L:_ui_options','number')
 
     for (let i=0; i<=n; i++) {
+        for (let j=1; j<4; j++) {
+            $('#interactive'.concat(i.toString())).removeClass('_rating'.concat(j.toString()));
+        }
         if (VarGet('L:_ui_toggle'.concat(i.toString()), 'number')>0) {
             $('#interactive'.concat(i.toString())).addClass('_selected');
             for (let j=1; j<4; j++) {
                 if (VarGet('L:_ui_toggle'.concat(i.toString()), 'number')==j) {
                     $('#interactive'.concat(i.toString())).addClass('_rating'.concat(j.toString()));
-                }
-                else {
-                    $('#interactive'.concat(i.toString())).removeClass('_rating'.concat(j.toString()));
                 }
             }
         }

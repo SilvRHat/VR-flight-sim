@@ -130,6 +130,15 @@ h2 {
 }
 
 
+.question .checkbox {
+    width: 16px;
+    height: 16px;
+    background-color: ivory;
+    margin: 2px;
+
+    display: block;
+    position: absolute;
+}
 
 .question .enum_rater:after  {
     width: 100px;
@@ -148,16 +157,18 @@ h2 {
     position: absolute;
 }
 
-
+.question._selected .checkbox {
+    background-color: rgb(26, 26, 60);
+}
 .question._rating1 .enum_rater:after {
-    background-color: rgba(251, 255, 0, 0.5);
-    border: rgb(235, 219, 0) 2px solid;
+    background-color: rgba(187, 177, 33, 0.89);
+    border: rgb(255, 209, 4) 2px solid;
     color: rgb(250, 255, 183);
     content: "Light";
 }
 .question._rating2 .enum_rater:after {
-    background-color: rgba(255, 141, 10, 0.5);
-    border: rgb(196, 104, 0) 2px solid;
+    background-color: rgba(241, 122, 11, 0.918);
+    border: rgba(240, 120, 8, 0.932) 2px solid;
     color: rgb(255, 230, 202);
     content: "Intermediate";
 }

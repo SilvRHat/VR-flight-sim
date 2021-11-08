@@ -31,7 +31,7 @@ local function selectMultichoice()
     end
     -- Toggle ui element
     local toggle = ipc.readLvar('L:_ui_toggle'..focus_id)
-    ipc.writeLvar('L:_ui_toggle'..focus_id, toggle+1 % mod)
+    ipc.writeLvar('L:_ui_toggle'..focus_id, (toggle+1) % mod)
 end
 
 
