@@ -130,23 +130,52 @@ h2 {
 }
 
 
-.question .checkbox {
-    width: 16px;
+
+.question .enum_rater:after  {
+    width: 100px;
     height: 16px;
-    background-color: ivory;
+    background-color: rgba(0,255,0,.5);
+    border: green 2px solid;
+    color: rgb(179, 255, 179);
+    content: "None";
+    padding: 2px 10px;
     margin: 2px;
+    border-radius: 5px;
+    text-align: center;
+    top: -3%;
     
     display: block;
     position: absolute;
 }
 
-.question._selected .checkbox {
-    background-color: rgb(26, 26, 60);
+
+.question._rating1 .enum_rater:after {
+    background-color: rgba(251, 255, 0, 0.5);
+    border: rgb(235, 219, 0) 2px solid;
+    color: rgb(250, 255, 183);
+    content: "Light";
 }
+.question._rating2 .enum_rater:after {
+    background-color: rgba(255, 141, 10, 0.5);
+    border: rgb(196, 104, 0) 2px solid;
+    color: rgb(255, 230, 202);
+    content: "Intermediate";
+}
+.question._rating3 .enum_rater:after {
+    background-color: rgba(255, 0, 0, 0.5);
+    border: rgb(128, 0, 0) 2px solid;
+    color: rgb(255, 182, 182);
+    content: "Severe";
+}
+
+.question._focus .enum_rater:after {
+    color: white;
+}
+
 
 .question p {
     position: relative;
-    left: 30px;
+    left: 140px;
     width: calc(100% - 30px);
     margin: 0px;
 }

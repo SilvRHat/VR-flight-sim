@@ -41,7 +41,7 @@ local EVENTS = {}
 -- loadout_init - Fires when the testbed application is started from the loadout scenario
 function EVENTS.loadout_init()
     --DATA_UTILS.logEvent(string.format('Level: Loadout; Testbed application loaded'))
-    DATA_UTILS.setUIState(3, true, 1)
+    DATA_UTILS.setUIState(3, true, 1, 2)
     varset('L:_ui_toggle2', '1')        -- Set default to create new data folder
     return true
 end
@@ -72,7 +72,7 @@ function EVENTS.loadout_loadLvl()
     end
 
     DATA_UTILS.clearToggles()
-    DATA_UTILS.setUIState(8, false, 1)
+    DATA_UTILS.setUIState(8, false, 1, 2)
     DATA_UTILS.logEvent(string.format('Level: Loadout; User began game from specific level'))
     return true
 end
@@ -82,7 +82,7 @@ end
 -- Intro Scenario events
 -- intro_init - Fires when intro level is loaded
 function EVENTS.intro_init()
-    DATA_UTILS.setUIState(1, true, 1)
+    DATA_UTILS.setUIState(1, true, 1, 2)
     DATA_UTILS.clearToggles()
     DATA_UTILS.logEvent(string.format('Level: Intro; Loaded'))
     return true
@@ -103,7 +103,7 @@ end
 -- Level-based Scenario events
 -- lvl_init - Fires when a level is loaded
 function EVENTS.lvl_init(lvl)
-    DATA_UTILS.setUIState(1, true, 1)
+    DATA_UTILS.setUIState(1, true, 1, 2)
     DATA_UTILS.clearToggles()
 
     DATA_UTILS.logEvent(string.format('Level: %s; Loaded',lvl))
@@ -170,13 +170,13 @@ end
 -- lvl_surveyQ2 - Fires when survey q1 is displayed
 function EVENTS.lvl_surveyQ1(lvl)
     DATA_UTILS.clearToggles()
-    DATA_UTILS.setUIState(11, true, 1)
+    DATA_UTILS.setUIState(11, true, 1, 4)
     DATA_UTILS.logEvent(string.format('Level: %s; Survey started',lvl))
 end
 
 -- lvl_surveyQ2 - Fires when survey q2 is displayed
 function EVENTS.lvl_surveyQ2(lvl)
-    DATA_UTILS.setUIState(11, false, 5)
+    DATA_UTILS.setUIState(11, false, 5, 2)
     DATA_UTILS.clearToggles()
     --varset('L:_ui_toggle4', '1')
 end

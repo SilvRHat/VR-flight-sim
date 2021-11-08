@@ -9,6 +9,8 @@ ipc = ipc or {}
 
 local options = ipc.readLvar('L:_ui_options')
 local focus_id = ipc.readLvar('L:_ui_focuson') % (options)
+local mod = ipc.readLvar('L:_ui_mod')
+if (mod<2) then mod=2 end
 
 
 local function selectSingle()
@@ -29,7 +31,7 @@ local function selectMultichoice()
     end
     -- Toggle ui element
     local toggle = ipc.readLvar('L:_ui_toggle'..focus_id)
-    ipc.writeLvar('L:_ui_toggle'..focus_id, toggle==1 and 0 or 1)
+    ipc.writeLvar('L:_ui_toggle'..focus_id, toggle+1 % mod)
 end
 
 

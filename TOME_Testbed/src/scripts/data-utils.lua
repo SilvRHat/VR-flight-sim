@@ -41,10 +41,11 @@ local DATA_UTILS = {}
     -- @param options - How many interactable elements there are on the UI
     -- @param multichoice - If the UI is multichoice
     -- @param focus - The element to focus on
-function DATA_UTILS.setUIState(options, multichoice, focus)
+function DATA_UTILS.setUIState(options, multichoice, focus, mod)
     varset('L:_ui_multichoice', multichoice and '1' or '0')
     varset('L:_ui_options', tostring(options) or 1)
     varset('L:_ui_focuson', tostring((100*options) + (focus or 1) - 1))
+    varset('L:_ui_mod', tostring(mod or 2))
 end
 
 
